@@ -123,7 +123,7 @@ gantt
     title Implementation Timeline
     dateFormat  YYYY-MM-DD
     section Phase 1
-    Foundation (VNet, NSGs, Subnets)    :p1, 2024-01-01, 7d
+    Foundation (VNet, NSGs, Subnets)    :p1, 2026-01-01, 7d
     section Phase 2
     Platform Services (KV, SQL, Redis)  :p2, after p1, 7d
     section Phase 3
