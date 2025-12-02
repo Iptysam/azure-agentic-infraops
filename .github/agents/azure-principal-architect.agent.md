@@ -9,6 +9,7 @@ tools:
     "Microsoft Docs/*",
     "Azure MCP/*",
     "Bicep (EXPERIMENTAL)/*",
+    "azure-pricing/*",
     "ms-azuretools.vscode-azure-github-copilot/azure_recommend_custom_modes",
     "ms-azuretools.vscode-azure-github-copilot/azure_query_azure_resource_graph",
     "ms-azuretools.vscode-azure-github-copilot/azure_get_auth_context",
@@ -130,15 +131,23 @@ For each recommendation:
 
 ## Cost Estimation Guidelines
 
+**Use Azure Pricing MCP Tools** for real-time cost data when available:
+
+- `azure_price_search` - Query current Azure retail prices with filters
+- `azure_cost_estimate` - Calculate monthly/yearly costs for specific SKUs
+- `azure_region_recommend` - Find cheapest Azure regions for a SKU
+- `azure_sku_discovery` - Discover available SKUs for a service
+
 When recommending Azure services, always include cost estimates:
 
-1. **Identify Cost Drivers**: List main cost factors (storage, compute, bandwidth, data transfer)
-2. **Break Down by Service**: Show SKU tier recommendations for each service/component
-3. **Provide Relative Sizing**: Compare Basic/Standard/Premium tiers
-4. **Optimization Suggestions**: Provide cost-saving alternatives (dev/test tiers, reserved instances, spot VMs)
-5. **Regional Variations**: Note if costs vary significantly by region
-6. **Reference Azure Pricing**: Direct users to Azure Pricing Calculator for current rates
-7. **SKU Tier Patterns to Recommend**:
+1. **Query Real-Time Prices**: Use `azure_price_search` or `azure_cost_estimate` tools for current pricing
+2. **Identify Cost Drivers**: List main cost factors (storage, compute, bandwidth, data transfer)
+3. **Break Down by Service**: Show SKU tier recommendations for each service/component
+4. **Compare Regions**: Use `azure_region_recommend` to identify cost-effective regions
+5. **Provide Relative Sizing**: Compare Basic/Standard/Premium tiers
+6. **Optimization Suggestions**: Provide cost-saving alternatives (dev/test tiers, reserved instances, spot VMs)
+7. **Note Customer Discount**: Default 10% customer discount is automatically applied
+8. **SKU Tier Patterns to Recommend**:
    - App Service: Basic (B1) for dev/test, Standard (S1) for production, Premium (P1v3) for zone redundancy
    - Azure SQL: Basic for dev, Standard S0-S2 for small-medium workloads, Premium P1+ for high performance
    - Storage Account: LRS for non-critical data, GRS for geo-redundancy requirements

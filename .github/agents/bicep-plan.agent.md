@@ -9,6 +9,7 @@ tools:
     "Bicep (EXPERIMENTAL)/*",
     "Microsoft Docs/*",
     "Azure MCP/*",
+    "azure-pricing/*",
     "ms-azuretools.vscode-azure-github-copilot/azure_get_azure_verified_module",
     "ms-azuretools.vscode-azure-github-copilot/azure_recommend_custom_modes",
     "ms-azuretools.vscode-azure-github-copilot/azure_query_azure_resource_graph",
@@ -191,6 +192,13 @@ avm: {module repo URL or commit} # if applicable
 
 # Cost Estimation
 
+**Use Azure Pricing MCP tools for real-time pricing data:**
+
+- `azure_price_search` - Query current prices for specific SKUs
+- `azure_cost_estimate` - Calculate monthly costs based on usage hours
+- `azure_region_recommend` - Find cheapest regions for each SKU
+- `azure_sku_discovery` - Discover available SKUs for services
+
 ## Monthly Cost Breakdown
 
 | Resource    | SKU/Tier | Quantity | Unit Cost | Monthly Cost    |
@@ -198,6 +206,8 @@ avm: {module repo URL or commit} # if applicable
 | {resource1} | {sku}    | {qty}    | ${x}      | ${y}            |
 | {resource2} | {sku}    | {qty}    | ${x}      | ${y}            |
 | **Total**   |          |          |           | **$XXX - $YYY** |
+
+> 💰 **Note**: Prices include 10% customer discount (auto-applied via MCP tools)
 
 **Cost Optimization Opportunities:**
 
