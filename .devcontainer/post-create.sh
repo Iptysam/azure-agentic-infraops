@@ -86,6 +86,32 @@ echo "🛠️  Verifying utilities..."
 command -v dot &> /dev/null && echo "  ✅ graphviz available" || echo "  ⚠️  graphviz not found (required for S08)"
 command -v dos2unix &> /dev/null && echo "  ✅ dos2unix available" || echo "  ⚠️  dos2unix not found"
 
+# Setup Azure Pricing MCP Server
+echo "💰 Setting up Azure Pricing MCP Server..."
+MCP_DIR="${PWD}/mcp/azure-pricing-mcp"
+if [ -d "$MCP_DIR" ]; then
+    if [ ! -d "$MCP_DIR/.venv" ]; then
+        echo "  Creating virtual environment..."
+        python3 -m venv "$MCP_DIR/.venv"
+        echo "  Installing dependencies..."
+        "$MCP_DIR/.venv/bin/pip" install --quiet -r "$MCP_DIR/requirements.txt" 2>&1 | tail -1 || true
+        echo "  ✅ Azure Pricing MCP venv created"
+    else
+        echo "  ✅ Azure Pricing MCP venv already exists"
+    fi
+    
+    # Health check - verify server starts
+    echo "  Running health check..."
+    if echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"healthcheck","version":"1.0"}}}' | \
+       timeout 5 "$MCP_DIR/.venv/bin/python" -m azure_pricing_mcp 2>/dev/null | grep -q '"serverInfo"'; then
+        echo "  ✅ MCP server health check passed"
+    else
+        echo "  ⚠️  MCP server health check failed (may need manual setup)"
+    fi
+else
+    echo "  ⚠️  MCP directory not found at $MCP_DIR"
+fi
+
 # Configure Azure CLI defaults (Azure CLI installed via devcontainer feature)
 echo "☁️  Configuring Azure CLI defaults..."
 if az config set defaults.location=swedencentral --only-show-errors 2>/dev/null; then

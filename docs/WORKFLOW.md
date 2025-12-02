@@ -1,6 +1,6 @@
 # Azure Infrastructure Agent Workflow
 
-> **Version**: 1.1
+> **Version**: 1.2
 > **Last Updated**: 2025-12-02
 
 This document describes the 5-step agent workflow for Azure infrastructure development in this repository.
@@ -30,6 +30,9 @@ graph LR
     subgraph Optional
         ADR["adr-generator"]
     end
+    subgraph MCP Integration
+        MCP["azure-pricing<br/>(real-time pricing)"]
+    end
 
     P -->|"requirements"| A
     A -->|"architecture"| D
@@ -38,6 +41,9 @@ graph LR
 
     A -.->|"optional"| ADR
     I -.->|"optional"| ADR
+    
+    MCP -.->|"pricing data"| A
+    MCP -.->|"cost estimates"| B
 
     style P fill:#e1f5fe
     style A fill:#fff3e0
@@ -45,6 +51,7 @@ graph LR
     style B fill:#e8f5e9
     style I fill:#fce4ec
     style ADR fill:#e8eaf6
+    style MCP fill:#fff9c4
 ```
 
 ## Workflow Steps
@@ -146,9 +153,11 @@ Implementer: [Executes deployment to Azure]
 ### azure-principal-architect
 
 - **Input**: Requirements from @plan or user
-- **Output**: WAF pillar assessment, SKU recommendations, cost estimates
-- **Limitations**: ❌ Cannot create or edit any files
-- **Focus**: Architectural guidance only
+- **Output**: WAF pillar assessment, SKU recommendations, cost estimates, pricing documentation
+- **Limitations**: ❌ Cannot create or edit Bicep/Terraform code files
+- **Focus**: Architectural guidance and cost analysis
+- **MCP Integration**: Uses `azure-pricing/*` tools for real-time Azure pricing data
+- **Documentation**: Can create `docs/{project}-waf-assessment.md` and `docs/{project}-cost-estimate.md`
 
 ### diagram-generator
 
@@ -163,6 +172,7 @@ Implementer: [Executes deployment to Azure]
 - **Output**: Implementation plan in `.bicep-planning-files/INFRA.{goal}.md`
 - **Limitations**: ❌ Cannot create actual Bicep code
 - **Focus**: Detailed planning with AVM modules
+- **MCP Integration**: Uses `azure-pricing/*` tools for SKU cost validation
 
 ### bicep-implement
 
@@ -176,6 +186,70 @@ Implementer: [Executes deployment to Azure]
 - **Input**: Any architectural decision
 - **Output**: ADR in `docs/adr/`
 - **Focus**: Decision documentation
+
+---
+
+## MCP Cost Estimation Integration
+
+The Azure Pricing MCP Server provides real-time cost data to agents during infrastructure planning.
+
+### Architecture
+
+![Azure Pricing MCP Architecture](diagrams/mcp/azure_pricing_mcp_architecture.png)
+
+### Available Tools
+
+| Tool                     | Purpose                                | Used By              |
+| ------------------------ | -------------------------------------- | -------------------- |
+| `azure_price_search`     | Query Azure retail prices with filters | architect, bicep-plan |
+| `azure_price_compare`    | Compare prices across regions/SKUs     | architect            |
+| `azure_cost_estimate`    | Calculate monthly/yearly costs         | architect, bicep-plan |
+| `azure_region_recommend` | Find cheapest Azure regions for a SKU  | architect            |
+| `azure_discover_skus`    | List available SKUs for a service      | architect, bicep-plan |
+| `azure_sku_discovery`    | Fuzzy SKU name matching                | architect            |
+| `get_customer_discount`  | Get customer discount (default 10%)    | architect            |
+
+### Setup
+
+The MCP server is automatically configured when you:
+
+1. **Dev Container**: Runs `post-create.sh` which sets up the venv
+2. **Manual**: Run the setup commands:
+
+```bash
+cd mcp/azure-pricing-mcp
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Configuration
+
+Pre-configured in `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "azure-pricing": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/mcp/azure-pricing-mcp/.venv/bin/python",
+      "args": ["-m", "azure_pricing_mcp"],
+      "cwd": "${workspaceFolder}/mcp/azure-pricing-mcp/src"
+    }
+  }
+}
+```
+
+### Creating Cost Documentation
+
+Ask the `azure-principal-architect` agent:
+
+- **"save costs"** - Creates `docs/{project}-cost-estimate.md`
+- **"save"** - Creates `docs/{project}-waf-assessment.md`
+
+### Fallback
+
+If MCP tools are unavailable, agents will recommend [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/).
 
 ---
 
@@ -196,8 +270,13 @@ For simple infrastructure or quick iterations, use `infrastructure-specialist` w
 | Implementation plans  | `.bicep-planning-files/INFRA.{goal}.md` |
 | Bicep templates       | `infra/bicep/{goal}/`                   |
 | Architecture diagrams | `docs/diagrams/{goal}/`                 |
+| MCP diagrams          | `docs/diagrams/mcp/`                    |
+| Cost estimates        | `docs/{project}-cost-estimate.md`       |
+| WAF assessments       | `docs/{project}-waf-assessment.md`      |
 | ADRs                  | `docs/adr/`                             |
 | Agent definitions     | `.github/agents/`                       |
+| MCP server            | `mcp/azure-pricing-mcp/`                |
+| MCP configuration     | `.vscode/mcp.json`                      |
 
 ---
 
@@ -229,4 +308,5 @@ For simple infrastructure or quick iterations, use `infrastructure-specialist` w
 
 - [Demo Prompts](../demos/demo-prompts.md)
 - [Copilot Instructions](../.github/copilot-instructions.md)
+- [Azure Pricing MCP README](../mcp/azure-pricing-mcp/README.md)
 - [README](../README.md)

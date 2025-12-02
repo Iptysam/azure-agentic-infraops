@@ -24,6 +24,8 @@ This file provides context and guidance for GitHub Copilot when assisting with t
 - Diagram generator: `.github/agents/diagram-generator.agent.md` (Python architecture diagrams)
 - Dev container config: `.devcontainer/devcontainer.json`
 - Line ending rules: `.gitattributes` (normalizes CRLF→LF for cross-platform development)
+- MCP configuration: `.vscode/mcp.json` (Azure Pricing MCP server)
+- MCP server source: `mcp/azure-pricing-mcp/` (real-time Azure pricing tools)
 
 ## Regional Selection Guidelines
 
@@ -57,7 +59,8 @@ This file provides context and guidance for GitHub Copilot when assisting with t
 ### Cost Optimization
 
 - Some regions have lower pricing for compute and storage resources
-- Use [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/) to compare costs
+- Use Azure Pricing MCP tools (`azure_region_recommend`) for real-time regional price comparison
+- Fallback: [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/) for manual estimates
 - Consider egress costs for data transfer between regions
 
 **Best Practice**: When deviating from `swedencentral`, document the reason (latency/compliance/availability) in deployment parameters or README.
@@ -559,7 +562,7 @@ When users request changes or additions:
 
 This repository includes a pre-configured dev container with all tools installed:
 
-**Included Tools:** Terraform (latest) with tfsec/Checkov • Azure CLI with Bicep CLI • PowerShell 7+ • Git • Go, Python, Node.js runtimes • 25+ VS Code extensions
+**Included Tools:** Terraform (latest) with tfsec/Checkov • Azure CLI with Bicep CLI • PowerShell 7+ • Git • Go, Python, Node.js runtimes • 25+ VS Code extensions • Azure Pricing MCP Server (auto-setup)
 
 **Quick Start:**
 
@@ -570,9 +573,26 @@ code github-copilot-demo
 az --version && bicep --version && pwsh --version
 ```
 
+**MCP Server Setup:** The dev container automatically sets up the Azure Pricing MCP server via `post-create.sh`. To verify:
+
+1. Open Command Palette (`Ctrl+Shift+P`)
+2. Run: **MCP: List Servers**
+3. Verify `azure-pricing` shows 7 tools
+
 ### Option 2: Manual Setup
 
 Required tools: VS Code • GitHub Copilot extension • Azure CLI 2.50+ • Bicep CLI 0.20+ • PowerShell 7+ • Git 2.30+ • Terraform 1.5+ (for Terraform demos)
+
+**Azure Pricing MCP Server (Manual Setup):**
+
+```bash
+cd mcp/azure-pricing-mcp
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+The MCP configuration is already in `.vscode/mcp.json` - just refresh the server in VS Code.
 
 ### Local Validation Commands
 

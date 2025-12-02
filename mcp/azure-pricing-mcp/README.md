@@ -102,7 +102,7 @@ The following tools are available to agents:
 
 ## 📋 Installation
 
-> **📝 New to setup?** Check out [INSTALL.md](INSTALL.md) for detailed instructions or [SETUP_CHECKLIST.md](SETUP_CHECKLIST.md) for a step-by-step checklist!  
+> **📝 New to setup?** Check out [INSTALL.md](INSTALL.md) for detailed installation instructions!  
 > **🐳 Prefer Docker?** See [DOCKER.md](DOCKER.md) for containerized deployment!
 
 ### Prerequisites
@@ -370,6 +370,7 @@ pytest tests/
 
 ```
 mcp/azure-pricing-mcp/           # Location within github-copilot-demo repo
+├── .venv/                       # Virtual environment (auto-created)
 ├── src/
 │   └── azure_pricing_mcp/
 │       ├── __init__.py          # Package initialization
@@ -379,14 +380,15 @@ mcp/azure-pricing-mcp/           # Location within github-copilot-demo repo
 ├── scripts/
 │   ├── install.py               # Installation script
 │   ├── setup.ps1                # PowerShell setup script
+│   ├── healthcheck.py           # Server health check
 │   └── run_server.py            # Server runner
-├── tests/                       # Test suite
+├── tests/                       # Test suite (51 tests)
 ├── docs/                        # Additional documentation
+├── .archive/                    # Archived/obsolete files
 ├── requirements.txt             # Python dependencies
 ├── pyproject.toml               # Package configuration
-├── README.md                    # This file
-├── QUICK_START.md               # Quick start guide
-└── USAGE_EXAMPLES.md            # Detailed usage examples
+├── INSTALL.md                   # Installation instructions
+└── README.md                    # This file
 ```
 
 ---
@@ -405,11 +407,10 @@ https://prices.azure.com/api/retail/prices
 
 ## 📚 Additional Documentation
 
-- **[QUICK_START.md](QUICK_START.md)** - Step-by-step setup guide
 - **[INSTALL.md](INSTALL.md)** - Detailed installation instructions
 - **[DOCKER.md](DOCKER.md)** - Docker containerization guide 🐳
-- **[USAGE_EXAMPLES.md](USAGE_EXAMPLES.md)** - Detailed usage examples and API responses
-- **[SETUP_CHECKLIST.md](SETUP_CHECKLIST.md)** - Installation verification checklist
+- **[docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)** - Development setup and guidelines
+- **[docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)** - Detailed code structure
 
 ---
 

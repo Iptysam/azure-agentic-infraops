@@ -131,23 +131,30 @@ For each recommendation:
 
 ## Cost Estimation Guidelines
 
-**Use Azure Pricing MCP Tools** for real-time cost data when available:
+**Use Azure Pricing MCP Tools** for real-time cost data (integrated via `mcp/azure-pricing-mcp/`):
 
-- `azure_price_search` - Query current Azure retail prices with filters
-- `azure_cost_estimate` - Calculate monthly/yearly costs for specific SKUs
-- `azure_region_recommend` - Find cheapest Azure regions for a SKU
-- `azure_sku_discovery` - Discover available SKUs for a service
+| Tool                     | Purpose                                        | Example Use                            |
+| ------------------------ | ---------------------------------------------- | -------------------------------------- |
+| `azure_price_search`     | Query current Azure retail prices with filters | Get D4s_v5 VM prices in swedencentral  |
+| `azure_price_compare`    | Compare prices across regions or SKUs          | Compare S1 vs P1v3 App Service Plans   |
+| `azure_cost_estimate`    | Calculate monthly/yearly costs for SKUs        | 730 hours/month for D8s_v5             |
+| `azure_region_recommend` | Find cheapest Azure regions for a SKU          | Which region is cheapest for SQL S2?   |
+| `azure_discover_skus`    | List all available SKUs for a service          | What App Service Plan SKUs exist?      |
+| `azure_sku_discovery`    | Fuzzy SKU name matching                        | "vm" → "Virtual Machines"              |
+| `get_customer_discount`  | Get customer discount (default 10%)            | Apply enterprise discount to estimates |
 
-When recommending Azure services, always include cost estimates:
+**Fallback**: If MCP tools are unavailable, use [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/)
 
-1. **Query Real-Time Prices**: Use `azure_price_search` or `azure_cost_estimate` tools for current pricing
-2. **Identify Cost Drivers**: List main cost factors (storage, compute, bandwidth, data transfer)
-3. **Break Down by Service**: Show SKU tier recommendations for each service/component
-4. **Compare Regions**: Use `azure_region_recommend` to identify cost-effective regions
-5. **Provide Relative Sizing**: Compare Basic/Standard/Premium tiers
-6. **Optimization Suggestions**: Provide cost-saving alternatives (dev/test tiers, reserved instances, spot VMs)
-7. **Note Customer Discount**: Default 10% customer discount is automatically applied
-8. **SKU Tier Patterns to Recommend**:
+**Workflow for Cost Estimation:**
+
+1. **Query Real-Time Prices**: Use `azure_price_search` or `azure_cost_estimate` for current pricing
+2. **Compare Regions**: Use `azure_region_recommend` to identify cost-effective regions
+3. **Identify Cost Drivers**: List main factors (compute, storage, bandwidth, data transfer)
+4. **Break Down by Service**: Show SKU tier recommendations per component
+5. **Apply Discounts**: Note that 10% customer discount is auto-applied
+6. **Provide Alternatives**: Include cost-saving options (reserved instances, spot VMs, dev/test tiers)
+
+**SKU Tier Patterns to Recommend**:
    - App Service: Basic (B1) for dev/test, Standard (S1) for production, Premium (P1v3) for zone redundancy
    - Azure SQL: Basic for dev, Standard S0-S2 for small-medium workloads, Premium P1+ for high performance
    - Storage Account: LRS for non-critical data, GRS for geo-redundancy requirements
@@ -261,10 +268,13 @@ Before handing off to bicep-plan, **ALWAYS** ask for approval:
 > | Cost        | X/10  | ...   |
 > | Operations  | X/10  | ...   |
 >
+> **Estimated Monthly Cost**: $X,XXX - $X,XXX (via Azure Pricing MCP)
+>
 > **Do you approve this architecture assessment?**
 >
 > - Reply **"yes"** or **"approve"** to proceed to Bicep planning
 > - Reply **"save"** to save this assessment to a markdown file
+> - Reply **"save costs"** to create a detailed cost estimate document
 > - Reply with **feedback** to refine the assessment
 > - Reply **"no"** to start over with different requirements
 
@@ -274,7 +284,99 @@ When the user requests to save the assessment (e.g., "save", "save to file", "do
 
 **File Location**: `docs/{project-name}-waf-assessment.md`
 
-**File Structure**:
+### Saving Cost Estimates to Documentation
+
+When the user requests a cost estimate document (e.g., "create cost estimate", "save pricing", "document costs"), create a dedicated pricing file:
+
+**File Location**: `docs/{project-name}-cost-estimate.md`
+
+**Cost Estimate File Structure**:
+
+```markdown
+# Azure Cost Estimate: {Project Name}
+
+**Generated**: {YYYY-MM-DD}
+**Region**: {primary-region}
+**Environment**: {dev|staging|prod}
+**MCP Tools Used**: azure_price_search, azure_cost_estimate, azure_region_recommend
+
+---
+
+## Summary
+
+| Metric              | Value            |
+| ------------------- | ---------------- |
+| Monthly Estimate    | ${X,XXX} - ${X,XXX} |
+| Annual Estimate     | ${XX,XXX} - ${XX,XXX} |
+| Primary Region      | swedencentral    |
+| Discount Applied    | 10%              |
+
+---
+
+## Detailed Cost Breakdown
+
+### Compute Services
+
+| Resource         | SKU          | Qty | $/Hour | $/Month | Notes              |
+| ---------------- | ------------ | --- | ------ | ------- | ------------------ |
+| App Service      | P1v3         | 2   | $0.XXX | $XXX    | Zone redundant     |
+| Azure Functions  | EP1          | 1   | $0.XXX | $XXX    | Premium plan       |
+| Virtual Machines | D4s_v5       | 3   | $0.XXX | $XXX    | General purpose    |
+
+### Data Services
+
+| Resource    | SKU      | Size   | $/Month | Notes            |
+| ----------- | -------- | ------ | ------- | ---------------- |
+| Azure SQL   | S2       | 250 GB | $XXX    | Standard tier    |
+| Redis Cache | C2       | 6 GB   | $XXX    | Basic cache      |
+| Storage     | LRS      | 500 GB | $XX     | Hot tier         |
+
+### Networking
+
+| Resource            | Configuration | $/Month | Notes               |
+| ------------------- | ------------- | ------- | ------------------- |
+| Front Door          | Standard      | $XXX    | WAF included        |
+| Private Endpoints   | 5 endpoints   | $XX     | $0.01/hour each     |
+| VNet Gateway        | VpnGw1        | $XXX    | For hybrid connect  |
+
+---
+
+## Regional Comparison
+
+| Region           | Monthly Cost | Savings vs Primary |
+| ---------------- | ------------ | ------------------ |
+| swedencentral    | $X,XXX       | Baseline           |
+| germanywestcentral | $X,XXX     | +X%                |
+| northeurope      | $X,XXX       | -X%                |
+
+---
+
+## Cost Optimization Recommendations
+
+1. **Reserved Instances**: Save up to 72% with 3-year reserved VM pricing
+2. **Dev/Test Pricing**: Use B-series VMs and Basic tiers for non-production
+3. **Auto-shutdown**: Schedule non-prod VMs to stop outside business hours
+4. **Serverless Options**: Consider Azure SQL Serverless for variable workloads
+5. **Spot VMs**: Use spot instances for fault-tolerant batch workloads
+
+---
+
+## Assumptions
+
+- Usage: 730 hours/month (24x7)
+- Data transfer: Minimal egress (<100 GB/month)
+- Customer discount: 10% applied to all prices
+- Prices queried: {YYYY-MM-DD} via Azure Pricing MCP
+
+---
+
+## References
+
+- [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/)
+- [Azure Pricing MCP Architecture](../docs/diagrams/mcp/azure_pricing_mcp_architecture.png)
+```
+
+### WAF Assessment File Structure
 
 ```markdown
 # Azure Well-Architected Framework Assessment
