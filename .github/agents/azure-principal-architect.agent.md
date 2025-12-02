@@ -133,14 +133,14 @@ For each recommendation:
 
 **Use Azure Pricing MCP Tools** for real-time cost data (integrated via `mcp/azure-pricing-mcp/`):
 
-| Tool                     | Purpose                                        | Example Use                            |
-| ------------------------ | ---------------------------------------------- | -------------------------------------- |
-| `azure_price_search`     | Query current Azure retail prices with filters | Get D4s_v5 VM prices in swedencentral  |
-| `azure_price_compare`    | Compare prices across regions or SKUs          | Compare S1 vs P1v3 App Service Plans   |
-| `azure_cost_estimate`    | Calculate monthly/yearly costs for SKUs        | 730 hours/month for D8s_v5             |
-| `azure_region_recommend` | Find cheapest Azure regions for a SKU          | Which region is cheapest for SQL S2?   |
-| `azure_discover_skus`    | List all available SKUs for a service          | What App Service Plan SKUs exist?      |
-| `azure_sku_discovery`    | Fuzzy SKU name matching                        | "vm" → "Virtual Machines"              |
+| Tool                     | Purpose                                        | Example Use                           |
+| ------------------------ | ---------------------------------------------- | ------------------------------------- |
+| `azure_price_search`     | Query current Azure retail prices with filters | Get D4s_v5 VM prices in swedencentral |
+| `azure_price_compare`    | Compare prices across regions or SKUs          | Compare S1 vs P1v3 App Service Plans  |
+| `azure_cost_estimate`    | Calculate monthly/yearly costs for SKUs        | 730 hours/month for D8s_v5            |
+| `azure_region_recommend` | Find cheapest Azure regions for a SKU          | Which region is cheapest for SQL S2?  |
+| `azure_discover_skus`    | List all available SKUs for a service          | What App Service Plan SKUs exist?     |
+| `azure_sku_discovery`    | Fuzzy SKU name matching                        | "vm" → "Virtual Machines"             |
 
 **Fallback**: If MCP tools are unavailable, use [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/)
 

@@ -83,7 +83,8 @@ with Diagram(
         waf_report = Storage("WAF Assessment\nwith Pricing")
 
     # Connections - User to Copilot
-    user >> Edge(label="Natural Language\nPricing Query", color="darkgreen") >> copilot
+    user >> Edge(label="Natural Language\nPricing Query",
+                 color="darkgreen") >> copilot
 
     # Copilot to Agents
     copilot >> Edge(label="Route to\nAgent", color="blue") >> architect
@@ -91,7 +92,8 @@ with Diagram(
 
     # Agents to MCP Server
     architect >> Edge(label="azure-pricing/*\ntools", color="purple") >> server
-    bicep_plan >> Edge(label="azure-pricing/*\ntools", color="purple") >> server
+    bicep_plan >> Edge(label="azure-pricing/*\ntools",
+                       color="purple") >> server
 
     # Server internal flow
     server >> Edge(color="gray") >> handlers
@@ -115,7 +117,8 @@ with Diagram(
 
     # Output generation
     architect >> Edge(label="Generate\nDocs", color="teal") >> cost_doc
-    architect >> Edge(label="Include in\nAssessment", color="teal") >> waf_report
+    architect >> Edge(label="Include in\nAssessment",
+                      color="teal") >> waf_report
 
 
 if __name__ == "__main__":
