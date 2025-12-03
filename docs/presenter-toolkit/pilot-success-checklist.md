@@ -215,12 +215,12 @@ _Document what worked, what didn't, and recommendations for rollout_
 
 ## Resources
 
-| Resource                  | Link                                                            |
-| ------------------------- | --------------------------------------------------------------- |
-| **ROI Calculator**        | [roi-calculator-worksheet.md](roi-calculator-worksheet.md)      |
-| **Executive Pitch**       | [executive-pitch.md](../../docs/value-proposition/executive-pitch.md)             |
-| **Time Savings Evidence** | [time-savings-evidence.md](../../docs/value-proposition/time-savings-evidence.md) |
-| **Demo Scenarios**        | [scenarios/](../../scenarios/)                                  |
+| Resource                  | Link                                                              |
+| ------------------------- | ----------------------------------------------------------------- |
+| **ROI Calculator**        | [roi-calculator.md](roi-calculator.md)                            |
+| **Executive Pitch**       | [executive-pitch.md](../value-proposition/executive-pitch.md)     |
+| **Time Savings Evidence** | [time-savings-evidence.md](../value-proposition/time-savings-evidence.md) |
+| **Demo Scenarios**        | [scenarios/](../../scenarios/)                                    |
 
 ---
 

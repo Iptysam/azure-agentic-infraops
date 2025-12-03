@@ -1,7 +1,12 @@
 # ROI Calculator for GitHub Copilot
 
-This calculator helps you build a business case for GitHub Copilot adoption, using measured time savings from
-real Infrastructure-as-Code workflows.
+> **Build a business case for GitHub Copilot adoption using measured time savings from real Infrastructure-as-Code
+> workflows.**
+
+This calculator combines scenario-based data with a customizable worksheet to help you calculate expected ROI for your
+team.
+
+---
 
 ## 🎯 Quick ROI Summary
 
@@ -9,103 +14,170 @@ real Infrastructure-as-Code workflows.
 
 **Typical ROI**: 5-15x return on investment for active IaC developers.
 
+**Why so fast?** At $19/month per user (~$0.12/hour for a full-time employee), even saving 10 minutes per day covers the
+cost. Most IT Pros report saving 1-2 hours on their first day.
+
 ---
 
 ## 📊 Time Savings by Scenario
 
 These measurements come from the repository's documented scenarios (S01-S09):
 
-| Scenario | Manual Time | With Copilot | Time Saved | Savings % |
-|----------|-------------|--------------|------------|-----------|
-| S01 - Bicep Baseline (Hub & Spoke) | 4-6 hours | 30-45 min | 3.5-5.5 hours | 85-90% |
-| S02 - Terraform Baseline | 4-6 hours | 30-45 min | 3.5-5.5 hours | 85-90% |
-| S03 - Five-Agent Workflow | 18 hours | 45 min | 17.25 hours | 96% |
-| S04 - Documentation Generation | 3-4 hours | 20-30 min | 2.5-3.5 hours | 85-90% |
-| S05 - Service Validation | 2-3 hours | 15-20 min | 1.75-2.75 hours | 85-90% |
-| S06 - Troubleshooting | 1-4 hours | 10-15 min | 0.75-3.75 hours | 80-90% |
-| S07 - SBOM Generator | 2-3 hours | 15-20 min | 1.75-2.75 hours | 85-90% |
-| S08 - Diagrams as Code | 2-3 hours | 15-20 min | 1.75-2.75 hours | 85-90% |
-| S09 - Coding Agent | 2-4 hours | 15-30 min | 1.5-3.5 hours | 85-90% |
+| Scenario                  | Manual Time | With Copilot | Time Saved     | Savings % |
+| ------------------------- | ----------- | ------------ | -------------- | --------- |
+| S01 - Bicep Baseline      | 4-6 hours   | 30-45 min    | 3.5-5.5 hours  | 85-90%    |
+| S02 - Terraform Baseline  | 4-6 hours   | 30-45 min    | 3.5-5.5 hours  | 85-90%    |
+| S03 - Five-Agent Workflow | 18 hours    | 45 min       | 17.25 hours    | 96%       |
+| S04 - Documentation       | 3-4 hours   | 20-30 min    | 2.5-3.5 hours  | 85-90%    |
+| S05 - Service Validation  | 2-3 hours   | 15-20 min    | 1.75-2.75 hrs  | 85-90%    |
+| S06 - Troubleshooting     | 1-4 hours   | 10-15 min    | 0.75-3.75 hrs  | 80-90%    |
+| S07 - SBOM Generator      | 2-3 hours   | 15-20 min    | 1.75-2.75 hrs  | 85-90%    |
+| S08 - Diagrams as Code    | 2-3 hours   | 15-20 min    | 1.75-2.75 hrs  | 85-90%    |
+| S09 - Coding Agent        | 2-4 hours   | 15-30 min    | 1.5-3.5 hours  | 85-90%    |
 
-📖 **Methodology**: See [Time Savings Evidence](../../docs/value-proposition/time-savings-evidence.md) for measurement details.
-
----
-
-## 🧮 ROI Calculator
-
-### Step 1: Input Your Variables
-
-| Variable | Your Value | Example |
-|----------|-----------|---------|
-| Number of IaC engineers | _____ | 5 |
-| Average hourly cost (loaded) | $_____ | $100 |
-| Infrastructure projects per month | _____ | 8 |
-| Hours per project (manual) | _____ | 6 |
-| Expected Copilot adoption rate | _____% | 80% |
-
-### Step 2: Calculate Monthly Costs
-
-```text
-Copilot Cost = Engineers × $19/month
-Example: 5 × $19 = $95/month
-```
-
-### Step 3: Calculate Monthly Savings
-
-```text
-Hours Saved = Projects × Manual Hours × Savings Rate × Adoption Rate
-Example: 8 projects × 6 hours × 85% × 80% = 32.6 hours/month
-
-Dollar Savings = Hours Saved × Hourly Cost
-Example: 32.6 hours × $100 = $3,264/month
-```
-
-### Step 4: Calculate ROI
-
-```text
-Net Savings = Dollar Savings - Copilot Cost
-Example: $3,264 - $95 = $3,169/month
-
-ROI = Net Savings / Copilot Cost × 100
-Example: $3,169 / $95 × 100 = 3,336% ROI
-```
+📖 **Methodology**: See [Time Savings Evidence](../value-proposition/time-savings-evidence.md) for measurement details.
 
 ---
 
-## 📋 Pre-Built Scenarios
+## 🧮 ROI Calculator Worksheet
+
+### Step 1: Enter Your Team Details
+
+| Input                   | Your Value | Example | Notes                                            |
+| ----------------------- | ---------- | ------- | ------------------------------------------------ |
+| **Number of IT Pros**   | _____      | 5       | Cloud architects, infra engineers, DevOps        |
+| **Average hourly rate** | $_____ /hr | $100    | Fully loaded cost (salary + benefits + overhead) |
+| **Working hours/month** | _____      | 160     | Standard assumption                              |
+
+---
+
+### Step 2: Estimate Current Time Allocation
+
+_Based on research, IT Pros typically spend their time as follows. Adjust percentages to match your reality._
+
+| Task Category                             | Industry Avg | Your Team % | Hours/Month (per person) |
+| ----------------------------------------- | ------------ | ----------- | ------------------------ |
+| IaC Development (Bicep, Terraform, ARM)   | 25%          | _____%      | _____ hrs                |
+| Scripting & Automation (PowerShell, Bash) | 15%          | _____%      | _____ hrs                |
+| Troubleshooting & Debugging               | 20%          | _____%      | _____ hrs                |
+| Documentation                             | 15%          | _____%      | _____ hrs                |
+| Research & Learning                       | 15%          | _____%      | _____ hrs                |
+| Strategic Architecture                    | 10%          | _____%      | _____ hrs                |
+| **TOTAL**                                 | 100%         | 100%        | 160 hrs                  |
+
+---
+
+### Step 3: Apply Time Savings Multipliers
+
+_Research-backed savings percentages. Use conservative (low) estimates for pilot planning._
+
+| Task Category          | Conservative | Moderate | Aggressive | Your Estimate |
+| ---------------------- | ------------ | -------- | ---------- | ------------- |
+| IaC Development        | 60%          | 75%      | 85%        | _____%        |
+| Scripting & Automation | 55%          | 70%      | 80%        | _____%        |
+| Troubleshooting        | 50%          | 65%      | 80%        | _____%        |
+| Documentation          | 65%          | 80%      | 90%        | _____%        |
+| Research & Learning    | 40%          | 55%      | 70%        | _____%        |
+
+**Research Sources:**
+
+- GitHub Copilot Study (2023): 55% task completion improvement
+- Forrester TEI (2024): 88% reduction in repetitive tasks
+- MIT Sloan (2024): 80% documentation time saved
+- Stanford HAI (2023): 60-70% problem-solving acceleration
+
+---
+
+### Step 4: Calculate Monthly Savings
+
+**Formula:**
+
+```text
+Hours Saved = (Current Hours × Savings %) for each task category
+Monthly Value = Total Hours Saved × Hourly Rate
+```
+
+| Task Category          | Current Hrs | Savings % | Hours Saved | Value Saved |
+| ---------------------- | ----------- | --------- | ----------- | ----------- |
+| IaC Development        | _____       | _____%    | _____       | $_____      |
+| Scripting & Automation | _____       | _____%    | _____       | $_____      |
+| Troubleshooting        | _____       | _____%    | _____       | $_____      |
+| Documentation          | _____       | _____%    | _____       | $_____      |
+| Research & Learning    | _____       | _____%    | _____       | $_____      |
+| **TOTAL per IT Pro**   |             |           | **_____ hrs** | **$_____**  |
+
+---
+
+### Step 5: Calculate Team ROI
+
+| Metric                         | Calculation                | Result        |
+| ------------------------------ | -------------------------- | ------------- |
+| **Monthly savings per IT Pro** | From Step 4                | $_____        |
+| **Team size**                  | From Step 1                | _____ people  |
+| **Total monthly savings**      | Savings × Team size        | $_____        |
+| **GitHub Copilot cost**        | $19 × Team size            | $_____        |
+| **Net monthly benefit**        | Savings - Cost             | $_____        |
+| **Monthly ROI**                | (Net benefit ÷ Cost) × 100 | _____%        |
+
+---
+
+## 📋 Pre-Built Examples
 
 ### Small Team (3 engineers, 4 projects/month)
 
-| Metric | Value |
-|--------|-------|
-| Copilot Cost | $57/month |
-| Hours Saved | 16.3 hours/month |
-| Dollar Savings | $1,632/month |
-| Net Savings | $1,575/month |
-| **Annual Net Savings** | **$18,900** |
-| ROI | 2,763% |
+| Metric                   | Value           |
+| ------------------------ | --------------- |
+| Copilot Cost             | $57/month       |
+| Hours Saved              | 16.3 hours/month |
+| Dollar Savings           | $1,632/month    |
+| Net Savings              | $1,575/month    |
+| **Annual Net Savings**   | **$18,900**     |
+| ROI                      | 2,763%          |
 
 ### Medium Team (10 engineers, 12 projects/month)
 
-| Metric | Value |
-|--------|-------|
-| Copilot Cost | $190/month |
-| Hours Saved | 48.9 hours/month |
-| Dollar Savings | $4,896/month |
-| Net Savings | $4,706/month |
-| **Annual Net Savings** | **$56,472** |
-| ROI | 2,477% |
+| Metric                   | Value           |
+| ------------------------ | --------------- |
+| Copilot Cost             | $190/month      |
+| Hours Saved              | 48.9 hours/month |
+| Dollar Savings           | $4,896/month    |
+| Net Savings              | $4,706/month    |
+| **Annual Net Savings**   | **$56,472**     |
+| ROI                      | 2,477%          |
 
 ### Large Team (25 engineers, 30 projects/month)
 
-| Metric | Value |
-|--------|-------|
-| Copilot Cost | $475/month |
-| Hours Saved | 122.4 hours/month |
-| Dollar Savings | $12,240/month |
-| Net Savings | $11,765/month |
-| **Annual Net Savings** | **$141,180** |
-| ROI | 2,477% |
+| Metric                   | Value            |
+| ------------------------ | ---------------- |
+| Copilot Cost             | $475/month       |
+| Hours Saved              | 122.4 hours/month |
+| Dollar Savings           | $12,240/month    |
+| Net Savings              | $11,765/month    |
+| **Annual Net Savings**   | **$141,180**     |
+| ROI                      | 2,477%           |
+
+### Enterprise Team (50 IT Pros)
+
+| Metric                   | Value            |
+| ------------------------ | ---------------- |
+| Copilot Cost             | $950/month       |
+| Hours Saved              | 45 hours/month per person |
+| Dollar Savings           | $225,000/month   |
+| Net Savings              | $224,050/month   |
+| **Annual Net Savings**   | **$2.7M**        |
+| ROI                      | 23,584%          |
+
+---
+
+## ⏱️ Break-Even Analysis
+
+### How Fast Will You Break Even?
+
+| Scenario                       | Break-Even Point |
+| ------------------------------ | ---------------- |
+| **Conservative (50% savings)** | < 1 day          |
+| **Moderate (70% savings)**     | < 4 hours        |
+| **Aggressive (85% savings)**   | < 2 hours        |
 
 ---
 
@@ -115,30 +187,30 @@ Beyond direct time savings, consider these benefits:
 
 ### Quality Improvements
 
-| Benefit | Impact |
-|---------|--------|
-| Reduced misconfigurations | Fewer production incidents |
-| Built-in security defaults | Lower security risk |
-| Consistent naming conventions | Easier maintenance |
-| Better documentation | Faster knowledge transfer |
+| Benefit                        | Impact                          |
+| ------------------------------ | ------------------------------- |
+| Reduced misconfigurations      | Fewer production incidents      |
+| Built-in security defaults     | Lower security risk             |
+| Consistent naming conventions  | Easier maintenance              |
+| Better documentation           | Faster knowledge transfer       |
 
 ### Team Benefits
 
-| Benefit | Impact |
-|---------|--------|
-| Faster onboarding | Junior engineers productive sooner |
-| Reduced cognitive load | Less burnout, higher retention |
-| Knowledge sharing | Best practices spread organically |
-| Focus on architecture | More time for high-value work |
+| Benefit                 | Impact                             |
+| ----------------------- | ---------------------------------- |
+| Faster onboarding       | Junior engineers productive sooner |
+| Reduced cognitive load  | Less burnout, higher retention     |
+| Knowledge sharing       | Best practices spread organically  |
+| Focus on architecture   | More time for high-value work      |
 
 ### Organizational Benefits
 
-| Benefit | Impact |
-|---------|--------|
-| Faster time-to-market | Competitive advantage |
-| Standardization | Cross-team consistency |
-| Reduced technical debt | Cleaner codebase over time |
-| Audit trail | Copilot history for compliance |
+| Benefit              | Impact                        |
+| -------------------- | ----------------------------- |
+| Faster time-to-market | Competitive advantage         |
+| Standardization      | Cross-team consistency        |
+| Reduced technical debt | Cleaner codebase over time   |
+| Audit trail          | Copilot history for compliance |
 
 ---
 
@@ -146,15 +218,11 @@ Beyond direct time savings, consider these benefits:
 
 ### For Technical Leaders
 
-Focus on:
-
 - Specific time savings per task type
 - Quality improvements (fewer incidents)
 - Team productivity and morale
 
 ### For Financial Leaders
-
-Focus on:
 
 - Hard dollar savings (hours × rate)
 - Break-even timeline (typically < 1 month)
@@ -162,23 +230,34 @@ Focus on:
 
 ### For Executive Leadership
 
-Focus on:
-
 - Strategic value (faster delivery, reduced risk)
 - Competitive positioning (AI-augmented teams)
 - Talent attraction and retention
+
+### Key Messages
+
+1. **"Break-even in hours, not months"** — Unlike most software investments, Copilot pays for itself almost
+   immediately.
+
+2. **"Not a productivity tax"** — Learning curve is minimal (1-2 days), and productivity gains are visible from day
+   one.
+
+3. **"Multiplies existing expertise"** — Your senior architects can now implement their own designs. Junior staff
+   learn faster.
+
+4. **"Risk is minimal"** — At $19/user/month with month-to-month billing, you can pilot with zero commitment.
 
 ---
 
 ## 📊 Comparison: Copilot vs. Alternatives
 
-| Alternative | Cost | Effectiveness | Notes |
-|-------------|------|---------------|-------|
-| **Do Nothing** | $0 | 0% savings | Status quo, no improvement |
-| **More Training** | $2-5K/person | 10-20% improvement | One-time, decays over time |
-| **Hire More Staff** | $150K+/year | Linear scaling | Expensive, slow to ramp |
-| **Better Templates** | $0 (internal time) | 20-30% improvement | Maintenance overhead |
-| **GitHub Copilot** | $228/year | 85-95% improvement | Continuous improvement |
+| Alternative          | Cost             | Effectiveness      | Notes                        |
+| -------------------- | ---------------- | ------------------ | ---------------------------- |
+| **Do Nothing**       | $0               | 0% savings         | Status quo, no improvement   |
+| **More Training**    | $2-5K/person     | 10-20% improvement | One-time, decays over time   |
+| **Hire More Staff**  | $150K+/year      | Linear scaling     | Expensive, slow to ramp      |
+| **Better Templates** | $0 (internal time) | 20-30% improvement | Maintenance overhead         |
+| **GitHub Copilot**   | $228/year        | 85-95% improvement | Continuous improvement       |
 
 ---
 
@@ -203,9 +282,34 @@ Break-Even Hours = $19 / Hourly_Rate
 
 ---
 
+## 🧪 Suggested Pilot Structure
+
+| Phase        | Duration | Team Size     | Success Criteria                  |
+| ------------ | -------- | ------------- | --------------------------------- |
+| Pilot        | 4 weeks  | 3-5 IT Pros   | 50%+ time savings on IaC tasks    |
+| Expansion    | 4 weeks  | 10-15 IT Pros | Consistent results, team adoption |
+| Full Rollout | Ongoing  | All IT Pros   | Standard tooling                  |
+
+---
+
 ## 📚 Resources
 
-- [Time Savings Evidence](../../docs/value-proposition/time-savings-evidence.md) - Detailed methodology
-- [Demo Delivery Guide](demo-delivery-guide.md) - Presenting to stakeholders
-- [GitHub Copilot Pricing](https://github.com/features/copilot) - Official pricing page
-- [Objection Handling](objection-handling.md) - Address budget concerns
+- [Time Savings Evidence](../value-proposition/time-savings-evidence.md) — Detailed methodology
+- [Demo Delivery Guide](demo-delivery-guide.md) — Presenting to stakeholders
+- [GitHub Copilot Pricing](https://github.com/features/copilot) — Official pricing page
+- [Objection Handling](objection-handling.md) — Address budget concerns
+
+---
+
+## Document Info
+
+|                  |                                  |
+| ---------------- | -------------------------------- |
+| **Created**      | November 2025                    |
+| **Purpose**      | Partner/customer ROI discussions |
+| **Data Sources** | time-savings-evidence.md         |
+| **Maintainer**   | Repository maintainers           |
+
+---
+
+_Download this worksheet, fill in your numbers, and use it to build the business case for your team._

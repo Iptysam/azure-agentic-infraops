@@ -74,12 +74,12 @@ Press `Ctrl+Alt+I` (Windows/Linux) or `Cmd+Alt+I` (Mac) to open the Copilot Chat
 
 We have pre-built scenarios ready to run:
 
-| Scenario               | Complexity   | Time   | Prompt File                     |
-| ---------------------- | ------------ | ------ | ------------------------------- |
-| **Static Website**     | Beginner     | 15 min | `scenarios/static-site-demo.md` |
-| **E-Commerce**         | Intermediate | 30 min | `scenarios/quick-demos/ecommerce-prompts.md` |
-| **Healthcare Portal**  | Advanced     | 30 min | `scenarios/healthcare-demo.md`  |
-| **Analytics Platform** | Intermediate | 30 min | `scenarios/analytics-demo.md`   |
+| Scenario               | Complexity   | Time   | Prompt File                             |
+| ---------------------- | ------------ | ------ | --------------------------------------- |
+| **Static Website**     | Beginner     | 15 min | `scenarios/S10-quick-demos/static-site-demo.md` |
+| **E-Commerce**         | Intermediate | 30 min | `scenarios/S10-quick-demos/ecommerce-prompts.md` |
+| **Healthcare Portal**  | Advanced     | 30 min | `scenarios/S10-quick-demos/healthcare-demo.md`  |
+| **Analytics Platform** | Intermediate | 30 min | `scenarios/S10-quick-demos/analytics-demo.md`   |
 
 **Recommended first scenario:** Static Website (simplest, fastest)
 
@@ -89,7 +89,7 @@ We have pre-built scenarios ready to run:
 
 ### Option A: Quick Start (Copy-Paste)
 
-1. Open `scenarios/static-site-demo.md`
+1. Open `scenarios/S10-quick-demos/static-site-demo.md`
 2. Copy the Step 1 prompt
 3. In Copilot Chat, type `@plan` then paste the prompt
 4. Follow the workflow through all steps

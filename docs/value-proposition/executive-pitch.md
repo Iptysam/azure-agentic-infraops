@@ -2,7 +2,7 @@
 
 > **Duration:** 5 minutes | **Audience:** C-level, IT Directors, Partner Leadership
 
-![78% Time Saved on Infrastructure Tasks](../resources/presenter-toolkit/infographics/generated/exec-pitch-banner.png)
+![78% Time Saved on Infrastructure Tasks](../presenter-toolkit/infographics/generated/exec-pitch-banner.png)
 
 ---
 
@@ -61,7 +61,7 @@ No lost-in-translation errors.
 
 ## The Proof (1.5 minutes)
 
-### Real Projects. Real Results.
+### Real Projects, Real Results
 
 These projects were built by a Cloud Architect with **no development background**:
 
@@ -95,7 +95,7 @@ This isn't vendor marketing. This is independent research from leading instituti
 
 ## The Ask (30 seconds)
 
-### Start Small. Prove Value. Scale.
+### Start Small, Prove Value, Scale
 
 **Recommended approach:**
 
@@ -111,35 +111,76 @@ This isn't vendor marketing. This is independent research from leading instituti
 
 ---
 
-## One Slide Summary
+## Meet Your IT Pro Personas
 
-![Executive One-Slide Summary](../resources/presenter-toolkit/infographics/generated/executive-one-slide-web.png)
+_The challenges below are drawn from hundreds of conversations with IT professionals._
+
+### Sarah Chen — Infrastructure Engineer
+
+> _"I need to deploy a hub-spoke network by Friday. Last time this took two weeks."_
+
+**With Copilot:** Production-ready network infrastructure in 45 minutes.
+
+### Marcus Thompson — Cloud Architect
+
+> _"We're preparing for Azure Advanced Specialization audit. I have 200+ compliance controls to verify."_
+
+**With Copilot:** Automated validation scripts catch gaps before auditors do.
+
+### Elena Rodriguez — DevOps Lead
+
+> _"Our runbooks are outdated, our architecture diagrams are wrong, and nobody has time to fix them."_
+
+**With Copilot:** Documentation that generates from code. Diagrams that stay in sync.
+
+### James Park — Platform Engineer
+
+> _"Production is down. The error message is cryptic. I've been Googling for an hour."_
+
+**With Copilot:** AI-assisted diagnosis in minutes. Root cause identified. Fix deployed.
+
+---
+
+## The One-Slide Summary
+
+![Executive One-Slide Summary](../presenter-toolkit/infographics/generated/executive-one-slide-web.png)
 
 ---
 
 ## Appendix: Talking Points for Q&A
 
+### "Will AI replace IT Pro jobs?"
+
+**No.** AI handles the _repetitive_ parts of the job so IT Pros can focus on the _valuable_ parts. The architect who
+designs systems still needs to design systems. But now they can also _implement_ those systems without waiting weeks
+for a development team. The IT Pros who thrive will be those who leverage AI as a multiplier.
+
+### "Can I trust AI-generated code?"
+
+**Trust but verify.** That's what you do with any code you didn't write yourself. Every scenario in this repository
+includes validation steps. AI generates the code; your team reviews, tests, and approves it. Your expertise remains
+the quality gate.
+
 ### "What about security?"
 
-Copilot doesn't access your production systems. It assists with code generation in the IDE.
-All code is reviewed by your team before deployment. Our agents are configured with Azure
-security best practices by default.
+**Security is built in.** The agents are configured with Azure security best practices by default—private endpoints,
+TLS 1.2+, managed identities, Well-Architected Framework guidance. Copilot doesn't access your production systems.
+All code is reviewed by your team before deployment.
 
 ### "How is this different from ChatGPT?"
 
-Copilot is integrated directly into VS Code and understands your codebase context. It's not
-a chatbot—it's a pair programmer that sees your files, understands your patterns, and
-generates contextually relevant code.
+Copilot is integrated directly into VS Code and understands your codebase context. It's not a chatbot—it's a pair
+programmer that sees your files, understands your patterns, and generates contextually relevant code.
 
 ### "What's the learning curve?"
 
-Minimal. The Dev Container provides pre-configured environments. Most IT Pros are productive
-within 1-2 days. The time invested pays back within the first week.
+Minimal. The Dev Container provides pre-configured environments. Most IT Pros are productive within 1-2 days.
+The time invested pays back within the first week.
 
 ### "Do we need to change our processes?"
 
-No. Copilot fits into existing workflows. Same tools, same review processes, same deployment
-pipelines. Just faster execution.
+No. Copilot fits into existing workflows. Same tools, same review processes, same deployment pipelines.
+Just faster execution.
 
 ---
 

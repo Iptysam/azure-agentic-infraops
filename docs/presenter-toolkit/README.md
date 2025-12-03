@@ -1,6 +1,6 @@
 # Presenter Toolkit
 
-> **Version 3.0.0** | Last Updated: December 3, 2025
+> **Version 3.1.0** | Last Updated: December 3, 2025
 
 This toolkit provides everything you need to deliver compelling Agentic InfraOps demonstrations to IT Professionals,
 whether you're presenting to customers, colleagues, training sessions, or leadership teams.
@@ -89,10 +89,8 @@ whether you're presenting to customers, colleagues, training sessions, or leader
 
 ## 📁 Additional Resources
 
-- **Main Demo Script**: [demos/30-MIN-DEMO-SCRIPT.md](../../scenarios/30-MIN-DEMO-SCRIPT.md)
-- **Quick Reference**: [demos/DEMO-QUICK-REFERENCE.md](../../scenarios/DEMO-QUICK-REFERENCE.md)
-- **Scenario Index**: [scenarios/README.md](../../scenarios/README.md) (all 9 scenarios)
-- **Five-Agent Workflow**: [resources/copilot-customizations/FIVE-MODE-WORKFLOW.md](../copilot-customizations/FIVE-MODE-WORKFLOW.md)
+- **Scenario Index**: [scenarios/README.md](../../scenarios/README.md) — All 10 scenarios with learning paths
+- **Workflow Guide**: [docs/workflow/WORKFLOW.md](../workflow/WORKFLOW.md) — Complete agent workflow documentation
 
 ## 🤝 Contributing
 

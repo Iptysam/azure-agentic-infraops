@@ -11,7 +11,7 @@
 | If you're...                     | Start with                                          |
 | -------------------------------- | --------------------------------------------------- |
 | **New to Copilot**               | [S01 Bicep Baseline](#s01-bicep-baseline)           |
-| **Want a quick demo**            | [Quick Demos](quick-demos/) - 15-30 min prompts     |
+| **Want a quick demo**            | [S10 Quick Demos](S10-quick-demos/) - 15-30 min prompts |
 | **Experienced with IaC**         | [S03 Five-Agent Workflow](#s03-five-agent-workflow) |
 | **Focused on Terraform**         | [S02 Terraform Baseline](#s02-terraform-baseline)   |
 | **Looking for async automation** | [S09 Coding Agent](#s09-coding-agent)               |
@@ -20,14 +20,14 @@
 
 ## Quick Demos
 
-For simple, single-prompt scenarios, see the [Quick Demos](quick-demos/) folder:
+For simple, single-prompt scenarios, see the [S10 Quick Demos](S10-quick-demos/) folder:
 
 | Demo                                                   | Complexity      | Time   | Description                           |
 | ------------------------------------------------------ | --------------- | ------ | ------------------------------------- |
-| [E-Commerce Prompts](quick-demos/ecommerce-prompts.md) | 🟡 Intermediate | 30 min | PCI-DSS compliant multi-tier platform |
-| [Healthcare Portal](quick-demos/healthcare-demo.md)    | 🔴 Advanced     | 30 min | HIPAA-compliant patient portal        |
-| [Analytics Platform](quick-demos/analytics-demo.md)    | 🟡 Intermediate | 30 min | Data analytics with Synapse           |
-| [Static Website](quick-demos/static-site-demo.md)      | 🟢 Beginner     | 15 min | Simple static web app                 |
+| [E-Commerce Prompts](S10-quick-demos/ecommerce-prompts.md) | 🟡 Intermediate | 30 min | PCI-DSS compliant multi-tier platform |
+| [Healthcare Portal](S10-quick-demos/healthcare-demo.md)    | 🔴 Advanced     | 30 min | HIPAA-compliant patient portal        |
+| [Analytics Platform](S10-quick-demos/analytics-demo.md)    | 🟡 Intermediate | 30 min | Data analytics with Synapse           |
+| [Static Website](S10-quick-demos/static-site-demo.md)      | 🟢 Beginner     | 15 min | Simple static web app                 |
 
 ---
 
@@ -125,6 +125,7 @@ flowchart LR
 > The other four agents are custom agents defined in `.github/agents/`.
 
 **Time Comparison**:
+
 | Approach | Duration |
 |----------|----------|
 | Traditional manual | 18+ hours |
@@ -333,6 +334,6 @@ Each scenario should:
 |                |                            |
 | -------------- | -------------------------- |
 | **Created**    | November 2025              |
-| **Scenarios**  | 9                          |
-| **Total Time** | ~4-5 hours (all scenarios) |
+| **Scenarios**  | 10 (S01-S09 + Quick Demos) |
+| **Total Time** | ~5-6 hours (all scenarios) |
 | **Maintainer** | Repository maintainers     |

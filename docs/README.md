@@ -41,8 +41,7 @@ Welcome to the Agentic InfraOps documentation center. This hub provides quick na
 
 - [Time Savings Evidence](value-proposition/time-savings-evidence.md) - Quantified efficiency gains
 - [Copilot Portfolio Showcase](value-proposition/copilot-portfolio-showcase.md) - Real-world examples
-- [Executive Pitch](value-proposition/executive-pitch.md) - C-level presentation material
-- [The IT Pro Copilot Story](value-proposition/the-itpro-copilot-story.md) - Narrative for IT professionals
+- [Executive Pitch](value-proposition/executive-pitch.md) - C-level presentation material with IT Pro personas
 
 ## 🛠️ Copilot Customization
 

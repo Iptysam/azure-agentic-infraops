@@ -1,6 +1,6 @@
 # Getting Started: Your Complete Journey
 
-> **Version 3.0.0** | Last Updated: December 3, 2025
+> **Version 3.1.0** | Last Updated: December 3, 2025
 >
 > **From zero to productive in 30 minutes.** This guide walks you through everything—from setup to your first deployment to mastering advanced workflows.
 
@@ -288,8 +288,8 @@ Delegate entire GitHub Issues to Copilot for autonomous implementation.
 | **Prerequisites**   | [docs/getting-started/prerequisites.md](prerequisites.md)                                                                | Tool requirements         |
 | **Model Selection** | [docs/getting-started/model-selection.md](model-selection.md)                                                            | Choose the right AI model |
 | **Scenarios**       | [scenarios/](../../scenarios/)                                                                                           | Hands-on learning         |
-| **Demo Script**     | [demos/30-MIN-DEMO-SCRIPT.md](../../scenarios/30-MIN-DEMO-SCRIPT.md)                                                     | Presenter guide           |
-| **ROI Calculator**  | [resources/presenter-toolkit/roi-calculator-worksheet.md](../../resources/presenter-toolkit/roi-calculator-worksheet.md) | Calculate savings         |
+| **Demo Script**     | [S01 Demo Script](../../scenarios/S01-bicep-baseline/DEMO-SCRIPT.md)                                                     | Presenter guide           |
+| **ROI Calculator**  | [docs/presenter-toolkit/roi-calculator.md](../presenter-toolkit/roi-calculator.md)                                       | Calculate savings         |
 
 ### Common Commands
 
@@ -343,10 +343,10 @@ Covers: Dev Container issues, Copilot problems, Azure deployment errors, custom 
 
 After completing this guide, you can:
 
-1. **Run demos for your team** - Use [demos/30-MIN-DEMO-SCRIPT.md](../../scenarios/30-MIN-DEMO-SCRIPT.md)
-2. **Pitch to leadership** - Use [docs/value-proposition/executive-pitch.md](../value-proposition/executive-pitch.md)
-3. **Start a pilot** - Use [resources/presenter-toolkit/pilot-success-checklist.md](../../resources/presenter-toolkit/pilot-success-checklist.md)
-4. **Calculate ROI** - Use [resources/presenter-toolkit/roi-calculator-worksheet.md](../../resources/presenter-toolkit/roi-calculator-worksheet.md)
+1. **Run demos for your team** - Use [S01 Demo Script](../../scenarios/S01-bicep-baseline/DEMO-SCRIPT.md)
+2. **Pitch to leadership** - Use [Executive Pitch](../value-proposition/executive-pitch.md)
+3. **Start a pilot** - Use [Pilot Success Checklist](../presenter-toolkit/pilot-success-checklist.md)
+4. **Calculate ROI** - Use [ROI Calculator](../presenter-toolkit/roi-calculator.md)
 
 ---
 

@@ -16,7 +16,7 @@ pip install matplotlib numpy pillow
 ### Generate All Assets
 
 ```bash
-cd resources/presenter-toolkit/infographics
+cd docs/presenter-toolkit/infographics
 
 # Generate time savings infographic
 python generate_infographic.py

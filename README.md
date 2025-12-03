@@ -1,6 +1,6 @@
 # Agentic InfraOps
 
-> **Version 3.0.0** | Last Updated: December 3, 2025 | [Changelog](VERSION.md)
+> **Version 3.1.0** | Last Updated: December 3, 2025 | [Changelog](VERSION.md)
 
 [![Agentic InfraOps](https://img.shields.io/badge/Agentic-InfraOps-FF6B35?style=for-the-badge&logo=robot&logoColor=white)](https://github.com/jonathan-vella/azure-agentic-infraops)
 [![Azure](https://img.shields.io/badge/Azure-Infrastructure-0078D4?style=for-the-badge&logo=microsoftazure)](https://azure.microsoft.com)
@@ -202,9 +202,30 @@ azure-agentic-infraops/
 │   └── presenter-toolkit/       # Demo delivery guides
 └── scenarios/
     ├── README.md                # Scenarios index
-    ├── quick-demos/             # Simple prompt-based demos
-    └── S01-S09/                 # Comprehensive learning scenarios
+    ├── S01-S09/                 # Comprehensive learning scenarios
+    └── S10-quick-demos/         # Simple prompt-based demos
 ```
+
+---
+
+## Scenarios Overview
+
+Learn by doing with **10 hands-on scenarios**:
+
+| #   | Scenario                  | Time   | Difficulty   | Description                            |
+| --- | ------------------------- | ------ | ------------ | -------------------------------------- |
+| S01 | Bicep Baseline            | 30 min | Beginner     | Secure hub-spoke network foundation    |
+| S02 | Terraform Baseline        | 30 min | Beginner     | Multi-cloud IaC with Terraform         |
+| S03 | Five-Agent Workflow       | 45 min | Advanced     | End-to-end HIPAA patient portal        |
+| S04 | Documentation Generation  | 20 min | Beginner     | Auto-generate docs from code           |
+| S05 | Service Validation        | 30 min | Intermediate | Automated compliance testing           |
+| S06 | Troubleshooting           | 25 min | Intermediate | Diagnose infrastructure issues         |
+| S07 | SBOM Generator            | 20 min | Intermediate | Software Bill of Materials             |
+| S08 | Diagrams as Code          | 20 min | Beginner     | Python-generated architecture diagrams |
+| S09 | Coding Agent              | 30 min | Advanced     | Async implementation via GitHub Issues |
+| S10 | Quick Demos               | 15-30 min | Varies    | Single-prompt demo scenarios           |
+
+📖 **[Full Scenarios Guide](scenarios/README.md)** — Learning paths, time savings, and deep-dive details
 
 ---
 
