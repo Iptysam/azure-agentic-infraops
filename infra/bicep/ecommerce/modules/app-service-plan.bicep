@@ -1,7 +1,8 @@
 // ============================================================================
 // App Service Plan Module
 // ============================================================================
-// Creates P1v3 zone-redundant App Service Plan for production workloads
+// Creates P1v4 zone-redundant App Service Plan for production workloads
+// P1v4 required for zone redundancy support
 // ============================================================================
 
 @description('Azure region for App Service Plan deployment')
@@ -28,14 +29,14 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2023-12-01' = {
   tags: tags
   kind: 'linux'
   sku: {
-    name: 'P1v2'
-    tier: 'PremiumV2'
-    size: 'P1v2'
+    name: 'P1v4'
+    tier: 'PremiumV4'
+    size: 'P1v4'
     capacity: capacity
   }
   properties: {
     reserved: true // Linux
-    zoneRedundant: false // P1v2 doesn't support zone redundancy in all regions
+    zoneRedundant: true // P1v4 supports zone redundancy
     targetWorkerCount: capacity
     targetWorkerSizeId: 0
   }

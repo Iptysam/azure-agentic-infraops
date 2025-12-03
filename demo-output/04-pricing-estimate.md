@@ -163,7 +163,7 @@ Based on real-time MCP pricing queries:
 | Azure Front Door       | Premium      | $330.00       | azure_price_search    |
 | Private Endpoints (×5) | -            | $36.50        | Calculated            |
 | Key Vault + Logging    | Standard     | $18.00        | azure_price_search    |
-| **TOTAL**              | -            | **$2,076/mo** | Real-time MCP queries |
+| **TOTAL**              | -            | **$2,212/mo** | Real-time MCP queries |
 
 ---
 

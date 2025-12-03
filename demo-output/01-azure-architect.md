@@ -71,7 +71,7 @@ Provide scores for each pillar and specific recommendations.
 
 | Feature          | Implementation                             |
 | ---------------- | ------------------------------------------ |
-| Zone redundancy  | App Service P1v3 (2+ instances across AZs) |
+| Zone redundancy  | App Service P1v4 (2+ instances across AZs) |
 | SLA target       | 99.9% achievable with Premium SKU          |
 | Messaging        | Service Bus Premium with private endpoints |
 | Event processing | Azure Functions EP1 with VNet integration  |
@@ -89,7 +89,7 @@ Provide scores for each pillar and specific recommendations.
 
 | Target          | Configuration Required                     |
 | --------------- | ------------------------------------------ |
-| 99.9% (current) | Zone redundancy (P1v3, 2+ instances)       |
+| 99.9% (current) | Zone redundancy (P1v4, 2+ instances)       |
 | 99.95%          | Add geo-replication, Traffic Manager       |
 | 99.99%          | Multi-region active-active with Front Door |
 
@@ -101,7 +101,7 @@ Provide scores for each pillar and specific recommendations.
 
 | Component        | Requirement  | Proposed SKU        | Status                         |
 | ---------------- | ------------ | ------------------- | ------------------------------ |
-| Concurrent Users | 10,000       | App Service P1v3 x2 | ✅ Can scale to 12 instances   |
+| Concurrent Users | 10,000       | App Service P1v4 x2 | ✅ Can scale to 12 instances   |
 | Catalog Queries  | <100ms       | Cognitive Search S1 | ✅ 15M docs, 35GB vector index |
 | Session Cache    | 10K sessions | Redis C2 (6GB)      | ✅ ~600 bytes/session avg      |
 | Async Processing | Order queue  | Service Bus Premium | ✅ 1M messages/day             |
@@ -121,7 +121,7 @@ Provide scores for each pillar and specific recommendations.
 
 | Service                  | Monthly Cost | % of Total |
 | ------------------------ | ------------ | ---------- |
-| App Service (P1v3 x2)    | $300         | 24%        |
+| App Service (P1v4 x2)    | $412         | 28%        |
 | Cognitive Search (S1)    | $250         | 20%        |
 | Service Bus + Functions  | $200         | 16%        |
 | Redis (C2)               | $170         | 14%        |

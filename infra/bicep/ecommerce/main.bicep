@@ -220,7 +220,7 @@ module keyVaultModule 'modules/key-vault.bicep' = {
   }
 }
 
-// App Service Plan (P1v3 Zone Redundant)
+// App Service Plan (P1v4 Zone Redundant)
 module appServicePlanModule 'modules/app-service-plan.bicep' = {
   name: 'app-service-plan-deployment'
   params: {

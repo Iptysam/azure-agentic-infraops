@@ -64,7 +64,7 @@ Deploy a PCI-DSS compliant, high-availability e-commerce platform using Azure Pa
 | Component              | Service                              | SKU           | Rationale                                       |
 | ---------------------- | ------------------------------------ | ------------- | ----------------------------------------------- |
 | React SPA Frontend     | Azure Static Web Apps                | Standard      | Built-in CDN, global edge, no server management |
-| .NET 8 REST API        | Azure App Service                    | P1v3          | Zone redundancy for 99.9% SLA, PaaS familiarity |
+| .NET 8 REST API        | Azure App Service                    | P1v4          | Zone redundancy for 99.9% SLA, PaaS familiarity |
 | Product Catalog DB     | Azure SQL Database                   | S3 (100 DTU)  | Relational data, Azure AD-only auth             |
 | Full-Text Search       | Azure Cognitive Search               | Standard S1   | Sub-100ms queries, faceted navigation           |
 | Session Caching        | Azure Cache for Redis                | Standard C2   | 10K concurrent sessions, low latency            |
@@ -102,7 +102,7 @@ Deploy a PCI-DSS compliant, high-availability e-commerce platform using Azure Pa
 
 | Service                                     | Estimated Cost (USD) |
 | ------------------------------------------- | -------------------- |
-| App Service Plan (P1v3 x2 instances)        | ~$300                |
+| App Service Plan (P1v4 x2 instances)        | ~$412                |
 | Azure SQL (S3, 100 DTU)                     | ~$150                |
 | Azure Cognitive Search (S1)                 | ~$250                |
 | Azure Cache for Redis (C2)                  | ~$170                |
@@ -142,7 +142,7 @@ gantt
 ### Phase 2 — Platform Services (Week 2)
 
 - Key Vault with soft-delete enabled
-- App Service Plan (P1v3, zone redundant)
+- App Service Plan (P1v4, zone redundant)
 - Azure SQL (Azure AD-only auth)
 - Azure Cache for Redis with private endpoint
 - Azure Cognitive Search with private endpoint

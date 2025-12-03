@@ -141,7 +141,7 @@ infra/bicep/ecommerce/
 
 | Resource         | SKU                | Monthly Cost      |
 | ---------------- | ------------------ | ----------------- |
-| App Service Plan | P1v3 (2 instances) | $276              |
+| App Service Plan | P1v4 (2 instances) | $412              |
 | SQL Database     | S3 (100 DTU)       | $150              |
 | Redis Cache      | Standard C2        | $170              |
 | Cognitive Search | Standard S1        | $250              |
@@ -150,7 +150,7 @@ infra/bicep/ecommerce/
 | Front Door       | Premium            | $330              |
 | Static Web App   | Standard           | $9                |
 | Log Analytics    | ~5GB/day           | $50               |
-| **Total**        |                    | **~$2,076/month** |
+| **Total**        |                    | **~$2,212/month** |
 
 ## Security Features
 

@@ -10,7 +10,7 @@ This file provides context and guidance for GitHub Copilot when assisting with t
 2. **Unique Resource Names**: Generate `var uniqueSuffix = uniqueString(resourceGroup().id)` in main.bicep, pass to ALL modules
 3. **Name Length Limits**: Key Vault ≤24 chars, Storage ≤24 chars (no hyphens), SQL ≤63 chars
 4. **Azure SQL Auth Policy**: Azure AD-only auth for SQL Server
-5. **Zone Redundancy**: App Service Plans need P1v3 SKU (not S1) for zone redundancy
+5. **Zone Redundancy**: App Service Plans need P1v4 SKU (not S1/P1v2) for zone redundancy
 6. **Four-Step Workflow**: `@plan` → `azure-principal-architect` → `bicep-plan` → `bicep-implement` (each step requires approval)
 7. **Deploy Script Pattern**: Use `[CmdletBinding(SupportsShouldProcess)]` + `$WhatIfPreference` (NOT explicit `$WhatIf` param)
 8. **Dev Container**: Pre-configured Ubuntu 24.04 with all tools (Terraform, Azure CLI, Bicep, PowerShell 7)
@@ -438,10 +438,13 @@ resource diagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' 
 
 **Common Policy Blockers:**
 
-1. **SQL Server Azure AD-only authentication**: Use Azure AD auth
-2. **App Service Plan zone redundancy**: Must use Premium SKU (P1v3+), not Standard
+1. **SQL Server Azure AD-only authentication**: Use `azureADOnlyAuthentication: true`
+2. **App Service Plan zone redundancy**: Must use Premium SKU (P1v4 recommended), not Standard
 3. **Key Vault name length**: Policy doesn't block, but Azure enforces 24-char limit
 4. **WAF matchVariable values**: Use `RequestHeader` (singular) not `RequestHeaders` - valid values are: `RemoteAddr`, `RequestMethod`, `QueryString`, `PostArgs`, `RequestUri`, `RequestHeader`, `RequestBody`, `Cookies`, `SocketAddr`
+5. **WAF policy naming**: Names must start with letter, alphanumeric only (NO hyphens) - use `wafpolicy{project}{env}001`
+6. **Storage Account allowSharedKeyAccess**: Many orgs block shared key access - use identity-based storage connections
+7. **SQL Server diagnostic settings**: Don't use `SQLSecurityAuditEvents` category - use `auditingSettings` resource instead
 
 **Implementation:**
 
@@ -452,6 +455,39 @@ param tags object = {
   Project: projectName
   Owner: owner
 }
+```
+
+### Azure Functions with Identity-Based Storage
+
+When Azure Policy blocks `allowSharedKeyAccess`, use identity-based storage connections:
+
+```bicep
+// Storage account - Azure Policy compliant
+resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = {
+  properties: {
+    allowSharedKeyAccess: false // Required by Azure Policy
+  }
+}
+
+// Function App with identity-based storage
+resource functionApp 'Microsoft.Web/sites@2023-12-01' = {
+  identity: { type: 'SystemAssigned' }
+  properties: {
+    siteConfig: {
+      appSettings: [
+        { name: 'AzureWebJobsStorage__accountName', value: storageAccount.name }
+        { name: 'WEBSITE_RUN_FROM_PACKAGE', value: '1' }
+        { name: 'FUNCTIONS_EXTENSION_VERSION', value: '~4' }
+      ]
+    }
+  }
+}
+
+// Required RBAC roles for identity-based storage access
+// Grant to Function App managed identity:
+// - Storage Blob Data Owner (for blob triggers)
+// - Storage Queue Data Contributor (for durable functions)
+// - Storage Table Data Contributor (for durable functions checkpoints)
 ```
 
 ### Progressive Deployment Pattern

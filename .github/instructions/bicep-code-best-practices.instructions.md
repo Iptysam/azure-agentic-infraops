@@ -266,11 +266,14 @@ resource blobService 'Microsoft.Storage/storageAccounts/blobServices@2023-01-01'
 | Missing `@description`                    | Poor maintainability         | Document all parameters                                 |
 | Explicit `dependsOn`                      | Unnecessary complexity       | Use symbolic references                                 |
 | Secrets in outputs                        | Security vulnerability       | Use Key Vault references                                |
-| S1 SKU for zone redundancy                | Policy violation             | Use P1v3 or higher                                      |
+| S1 SKU for zone redundancy                | Policy violation             | Use P1v4 or higher                                      |
 | Old API versions                          | Missing features             | Use latest stable versions                              |
 | Resource ID strings for scope             | BCP036 type error            | Use `existing` resource references                      |
 | Passing resource IDs to modules for scope | Scope requires resource type | Pass resource names and use `existing` keyword          |
 | WAF `RequestHeaders` matchVariable        | ARM EnumerationOutOfRange    | Use `RequestHeader` (singular) - see valid values below |
+| `allowSharedKeyAccess: true`              | Azure Policy may block       | Use identity-based storage connections                  |
+| SQL `SQLSecurityAuditEvents` diagnostic   | Category not supported       | Use `auditingSettings` resource instead                 |
+| WAF policy names with hyphens             | Naming validation fails      | Use alphanumeric only: `wafpolicy{name}`                |
 
 ### WAF Policy matchVariable Valid Values
 
@@ -287,6 +290,101 @@ When creating WAF custom rules, use only these valid `matchVariable` values:
 - `SocketAddr` - Socket address
 
 **Common Mistake**: Using `RequestHeaders` (plural) instead of `RequestHeader` (singular).
+
+## Azure Policy Compliance
+
+Many Azure subscriptions have policies that block certain configurations. Plan for these common blockers:
+
+### Storage Account Policies
+
+**Problem**: Azure Policy may enforce `allowSharedKeyAccess: false`, breaking connection strings.
+
+**Solution**: Use identity-based storage connections for Azure Functions:
+
+```bicep
+// Storage account with identity-based access (Azure Policy compliant)
+resource storageAccount 'Microsoft.Storage/storageAccounts@2023-05-01' = {
+  name: storageAccountName
+  properties: {
+    allowSharedKeyAccess: false // Azure Policy requires false
+    // ... other properties
+  }
+}
+
+// Function App with identity-based storage connection
+resource functionApp 'Microsoft.Web/sites@2023-12-01' = {
+  identity: { type: 'SystemAssigned' }
+  properties: {
+    siteConfig: {
+      appSettings: [
+        { name: 'AzureWebJobsStorage__accountName', value: storageAccount.name }
+        { name: 'WEBSITE_RUN_FROM_PACKAGE', value: '1' }
+        { name: 'FUNCTIONS_EXTENSION_VERSION', value: '~4' }
+      ]
+    }
+  }
+}
+
+// Required RBAC roles for identity-based storage
+resource storageBlobDataOwner 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  scope: storageAccount
+  properties: {
+    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', 'b7e6dc6d-f1e8-4753-8033-0f276bb0955b')
+    principalId: functionApp.identity.principalId
+    principalType: 'ServicePrincipal'
+  }
+}
+// Also grant: Storage Queue Data Contributor, Storage Table Data Contributor
+```
+
+### SQL Server Policies
+
+- **Azure AD-only authentication**: Use `azureADOnlyAuthentication: true`
+- **Diagnostic settings**: SQL Server itself doesn't support `SQLSecurityAuditEvents` category
+  - Use `Microsoft.Sql/servers/auditingSettings` resource for auditing
+  - Don't create diagnostic settings for SQL Server (only for databases)
+
+### WAF Policy Naming
+
+WAF policy names have strict validation rules:
+
+- Must start with a letter
+- Only alphanumeric characters allowed (NO hyphens, underscores, or special chars)
+- Pattern: `wafpolicy{project}{env}001`
+
+```bicep
+// ✅ CORRECT: Alphanumeric only
+var wafPolicyName = 'wafpolicy${replace(projectName, '-', '')}${environment}001'
+// Result: "wafpolicyecommerceprod001"
+
+// ❌ WRONG: Hyphens cause validation failure
+var wafPolicyName = 'waf-${projectName}-${environment}-001'
+// Result: "waf-ecommerce-prod-001" - FAILS!
+```
+
+### App Service Plan Zone Redundancy
+
+Zone redundancy requires Premium v3 or v4 SKU:
+
+| SKU Tier  | Zone Redundancy  | Use Case            |
+| --------- | ---------------- | ------------------- |
+| S1/S2/S3  | ❌ Not supported | Dev/test only       |
+| P1v2/P2v2 | ❌ Not supported | Legacy Premium      |
+| P1v3/P2v3 | ✅ Supported     | Production          |
+| P1v4/P2v4 | ✅ Supported     | Production (latest) |
+
+```bicep
+// P1v4 with zone redundancy enabled
+resource appServicePlan 'Microsoft.Web/serverfarms@2023-12-01' = {
+  sku: {
+    name: 'P1v4'
+    tier: 'PremiumV4'
+  }
+  properties: {
+    zoneRedundant: true // Only works with P1v3/P1v4 or higher
+  }
+}
+```
 
 ## Validation
 
