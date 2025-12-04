@@ -417,7 +417,10 @@ async function generateAnimatedFrames() {
   for (let step = 0; step < frames.length; step++) {
     const duration = stepDurations[step] || 3;
     for (let j = 0; j < duration; j++) {
-      const outputFrame = join(framesDir, `frame-${String(outputFrameIndex).padStart(3, "0")}.png`);
+      const outputFrame = join(
+        framesDir,
+        `frame-${String(outputFrameIndex).padStart(3, "0")}.png`
+      );
       execSync(`cp "${frames[step]}" "${outputFrame}"`);
       outputFrameIndex++;
     }
