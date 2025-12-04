@@ -33,24 +33,24 @@ python generate_exec_banner.py
 
 Generated files are saved to `./generated/`:
 
-| File                               | Format  | Use Case                    |
-| ---------------------------------- | ------- | --------------------------- |
-| `workflow-diagram.png`             | 300 DPI | 4-step agent workflow       |
-| `workflow-diagram-web.png`         | 150 DPI | Web, presentations          |
-| `waf-scorecard.png`                | 300 DPI | WAF alignment radar chart   |
-| `waf-scorecard-web.png`            | 150 DPI | Web, presentations          |
-| `roi-calculator.png`               | 300 DPI | ROI/value infographic       |
-| `roi-calculator-web.png`           | 150 DPI | Web, presentations          |
-| `time-savings-infographic.png`     | 300 DPI | Print, large displays       |
-| `time-savings-infographic-web.png` | 150 DPI | Web, presentations          |
-| `time-savings-infographic.pdf`     | Vector  | Scalable printing           |
-| `before-after-poster.png`          | 300 DPI | Print, workshop walls       |
-| `before-after-poster-web.png`      | 150 DPI | Web, presentations          |
-| `before-after-poster.pdf`          | Vector  | Scalable printing           |
-| `executive-one-slide.png`          | 300 DPI | Executive summary slide     |
-| `executive-one-slide-web.png`      | 150 DPI | Web, presentations          |
-| `docs-overview-infographic.png`    | 300 DPI | Documentation navigation    |
-| `exec-pitch-banner.png`            | 150 DPI | Banner for presentations    |
+| File                               | Format  | Use Case                  |
+| ---------------------------------- | ------- | ------------------------- |
+| `workflow-diagram.png`             | 300 DPI | 4-step agent workflow     |
+| `workflow-diagram-web.png`         | 150 DPI | Web, presentations        |
+| `waf-scorecard.png`                | 300 DPI | WAF alignment radar chart |
+| `waf-scorecard-web.png`            | 150 DPI | Web, presentations        |
+| `roi-calculator.png`               | 300 DPI | ROI/value infographic     |
+| `roi-calculator-web.png`           | 150 DPI | Web, presentations        |
+| `time-savings-infographic.png`     | 300 DPI | Print, large displays     |
+| `time-savings-infographic-web.png` | 150 DPI | Web, presentations        |
+| `time-savings-infographic.pdf`     | Vector  | Scalable printing         |
+| `before-after-poster.png`          | 300 DPI | Print, workshop walls     |
+| `before-after-poster-web.png`      | 150 DPI | Web, presentations        |
+| `before-after-poster.pdf`          | Vector  | Scalable printing         |
+| `executive-one-slide.png`          | 300 DPI | Executive summary slide   |
+| `executive-one-slide-web.png`      | 150 DPI | Web, presentations        |
+| `docs-overview-infographic.png`    | 300 DPI | Documentation navigation  |
+| `exec-pitch-banner.png`            | 150 DPI | Banner for presentations  |
 
 ---
 

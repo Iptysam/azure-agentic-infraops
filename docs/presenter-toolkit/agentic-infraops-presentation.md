@@ -39,11 +39,13 @@ style: |
 
 **Verified. Well-Architected. Deployable.**
 
+🔗 **aka.ms/agenticinfraops**
+
 ---
 
-![bg right:40%](infographics/generated/workflow-diagram-web.png)
-
 # What is Agentic InfraOps?
+
+![bg right:45%](infographics/generated/workflow-diagram-web.png)
 
 **AI-powered infrastructure development** using coordinated GitHub Copilot agents
 
@@ -58,11 +60,11 @@ style: |
 
 # The Evolution of Infrastructure Development
 
-| Era | Approach | Time to Deploy |
-|-----|----------|----------------|
-| Manual | Click-ops in portal | Days |
-| Scripted | ARM/Bicep templates | Hours |
-| **Agentic** | AI-coordinated agents | **Minutes** |
+| Era         | Approach              | Time to Deploy |
+| ----------- | --------------------- | -------------- |
+| Manual      | Click-ops in portal   | Days           |
+| Scripted    | ARM/Bicep templates   | Hours          |
+| **Agentic** | AI-coordinated agents | **Minutes**    |
 
 > "From clicking buttons to describing intent"
 
@@ -70,7 +72,15 @@ style: |
 
 # The 4-Step Agent Workflow
 
-![width:1100px](infographics/generated/workflow-diagram-web.png)
+![width:1100px](infographics/generated/workflow-diagram.png)
+
+---
+
+# Live Demo: Agent Workflow
+
+![width:900px](infographics/generated/demo-workflow.gif)
+
+_30-second animated demo showing the complete workflow_
 
 ---
 
@@ -79,7 +89,7 @@ style: |
 **Built-in Plan Agent** gathers requirements
 
 ```
-@plan Create a HIPAA-compliant patient portal with 
+@plan Create a HIPAA-compliant patient portal with
       Azure App Service and SQL Database
 ```
 
@@ -95,7 +105,7 @@ style: |
 **Custom Agent** provides WAF assessment
 
 - Security evaluation (9/10)
-- Reliability review (8/10)  
+- Reliability review (8/10)
 - Performance analysis (8/10)
 - Cost optimization (7/10)
 - Operational excellence (8/10)
@@ -104,7 +114,7 @@ style: |
 
 ---
 
-![bg right:50%](infographics/generated/waf-scorecard-web.png)
+![bg right:50%](infographics/generated/waf-scorecard.png)
 
 # Well-Architected Alignment
 
@@ -113,6 +123,7 @@ Every design is scored against Azure WAF pillars
 **Overall Score: 8.0/10**
 
 Agents ensure compliance with:
+
 - Azure Security Benchmark
 - Reliability best practices
 - Performance targets
@@ -143,7 +154,7 @@ Agents ensure compliance with:
 - Creates Bicep templates from plan
 - Uses Azure Verified Modules
 - Validates with `bicep build` and `lint`
-- Ready for `az deployment` 
+- Ready for `az deployment`
 
 ```bash
 # One-command deployment
@@ -158,18 +169,18 @@ az deployment group create \
 
 **Real-time pricing data** during architecture phase
 
-| Tool | Purpose |
-|------|---------|
-| `azure_price_search` | Query retail prices |
-| `azure_region_recommend` | Find cheapest regions |
-| `azure_cost_estimate` | Calculate monthly costs |
-| `azure_sku_discovery` | List available SKUs |
+| Tool                     | Purpose                 |
+| ------------------------ | ----------------------- |
+| `azure_price_search`     | Query retail prices     |
+| `azure_region_recommend` | Find cheapest regions   |
+| `azure_cost_estimate`    | Calculate monthly costs |
+| `azure_sku_discovery`    | List available SKUs     |
 
 > No more guessing costs!
 
 ---
 
-![bg right:50%](infographics/generated/roi-calculator-web.png)
+![bg right:50%](infographics/generated/roi-calculator.png)
 
 # ROI: The Business Case
 
@@ -185,15 +196,21 @@ az deployment group create \
 
 # Time Savings by Task
 
-| Task | Before | After | Savings |
-|------|--------|-------|---------|
-| IaC Development | 6.0h | 1.5h | **-75%** |
-| Documentation | 4.0h | 0.5h | **-88%** |
-| Troubleshooting | 3.0h | 1.0h | **-67%** |
-| Code Review | 2.0h | 0.5h | **-75%** |
-| Learning New Tech | 5.0h | 2.0h | **-60%** |
+![bg right:55%](infographics/generated/time-savings-infographic-web.png)
 
-*Per week per IT Pro*
+| Task              | Before | After | Savings  |
+| ----------------- | ------ | ----- | -------- |
+| IaC Development   | 6.0h   | 1.5h  | **-75%** |
+| Documentation     | 4.0h   | 0.5h  | **-88%** |
+| Troubleshooting   | 3.0h   | 1.0h  | **-67%** |
+| Code Review       | 2.0h   | 0.5h  | **-75%** |
+| Learning New Tech | 5.0h   | 2.0h  | **-60%** |
+
+---
+
+# Before vs After: The Transformation
+
+![width:1100px](infographics/generated/before-after-poster-web.png)
 
 ---
 
@@ -202,6 +219,7 @@ az deployment group create \
 **Scenario**: Multi-tier e-commerce with PCI-DSS alignment
 
 **Components** (61 resources):
+
 - Azure Front Door Premium + WAF
 - App Service (zone-redundant P1v4)
 - Azure SQL Database
@@ -215,9 +233,9 @@ az deployment group create \
 
 # Demo: Architecture Diagram
 
-![width:900px](../diagrams/ecommerce/ecommerce_architecture.png)
+![width:950px](../diagrams/ecommerce/ecommerce_architecture.png)
 
-Generated with `diagram-generator` agent
+_Generated with `diagram-generator` agent using Python Diagrams library_
 
 ---
 
@@ -227,11 +245,11 @@ Generated with `diagram-generator` agent
 
 ## ✅ Reality: Copilot **amplifies** IT Pros
 
-| Role | Before | After |
-|------|--------|-------|
-| Expert | Write code | Review + guide AI |
-| Mid-level | Copy/paste patterns | Design + customize |
-| Newcomer | Learn basics | Learn best practices |
+| Role      | Before              | After                |
+| --------- | ------------------- | -------------------- |
+| Expert    | Write code          | Review + guide AI    |
+| Mid-level | Copy/paste patterns | Design + customize   |
+| Newcomer  | Learn basics        | Learn best practices |
 
 > "The best IT Pros will be those who master AI collaboration"
 
@@ -247,7 +265,7 @@ Generated with `diagram-generator` agent
 - ✅ Enterprise proxy support
 - ✅ IP indemnity included
 
-*GitHub Copilot Business/Enterprise only*
+_GitHub Copilot Business/Enterprise only_
 
 ---
 
@@ -268,15 +286,18 @@ Generated with `diagram-generator` agent
 # Getting Started
 
 ## 1. Clone the Repository
+
 ```bash
 git clone https://github.com/jonathan-vella/azure-agentic-infraops
 code azure-agentic-infraops
 ```
 
 ## 2. Open in Dev Container
+
 - F1 → "Dev Containers: Reopen in Container"
 
 ## 3. Start the Workflow
+
 - Open Copilot Chat → Select `@plan`
 
 ---
@@ -284,20 +305,23 @@ code azure-agentic-infraops
 # Quick Start Prompts
 
 **E-Commerce Platform:**
+
 ```
-@plan Create a PCI-DSS compliant e-commerce platform 
+@plan Create a PCI-DSS compliant e-commerce platform
 with Azure Front Door, App Service, and SQL Database
 ```
 
 **Patient Portal:**
+
 ```
-@plan Create a HIPAA-compliant patient portal with 
+@plan Create a HIPAA-compliant patient portal with
 secure access to medical records
 ```
 
 **Data Analytics:**
+
 ```
-@plan Create a data analytics platform with 
+@plan Create a data analytics platform with
 Azure Synapse and Power BI integration
 ```
 
@@ -305,15 +329,15 @@ Azure Synapse and Power BI integration
 
 # Scenarios Available
 
-| # | Scenario | Duration | Difficulty |
-|---|----------|----------|------------|
-| S01 | Bicep Baseline | 30 min | Beginner |
-| S02 | Terraform Baseline | 30 min | Beginner |
-| S03 | Five-Agent Workflow | 45 min | Advanced |
-| S04 | Documentation Generation | 20 min | Beginner |
-| S05 | Service Validation | 30 min | Intermediate |
+| #   | Scenario                 | Duration | Difficulty   |
+| --- | ------------------------ | -------- | ------------ |
+| S01 | Bicep Baseline           | 30 min   | Beginner     |
+| S02 | Terraform Baseline       | 30 min   | Beginner     |
+| S03 | Five-Agent Workflow      | 45 min   | Advanced     |
+| S04 | Documentation Generation | 20 min   | Beginner     |
+| S05 | Service Validation       | 30 min   | Intermediate |
 
-*10 total scenarios from beginner to advanced*
+_10 total scenarios from beginner to advanced_
 
 ---
 
@@ -340,6 +364,12 @@ Azure Synapse and Power BI integration
 
 ---
 
+# Executive Summary (One Slide)
+
+![width:1100px](infographics/generated/executive-one-slide-web.png)
+
+---
+
 <!-- _class: lead -->
 <!-- _backgroundColor: #0078D4 -->
 <!-- _color: white -->
@@ -358,23 +388,23 @@ Azure Synapse and Power BI integration
 
 Located in `.github/agents/`:
 
-| Agent | Purpose |
-|-------|---------|
-| `azure-principal-architect` | WAF assessment |
-| `bicep-plan` | Implementation planning |
-| `bicep-implement` | Code generation |
-| `diagram-generator` | Architecture diagrams |
-| `adr-generator` | Decision records |
+| Agent                       | Purpose                 |
+| --------------------------- | ----------------------- |
+| `azure-principal-architect` | WAF assessment          |
+| `bicep-plan`                | Implementation planning |
+| `bicep-implement`           | Code generation         |
+| `diagram-generator`         | Architecture diagrams   |
+| `adr-generator`             | Decision records        |
 
 ---
 
 # Appendix: Color Palette
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Azure Blue | `#0078D4` | Primary, headers |
-| Green | `#107C10` | Success, planning |
-| Purple | `#5C2D91` | Implementation |
-| Orange | `#D83B01` | Architecture |
-| Yellow | `#FFB900` | Warnings |
-| Gray | `#201F1E` | Body text |
+| Color      | Hex       | Usage             |
+| ---------- | --------- | ----------------- |
+| Azure Blue | `#0078D4` | Primary, headers  |
+| Green      | `#107C10` | Success, planning |
+| Purple     | `#5C2D91` | Implementation    |
+| Orange     | `#D83B01` | Architecture      |
+| Yellow     | `#FFB900` | Warnings          |
+| Gray       | `#201F1E` | Body text         |

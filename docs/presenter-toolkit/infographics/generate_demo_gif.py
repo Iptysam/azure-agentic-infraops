@@ -121,7 +121,8 @@ def render_frame(frame: TerminalFrame) -> Image.Image:
     for line_segments in frame.lines:
         x = PADDING
         for text, color in line_segments:
-            draw.text((x, y), text, font=font, fill=COLORS.get(color, COLORS["text"]))
+            draw.text((x, y), text, font=font,
+                      fill=COLORS.get(color, COLORS["text"]))
             # Approximate character width
             x += len(text) * 8.5
         y += LINE_HEIGHT
@@ -160,7 +161,8 @@ def create_workflow_animation() -> list[Image.Image]:
             current_segments: list[tuple[str, str]] = []
             for text, color in segments:
                 for i in range(len(text)):
-                    current_segments_copy = current_segments + [(text[: i + 1], color)]
+                    current_segments_copy = current_segments + \
+                        [(text[: i + 1], color)]
                     terminal.lines[-1] = current_segments_copy
                     if i % TYPING_SPEED == 0:
                         frames.append(render_frame(terminal))
@@ -234,7 +236,8 @@ def create_workflow_animation() -> list[Image.Image]:
     # === Step 2: Architecture ===
     terminal.add_line([])
     type_line(
-        [("@azure-principal-architect", "purple"), (" - Reviewing architecture...", "dim")]
+        [("@azure-principal-architect", "purple"),
+         (" - Reviewing architecture...", "dim")]
     )
     add_frames(PAUSE_SHORT)
 
@@ -320,7 +323,8 @@ def create_workflow_animation() -> list[Image.Image]:
 
     # === Step 3: Bicep Plan ===
     terminal.add_line([])
-    type_line([("@bicep-plan", "purple"), (" - Creating module structure...", "dim")])
+    type_line([("@bicep-plan", "purple"),
+              (" - Creating module structure...", "dim")])
     add_frames(PAUSE_SHORT)
 
     # Module list
@@ -334,27 +338,33 @@ def create_workflow_animation() -> list[Image.Image]:
         typing=False,
     )
     type_line(
-        [("     ", "text"), ("├── ", "dim"), ("main.bicep", "text"), ("         (orchestrator)", "dim")],
+        [("     ", "text"), ("├── ", "dim"), ("main.bicep", "text"),
+         ("         (orchestrator)", "dim")],
         typing=False,
     )
     type_line(
-        [("     ", "text"), ("├── ", "dim"), ("network.bicep", "text"), ("      (VNet, NSGs)", "dim")],
+        [("     ", "text"), ("├── ", "dim"),
+         ("network.bicep", "text"), ("      (VNet, NSGs)", "dim")],
         typing=False,
     )
     type_line(
-        [("     ", "text"), ("├── ", "dim"), ("security.bicep", "text"), ("     (Key Vault, WAF)", "dim")],
+        [("     ", "text"), ("├── ", "dim"),
+         ("security.bicep", "text"), ("     (Key Vault, WAF)", "dim")],
         typing=False,
     )
     type_line(
-        [("     ", "text"), ("├── ", "dim"), ("database.bicep", "text"), ("     (Azure SQL)", "dim")],
+        [("     ", "text"), ("├── ", "dim"),
+         ("database.bicep", "text"), ("     (Azure SQL)", "dim")],
         typing=False,
     )
     type_line(
-        [("     ", "text"), ("├── ", "dim"), ("app-service.bicep", "text"), ("  (Web App)", "dim")],
+        [("     ", "text"), ("├── ", "dim"),
+         ("app-service.bicep", "text"), ("  (Web App)", "dim")],
         typing=False,
     )
     type_line(
-        [("     ", "text"), ("└── ", "dim"), ("monitoring.bicep", "text"), ("   (Log Analytics)", "dim")],
+        [("     ", "text"), ("└── ", "dim"),
+         ("monitoring.bicep", "text"), ("   (Log Analytics)", "dim")],
         typing=False,
     )
     add_frames(PAUSE_MEDIUM)
@@ -370,7 +380,8 @@ def create_workflow_animation() -> list[Image.Image]:
 
     # === Step 4: Implementation ===
     terminal.add_line([])
-    type_line([("@bicep-implement", "purple"), (" - Generating templates...", "dim")])
+    type_line([("@bicep-implement", "purple"),
+              (" - Generating templates...", "dim")])
     add_frames(PAUSE_SHORT)
 
     # Progress
@@ -390,14 +401,18 @@ def create_workflow_animation() -> list[Image.Image]:
 
     # Validation
     terminal.add_line([])
-    type_line([("  ", "text"), ("Running ", "text"), ("bicep build", "blue"), ("...", "dim")])
+    type_line([("  ", "text"), ("Running ", "text"),
+              ("bicep build", "blue"), ("...", "dim")])
     add_frames(PAUSE_MEDIUM)
-    type_line([("  ", "text"), ("✓", "green"), (" Build succeeded: 0 errors", "text")], typing=False)
+    type_line([("  ", "text"), ("✓", "green"),
+              (" Build succeeded: 0 errors", "text")], typing=False)
 
     terminal.add_line([])
-    type_line([("  ", "text"), ("Running ", "text"), ("bicep lint", "blue"), ("...", "dim")])
+    type_line([("  ", "text"), ("Running ", "text"),
+              ("bicep lint", "blue"), ("...", "dim")])
     add_frames(PAUSE_SHORT)
-    type_line([("  ", "text"), ("✓", "green"), (" Lint passed: 0 warnings", "text")], typing=False)
+    type_line([("  ", "text"), ("✓", "green"),
+              (" Lint passed: 0 warnings", "text")], typing=False)
     add_frames(PAUSE_MEDIUM)
 
     # === Final Summary ===
@@ -484,7 +499,8 @@ def main():
     print(f"  → File size: {file_size:.2f} MB")
 
     print(f"\n✅ Demo GIF saved to: {output_path}")
-    print(f"   Duration: ~{len(pil_frames) * FRAME_DURATION / 1000:.1f} seconds")
+    print(
+        f"   Duration: ~{len(pil_frames) * FRAME_DURATION / 1000:.1f} seconds")
 
 
 if __name__ == "__main__":
