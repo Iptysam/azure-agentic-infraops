@@ -12,8 +12,8 @@
 
 | Metric           | Value             |
 | ---------------- | ----------------- |
-| Monthly Estimate | $1,350 - $1,450   |
-| Annual Estimate  | $16,200 - $17,400 |
+| Monthly Estimate | $1,550 - $1,650   |
+| Annual Estimate  | $18,600 - $19,800 |
 | Primary Region   | swedencentral     |
 | Pricing Type     | List Price (PAYG) |
 | WAF Score        | 8.0/10            |
@@ -37,19 +37,19 @@ pie showData
     title Monthly Cost Distribution ($)
     "Compute" : 535
     "Data Services" : 466
+    "Networking" : 376
     "Messaging" : 200
-    "Networking" : 145
     "Security/Mgmt" : 18
 ```
 
 ### Key Design Decisions Affecting Cost
 
-| Decision               | Cost Impact | Business Rationale                    |
-| ---------------------- | ----------- | ------------------------------------- |
-| Zone redundancy (P1v4) | +$206/month | 99.9% SLA for revenue-critical app    |
-| Premium Service Bus    | +$550/month | Private endpoints, order reliability  |
-| Cognitive Search S1    | +$245/month | <100ms product search performance     |
-| Private endpoints (×5) | +$37/month  | PCI-DSS network isolation requirement |
+| Decision                     | Cost Impact | Business Rationale                    |
+| ---------------------------- | ----------- | ------------------------------------- |
+| Zone redundancy (P1v4 Linux) | +$206/month | 99.9% SLA for revenue-critical app    |
+| Premium Service Bus          | +$550/month | Private endpoints, order reliability  |
+| Cognitive Search S1          | +$245/month | <100ms product search performance     |
+| Private endpoints (×5)       | +$37/month  | PCI-DSS network isolation requirement |
 
 ---
 
@@ -57,10 +57,10 @@ pie showData
 
 ### Compute Services
 
-| Resource         | SKU            | Qty | $/Hour | $/Month | Notes                            |
-| ---------------- | -------------- | --- | ------ | ------- | -------------------------------- |
-| App Service Plan | P1v4 (Windows) | 2   | $0.282 | $411.72 | Zone redundant, 2 instances      |
-| Azure Functions  | EP1 (Premium)  | 1   | $0.169 | $123.37 | Elastic Premium, VNet integrated |
+| Resource         | SKU           | Qty | $/Hour | $/Month | Notes                            |
+| ---------------- | ------------- | --- | ------ | ------- | -------------------------------- |
+| App Service Plan | P1v4 (Linux)  | 2   | $0.282 | $411.72 | Zone redundant, 2 instances      |
+| Azure Functions  | EP1 (Premium) | 1   | $0.169 | $123.37 | Elastic Premium, VNet integrated |
 
 **Compute Subtotal**: ~$535/month
 
@@ -88,13 +88,13 @@ pie showData
 
 ### Networking & Edge
 
-| Resource          | SKU      | Config      | $/Month | Notes                       |
-| ----------------- | -------- | ----------- | ------- | --------------------------- |
-| Azure Front Door  | Standard | WAF enabled | $100.00 | Global load balancing + WAF |
-| Private Endpoints | -        | 5 endpoints | $36.50  | $0.01/hour × 5 × 730 hours  |
-| Static Web Apps   | Standard | React SPA   | $9.00   | Frontend hosting            |
+| Resource          | SKU         | Config      | $/Month | Notes                              |
+| ----------------- | ----------- | ----------- | ------- | ---------------------------------- |
+| Azure Front Door  | Premium_AFD | WAF enabled | $330.00 | Global LB + WAF (PCI-DSS required) |
+| Private Endpoints | -           | 5 endpoints | $36.50  | $0.01/hour × 5 × 730 hours         |
+| Static Web Apps   | Standard    | React SPA   | $9.00   | Frontend hosting                   |
 
-**Networking Subtotal**: ~$145/month
+**Networking Subtotal**: ~$376/month
 
 ### Security & Management
 
@@ -113,12 +113,12 @@ pie showData
 
 | Category            | Monthly Cost | % of Total |
 | ------------------- | ------------ | ---------- |
-| Compute             | $535         | 39%        |
-| Data Services       | $466         | 34%        |
-| Messaging           | $200         | 15%        |
-| Networking          | $145         | 11%        |
+| Compute             | $535         | 34%        |
+| Data Services       | $466         | 29%        |
+| Networking          | $376         | 24%        |
+| Messaging           | $200         | 13%        |
 | Security/Management | $18          | 1%         |
-| **Total**           | **~$1,364**  | 100%       |
+| **Total**           | **~$1,595**  | 100%       |
 
 ---
 
@@ -184,11 +184,11 @@ Using `azure_region_recommend` for App Service P1v4:
 
 | Environment | Monthly Cost | Notes                              |
 | ----------- | ------------ | ---------------------------------- |
-| Production  | $1,364       | Full Premium SKUs, zone redundancy |
-| Staging     | $680         | Same SKUs, single instances        |
-| Development | $340         | Basic/Standard SKUs, no redundancy |
+| Production  | $1,595       | Full Premium SKUs, zone redundancy |
+| Staging     | $800         | Same SKUs, single instances        |
+| Development | $400         | Basic/Standard SKUs, no redundancy |
 
-**Total for all environments**: ~$2,384/month
+**Total for all environments**: ~$2,795/month
 
 ---
 

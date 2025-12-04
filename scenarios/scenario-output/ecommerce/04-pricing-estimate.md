@@ -10,27 +10,27 @@
 ```text
 Use the Azure Pricing MCP tools to get real-time pricing for our e-commerce platform
 components. I need accurate costs for:
-- App Service P1v3 in swedencentral
+- App Service P1v4 in swedencentral (zone-redundant)
 - Azure Functions Premium EP1
 - Azure SQL S3 (100 DTU)
 - Azure Cache for Redis C2
 - Azure Cognitive Search S1
 - Service Bus Premium
-- Azure Front Door Premium (PCI-DSS WAF)
+- Azure Front Door Premium (PCI-DSS WAF with managed rules)
 ```
 
 ---
 
 ## ✅ MCP Tool Calls & Results
 
-### 1. App Service Plan P1v3 (Windows)
+### 1. App Service Plan P1v4 (Linux, Zone-Redundant)
 
 **Tool:** `azure_price_search`
 
 ```json
 {
   "service_name": "App Service",
-  "sku_name": "P1v3",
+  "sku_name": "P1v4",
   "region": "swedencentral"
 }
 ```
@@ -123,7 +123,7 @@ components. I need accurate costs for:
 ```json
 {
   "service_name": "App Service",
-  "sku_name": "P1v3",
+  "sku_name": "P1v4",
   "regions_to_compare": [
     "swedencentral",
     "westeurope",
@@ -154,13 +154,13 @@ Based on real-time MCP pricing queries:
 
 | Service                | SKU          | Monthly Cost  | Source                |
 | ---------------------- | ------------ | ------------- | --------------------- |
-| App Service Plan (×2)  | P1v3 Windows | $411.72       | azure_price_search    |
+| App Service Plan (×2)  | P1v4 Linux   | $411.72       | azure_price_search    |
 | Azure Functions        | EP1          | $123.37       | azure_price_search    |
 | Azure Cognitive Search | S1           | $245.28       | azure_price_search    |
 | Azure SQL Database     | S3 (100 DTU) | $145.16       | azure_price_search    |
 | Azure Cache for Redis  | C2 Basic     | $65.70        | azure_price_search    |
 | Service Bus            | Premium 1 MU | $677.08       | azure_price_search    |
-| Azure Front Door       | Premium      | $330.00       | azure_price_search    |
+| Azure Front Door       | Premium_AFD  | $330.00       | azure_price_search    |
 | Private Endpoints (×5) | -            | $36.50        | Calculated            |
 | Key Vault + Logging    | Standard     | $18.00        | azure_price_search    |
 | **TOTAL**              | -            | **$2,212/mo** | Real-time MCP queries |

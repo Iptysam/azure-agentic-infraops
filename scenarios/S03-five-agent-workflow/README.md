@@ -178,7 +178,7 @@ See [DEMO-SCRIPT.md](DEMO-SCRIPT.md) for detailed walkthrough.
 
 ## 📁 Demo Structure
 
-```bicep
+```text
 S03-five-agent-workflow/
 ├── README.md                           # This file
 ├── DEMO-SCRIPT.md                      # Step-by-step presentation guide
@@ -189,11 +189,17 @@ S03-five-agent-workflow/
 │   └── workflow-prompts.md             # All prompts for the workflow stages
 ├── solution/
 │   ├── outputs/
+│   │   ├── README.md                   # Outputs index
 │   │   ├── stage1-architecture-assessment.md   # WAF scores, recommendations
-│   │   ├── stage2-implementation-plan.md       # Resource definitions, dependencies
-│   │   └── stage3-validation-results.md        # Bicep validation outcomes
+│   │   └── stage2-implementation-plan.md       # Resource definitions, dependencies
 │   └── templates/
 │       └── [Link to infra/bicep/contoso-patient-portal/]
+└── [Workflow Output: ../scenario-output/contoso-patient-portal/]
+    ├── 00-plan.md                      # @plan output
+    ├── 01-azure-architect.md           # WAF assessment
+    ├── 02-bicep-plan.md                # Implementation plan
+    ├── 03-bicep-code-gen.md            # Bicep generation
+    └── contoso-cost-estimate.md        # Cost breakdown (~$207/mo)
 ```
 
 ## 🎬 Demo Flow
@@ -399,12 +405,17 @@ By the end of this demo, participants will:
 ### Related Demos
 
 - [Demo 01: Bicep Baseline (S01)](../S01-bicep-baseline/) - Intro to Bicep with Copilot
+- [Demo 04: E-Commerce Platform (S04)](../S04-ecommerce-platform/) - Full workflow with MCP pricing
+
+### Workflow Output Files
+
+- [Contoso Patient Portal Outputs](../scenario-output/contoso-patient-portal/) - Complete workflow documentation
+- [Cost Estimate](../scenario-output/contoso-patient-portal/contoso-cost-estimate.md) - Detailed pricing (~$207/mo)
 
 ### Implementation Files
 
 - [Bicep Templates](../../infra/bicep/contoso-patient-portal/)
-- [Implementation Summary](../../infra/bicep/contoso-patient-portal/IMPLEMENTATION-SUMMARY.md)
-- [Validation Checklist](../../infra/bicep/contoso-patient-portal/VALIDATION-CHECKLIST.md)
+- [Deployment Script](../../infra/bicep/contoso-patient-portal/deploy.ps1)
 
 ## 🎤 Presentation Tips
 
