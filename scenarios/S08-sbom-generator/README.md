@@ -23,7 +23,7 @@ This demo shows how GitHub Copilot acts as your **SBOM expert partner**, teachin
 
 **Perfect for**: Security teams new to SBOMs, compliance officers, IT professionals learning component discovery
 
-## What You'll Learn
+## Learning Objectives
 
 By completing this demo, participants will understand:
 
@@ -82,7 +82,7 @@ By completing this demo, participants will understand:
 - 🎓 **Reusable skills** for future SBOM requests
 - 🤝 **Customer confidence** in delivery quality
 
-## What You'll Learn & Build
+## Learning Objectives: What You'll Build
 
 ```mermaid
 %%{init: {'theme':'neutral'}}%%

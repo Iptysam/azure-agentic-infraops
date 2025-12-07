@@ -535,6 +535,59 @@ This demo was created from an actual test execution of the 5-agent workflow. If 
 
 ---
 
+## 🎓 Trainer Notes
+
+> **For instructors delivering this scenario in workshops or training sessions.**
+
+### Audience Assessment
+
+Before starting, gauge your audience:
+
+| Question | If "Yes" | Adjust Approach |
+|----------|----------|-----------------|
+| "Who has used GitHub Copilot Chat?" | Many hands | Skip basic Copilot intro |
+| "Who has built Bicep/ARM templates?" | Most | Focus on workflow, not syntax |
+| "Who has designed HIPAA architectures?" | Some | They can validate agent recommendations |
+| "Who has used VS Code Plan Agent?" | Few | Spend more time on Step 1 demo |
+
+### Common Stumbling Points
+
+| Phase | Issue | How to Help |
+|-------|-------|-------------|
+| Step 1 (@plan) | "Where's the Plan Agent?" | Show `Ctrl+Shift+A` agent picker |
+| Step 2 (Architect) | "Why no code?" | Emphasize WAF guidance vs implementation |
+| Step 3 (bicep-plan) | "Too much output" | Use collapsible sections, focus on key modules |
+| Step 4 (bicep-implement) | "Validation errors" | Expected! Show iterative refinement |
+| Handoffs | "Lost context between agents" | Demonstrate UI handoff buttons |
+
+### Facilitation Tips
+
+1. **Demo the approval gates** — Show how to review before proceeding
+2. **Use a timer** — 45 minutes is achievable; don't rush Step 2
+3. **Show the generated `.prompt.md` files** — Plans are reusable artifacts
+4. **Validate live** — Run `bicep build` to prove code works
+5. **Compare to manual** — "This took 18 hours without agents"
+
+### Time Adjustments
+
+| Audience | Recommended Time | Focus Areas |
+|----------|------------------|-------------|
+| Architects | 30 min | Skip basics, focus on WAF assessment quality |
+| Developers | 45 min | Full workflow, emphasize code generation |
+| IT Pros new to IaC | 60 min | Extended Step 1, more explanation |
+| Executives (demo only) | 20 min | Abbreviated, focus on time savings |
+
+### Post-Session Resources
+
+Share these with participants:
+
+- 📖 This README and `examples/five-agent-conversation.md`
+- 🎯 [Workflow Guide](../../docs/workflow/WORKFLOW.md)
+- 📚 [VS Code Plan Agent Docs](https://code.visualstudio.com/docs/copilot/chat/chat-planning)
+- 💬 Repository issues for questions
+
+---
+
 **Demo Version**: 1.0.0  
 **Last Updated**: November 18, 2025  
 **Tested With**: GitHub Copilot (Claude Sonnet 4.5), Azure CLI 2.50.0+, Bicep 0.20.0+

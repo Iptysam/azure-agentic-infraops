@@ -21,6 +21,8 @@ whether you're presenting to customers, colleagues, training sessions, or leader
 | ----------------------------------------------------------------- | -------------------------------------------- |
 | [Demo Delivery Guide](demo-delivery-guide.md)                     | Step-by-step guide for running demos         |
 | [Character Reference](character-reference.md)                     | Persona quick-reference for storytelling     |
+| [Workshop Checklist](workshop-checklist.md)                       | Pre/during/post workshop delivery checklist  |
+| [Feedback Survey](feedback-survey.md)                             | Post-workshop feedback collection template   |
 | [Objection Handling](objection-handling.md)                       | Common concerns and evidence-based responses |
 | [ROI Calculator](roi-calculator.md)                               | Build a business case with time savings data |
 | [GitHub Copilot for IT Pros](github-copilot-for-itpros.md)        | Marp presentation slides                     |

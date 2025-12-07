@@ -377,6 +377,59 @@ how module outputs work?
 
 ---
 
+## 🎓 Trainer Notes
+
+> **For instructors delivering this scenario in workshops or training sessions.**
+
+### Audience Assessment
+
+Before starting, gauge your audience:
+
+| Question | If "Yes" | Adjust Approach |
+|----------|----------|-----------------|
+| "Who has used CloudFormation?" | Many hands | Lean into AWS→Azure mapping |
+| "Who has used ARM templates?" | Most | Compare HCL vs JSON syntax |
+| "Who manages state currently?" | Some | Deep dive on remote backend |
+| "Who has multi-cloud experience?" | Few | Emphasize Terraform's portability |
+
+### Common Stumbling Points
+
+| Phase | Issue | How to Help |
+|-------|-------|-------------|
+| Provider config | "Where do credentials go?" | Show `az login` + environment auth |
+| State management | "What if state gets corrupted?" | Explain locking + backup strategies |
+| Module structure | "Why so many files?" | Compare to CloudFormation nested stacks |
+| Environment separation | "Workspaces vs directories?" | Show both patterns, recommend directories |
+| Testing | "How do I test infrastructure?" | Introduce Terratest concepts |
+
+### Facilitation Tips
+
+1. **Draw parallels constantly** — "In CloudFormation, you’d use X; in Terraform, it’s Y"
+2. **Show the state file** — Open `terraform.tfstate` to demystify it
+3. **Demonstrate drift** — Make a Portal change, run `terraform plan` to show detection
+4. **Use `terraform console`** — Live REPL for expression testing
+5. **Keep AWS/GCP examples ready** — For multi-cloud comparison questions
+
+### Time Adjustments
+
+| Audience | Recommended Time | Focus Areas |
+|----------|------------------|-------------|
+| CloudFormation experts | 25 min | Quick syntax, focus on state + modules |
+| ARM template users | 30 min | HCL benefits, provider ecosystem |
+| IaC beginners | 45 min | All phases, extended state discussion |
+| Multi-cloud teams | 35 min | Provider patterns, workspace strategies |
+
+### Post-Session Resources
+
+Share these with participants:
+
+- 📖 This README for reference
+- 🎯 `examples/copilot-terraform-conversation.md` for self-study
+- 📚 [Terraform Azure Learning Path](https://learn.microsoft.com/training/paths/terraform-azure/)
+- 🛠️ [Azure Verified Modules (Terraform)](https://registry.terraform.io/namespaces/Azure)
+
+---
+
 ## Related Resources
 
 - [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)

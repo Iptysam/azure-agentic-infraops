@@ -28,7 +28,7 @@ not just a query generator.
 | Analysis           | "What do these numbers mean?" | "What story does this data tell?"                            |
 | Root Cause         | "I think I found it"          | "How do I validate this conclusion?"                         |
 
-### Sarah's Key Insight
+### Maya's Key Insight
 
 > "Copilot didn't just give me queries. It asked me questions that made me
 > realize I was looking in the wrong place. The breakthrough wasn't faster
@@ -350,9 +350,62 @@ S07-troubleshooting/
 ## Next Steps
 
 1. **Run the Demo**: Follow [DEMO-SCRIPT.md](./DEMO-SCRIPT.md)
-2. **Read Sarah's Conversation**: [examples/copilot-conversation.md](./examples/copilot-conversation.md)
+2. **Read Maya's Conversation**: [examples/copilot-conversation.md](./examples/copilot-conversation.md)
 3. **Learn Prompt Patterns**: [prompts/effective-prompts.md](./prompts/effective-prompts.md)
 4. **Try Your Own Incident**: Apply the 5-phase workflow to your next alert
+
+---
+
+## 🎓 Trainer Notes
+
+> **For instructors delivering this scenario in workshops or training sessions.**
+
+### Audience Assessment
+
+Before starting, gauge your audience:
+
+| Question | If "Yes" | Adjust Approach |
+|----------|----------|-----------------|
+| "Who has written KQL queries?" | Many hands | Skip KQL syntax basics |
+| "Who has been on-call?" | Most | They'll relate to Maya's stress |
+| "Who has used App Insights?" | Some | Can skip portal navigation |
+| "Who has done root cause analysis?" | Few | Emphasize hypothesis-driven approach |
+
+### Common Stumbling Points
+
+| Phase | Issue | How to Help |
+|-------|-------|-------------|
+| Phase 1 | "Just give me the query" | Explain why problem definition matters |
+| Phase 2 | "What logs should I look at?" | Guide discovery questions |
+| Phase 3 | "KQL syntax errors" | Show Copilot error correction |
+| Phase 4 | "Numbers don't make sense" | Walk through statistical interpretation |
+| Phase 5 | "How do I know it's the root cause?" | Teach validation techniques |
+
+### Facilitation Tips
+
+1. **Create urgency** — "It's 2 AM, revenue is bleeding" sets the tone
+2. **Don't give answers** — Let participants discover with Copilot
+3. **Show wrong paths** — Demonstrate how Copilot redirects thinking
+4. **Use real metrics** — $22K/hour makes the scenario tangible
+5. **Celebrate the "aha" moment** — When they realize it's connection pooling
+
+### Time Adjustments
+
+| Audience | Recommended Time | Focus Areas |
+|----------|------------------|-------------|
+| SREs/DevOps | 20 min | Quick scenario, focus on KQL patterns |
+| Developers | 30 min | Extended Phase 2-3, more KQL teaching |
+| IT Ops new to Azure | 40 min | Full 5-phase walkthrough |
+| Mixed experience | 25 min | Standard flow, pair experienced with beginners |
+
+### Post-Session Resources
+
+Share these with participants:
+
+- 📖 This README and `examples/copilot-conversation.md`
+- 🎯 [KQL Quick Reference](https://learn.microsoft.com/azure/data-explorer/kql-quick-reference)
+- 📚 [Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/log-query-overview)
+- 💬 Repository issues for questions
 
 ---
 
