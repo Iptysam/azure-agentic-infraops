@@ -543,22 +543,22 @@ This demo was created from an actual test execution of the 5-agent workflow. If 
 
 Before starting, gauge your audience:
 
-| Question | If "Yes" | Adjust Approach |
-|----------|----------|-----------------|
-| "Who has used GitHub Copilot Chat?" | Many hands | Skip basic Copilot intro |
-| "Who has built Bicep/ARM templates?" | Most | Focus on workflow, not syntax |
-| "Who has designed HIPAA architectures?" | Some | They can validate agent recommendations |
-| "Who has used VS Code Plan Agent?" | Few | Spend more time on Step 1 demo |
+| Question                                | If "Yes"   | Adjust Approach                         |
+| --------------------------------------- | ---------- | --------------------------------------- |
+| "Who has used GitHub Copilot Chat?"     | Many hands | Skip basic Copilot intro                |
+| "Who has built Bicep/ARM templates?"    | Most       | Focus on workflow, not syntax           |
+| "Who has designed HIPAA architectures?" | Some       | They can validate agent recommendations |
+| "Who has used VS Code Plan Agent?"      | Few        | Spend more time on Step 1 demo          |
 
 ### Common Stumbling Points
 
-| Phase | Issue | How to Help |
-|-------|-------|-------------|
-| Step 1 (@plan) | "Where's the Plan Agent?" | Show `Ctrl+Shift+A` agent picker |
-| Step 2 (Architect) | "Why no code?" | Emphasize WAF guidance vs implementation |
-| Step 3 (bicep-plan) | "Too much output" | Use collapsible sections, focus on key modules |
-| Step 4 (bicep-implement) | "Validation errors" | Expected! Show iterative refinement |
-| Handoffs | "Lost context between agents" | Demonstrate UI handoff buttons |
+| Phase                    | Issue                         | How to Help                                    |
+| ------------------------ | ----------------------------- | ---------------------------------------------- |
+| Step 1 (@plan)           | "Where's the Plan Agent?"     | Show `Ctrl+Shift+A` agent picker               |
+| Step 2 (Architect)       | "Why no code?"                | Emphasize WAF guidance vs implementation       |
+| Step 3 (bicep-plan)      | "Too much output"             | Use collapsible sections, focus on key modules |
+| Step 4 (bicep-implement) | "Validation errors"           | Expected! Show iterative refinement            |
+| Handoffs                 | "Lost context between agents" | Demonstrate UI handoff buttons                 |
 
 ### Facilitation Tips
 
@@ -570,12 +570,12 @@ Before starting, gauge your audience:
 
 ### Time Adjustments
 
-| Audience | Recommended Time | Focus Areas |
-|----------|------------------|-------------|
-| Architects | 30 min | Skip basics, focus on WAF assessment quality |
-| Developers | 45 min | Full workflow, emphasize code generation |
-| IT Pros new to IaC | 60 min | Extended Step 1, more explanation |
-| Executives (demo only) | 20 min | Abbreviated, focus on time savings |
+| Audience               | Recommended Time | Focus Areas                                  |
+| ---------------------- | ---------------- | -------------------------------------------- |
+| Architects             | 30 min           | Skip basics, focus on WAF assessment quality |
+| Developers             | 45 min           | Full workflow, emphasize code generation     |
+| IT Pros new to IaC     | 60 min           | Extended Step 1, more explanation            |
+| Executives (demo only) | 20 min           | Abbreviated, focus on time savings           |
 
 ### Post-Session Resources
 

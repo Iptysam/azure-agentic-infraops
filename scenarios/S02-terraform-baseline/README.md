@@ -385,22 +385,22 @@ how module outputs work?
 
 Before starting, gauge your audience:
 
-| Question | If "Yes" | Adjust Approach |
-|----------|----------|-----------------|
-| "Who has used CloudFormation?" | Many hands | Lean into AWS→Azure mapping |
-| "Who has used ARM templates?" | Most | Compare HCL vs JSON syntax |
-| "Who manages state currently?" | Some | Deep dive on remote backend |
-| "Who has multi-cloud experience?" | Few | Emphasize Terraform's portability |
+| Question                          | If "Yes"   | Adjust Approach                   |
+| --------------------------------- | ---------- | --------------------------------- |
+| "Who has used CloudFormation?"    | Many hands | Lean into AWS→Azure mapping       |
+| "Who has used ARM templates?"     | Most       | Compare HCL vs JSON syntax        |
+| "Who manages state currently?"    | Some       | Deep dive on remote backend       |
+| "Who has multi-cloud experience?" | Few        | Emphasize Terraform's portability |
 
 ### Common Stumbling Points
 
-| Phase | Issue | How to Help |
-|-------|-------|-------------|
-| Provider config | "Where do credentials go?" | Show `az login` + environment auth |
-| State management | "What if state gets corrupted?" | Explain locking + backup strategies |
-| Module structure | "Why so many files?" | Compare to CloudFormation nested stacks |
-| Environment separation | "Workspaces vs directories?" | Show both patterns, recommend directories |
-| Testing | "How do I test infrastructure?" | Introduce Terratest concepts |
+| Phase                  | Issue                           | How to Help                               |
+| ---------------------- | ------------------------------- | ----------------------------------------- |
+| Provider config        | "Where do credentials go?"      | Show `az login` + environment auth        |
+| State management       | "What if state gets corrupted?" | Explain locking + backup strategies       |
+| Module structure       | "Why so many files?"            | Compare to CloudFormation nested stacks   |
+| Environment separation | "Workspaces vs directories?"    | Show both patterns, recommend directories |
+| Testing                | "How do I test infrastructure?" | Introduce Terratest concepts              |
 
 ### Facilitation Tips
 
@@ -412,12 +412,12 @@ Before starting, gauge your audience:
 
 ### Time Adjustments
 
-| Audience | Recommended Time | Focus Areas |
-|----------|------------------|-------------|
-| CloudFormation experts | 25 min | Quick syntax, focus on state + modules |
-| ARM template users | 30 min | HCL benefits, provider ecosystem |
-| IaC beginners | 45 min | All phases, extended state discussion |
-| Multi-cloud teams | 35 min | Provider patterns, workspace strategies |
+| Audience               | Recommended Time | Focus Areas                             |
+| ---------------------- | ---------------- | --------------------------------------- |
+| CloudFormation experts | 25 min           | Quick syntax, focus on state + modules  |
+| ARM template users     | 30 min           | HCL benefits, provider ecosystem        |
+| IaC beginners          | 45 min           | All phases, extended state discussion   |
+| Multi-cloud teams      | 35 min           | Provider patterns, workspace strategies |
 
 ### Post-Session Resources
 

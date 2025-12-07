@@ -33,28 +33,28 @@ Use these as discussion prompts for smaller groups.
 
 **Q1. Overall, how would you rate this workshop?** ⭐
 
-| Rating | Description    |
-| ------ | -------------- |
-| 5      | Excellent      |
-| 4      | Very Good      |
-| 3      | Good           |
-| 2      | Fair           |
-| 1      | Needs Work     |
+| Rating | Description |
+| ------ | ----------- |
+| 5      | Excellent   |
+| 4      | Very Good   |
+| 3      | Good        |
+| 2      | Fair        |
+| 1      | Needs Work  |
 
 **Q2. How likely are you to recommend this workshop to a colleague?** (NPS)
 
-| Score | Label           |
-| ----- | --------------- |
-| 10    | Extremely likely |
-| 9     |                 |
-| 8     |                 |
-| 7     |                 |
-| 6     |                 |
-| 5     | Neutral         |
-| 4     |                 |
-| 3     |                 |
-| 2     |                 |
-| 1     |                 |
+| Score | Label             |
+| ----- | ----------------- |
+| 10    | Extremely likely  |
+| 9     |                   |
+| 8     |                   |
+| 7     |                   |
+| 6     |                   |
+| 5     | Neutral           |
+| 4     |                   |
+| 3     |                   |
+| 2     |                   |
+| 1     |                   |
 | 0     | Not at all likely |
 
 ---
@@ -75,29 +75,29 @@ Use these as discussion prompts for smaller groups.
 - [ ] Writing effective prompts for Copilot
 - [ ] Understanding Azure Well-Architected Framework alignment
 - [ ] Working with Bicep/Terraform templates
-- [ ] Other: ____________________
+- [ ] Other: ********\_\_\_\_********
 
 **Q5. Before this workshop, how confident were you using AI-assisted tools
 for infrastructure development?**
 
-| Rating | Description       |
-| ------ | ----------------- |
-| 5      | Very confident    |
+| Rating | Description        |
+| ------ | ------------------ |
+| 5      | Very confident     |
 | 4      | Somewhat confident |
-| 3      | Neutral           |
+| 3      | Neutral            |
 | 2      | Somewhat uncertain |
-| 1      | Not confident     |
+| 1      | Not confident      |
 
 **Q6. After this workshop, how confident are you using AI-assisted tools
 for infrastructure development?**
 
-| Rating | Description       |
-| ------ | ----------------- |
-| 5      | Very confident    |
+| Rating | Description        |
+| ------ | ------------------ |
+| 5      | Very confident     |
 | 4      | Somewhat confident |
-| 3      | Neutral           |
+| 3      | Neutral            |
 | 2      | Somewhat uncertain |
-| 1      | Not confident     |
+| 1      | Not confident      |
 
 ---
 
@@ -172,7 +172,7 @@ in the next 30 days?**
 - [ ] Technical complexity
 - [ ] Unclear business value
 - [ ] Need manager approval
-- [ ] Other: ____________________
+- [ ] Other: ********\_\_\_\_********
 - [ ] No barriers - ready to start!
 
 **Q15. What specific project or task will you try this on first?**
@@ -201,7 +201,7 @@ _Open text field_
 - [ ] Security and compliance automation
 - [ ] Multi-environment deployments
 - [ ] Troubleshooting and debugging
-- [ ] Other: ____________________
+- [ ] Other: ********\_\_\_\_********
 
 **Q19. Any additional comments or feedback?**
 
@@ -229,13 +229,13 @@ _Email field_
 
 ### Key Metrics to Track
 
-| Metric               | Target     | Source     |
-| -------------------- | ---------- | ---------- |
-| Overall Rating       | ≥4.0/5     | Q1         |
-| NPS Score            | ≥50        | Q2         |
-| Confidence Lift      | ≥1.5 points | Q6-Q5      |
-| Intent to Use        | ≥70%       | Q13        |
-| Met Objectives       | ≥80%       | Q3         |
+| Metric          | Target      | Source |
+| --------------- | ----------- | ------ |
+| Overall Rating  | ≥4.0/5      | Q1     |
+| NPS Score       | ≥50         | Q2     |
+| Confidence Lift | ≥1.5 points | Q6-Q5  |
+| Intent to Use   | ≥70%        | Q13    |
+| Met Objectives  | ≥80%        | Q3     |
 
 ### NPS Calculation
 
@@ -270,7 +270,7 @@ Hi [Name],
 
 Thank you for attending today's Agentic InfraOps workshop on [Scenario Name]!
 
-Your feedback helps us improve future sessions. Please take 3-5 minutes to 
+Your feedback helps us improve future sessions. Please take 3-5 minutes to
 share your thoughts:
 
 [Survey Link]
@@ -290,14 +290,14 @@ Best regards,
 
 ## 📈 Feedback Action Matrix
 
-| Feedback Theme          | Score Range | Action                          |
-| ----------------------- | ----------- | ------------------------------- |
-| Pace too fast           | >30%        | Add more checkpoints            |
-| Content too basic       | >20%        | Offer advanced track            |
-| Content too advanced    | >20%        | Add prerequisite assessment     |
-| Low confidence lift     | <1.0        | More hands-on practice          |
-| Low NPS                 | <30         | Comprehensive content review    |
-| High barrier: licensing | >40%        | Provide trial access info       |
+| Feedback Theme          | Score Range | Action                       |
+| ----------------------- | ----------- | ---------------------------- |
+| Pace too fast           | >30%        | Add more checkpoints         |
+| Content too basic       | >20%        | Offer advanced track         |
+| Content too advanced    | >20%        | Add prerequisite assessment  |
+| Low confidence lift     | <1.0        | More hands-on practice       |
+| Low NPS                 | <30         | Comprehensive content review |
+| High barrier: licensing | >40%        | Provide trial access info    |
 
 ---
 

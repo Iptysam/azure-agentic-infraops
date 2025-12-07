@@ -137,10 +137,14 @@ $bicepInstalled = $false
 $bicepVersion = ""
 if ($azInstalled) {
     try {
-        $bicepOutput = az bicep version 2>&1
-        if ($bicepOutput -match '\d+\.\d+\.\d+') {
+        # Use --only-show-errors to suppress warnings, capture just version output
+        $bicepOutput = az bicep version --only-show-errors 2>&1 | Out-String
+        if ($bicepOutput -match 'Bicep CLI version (\d+\.\d+\.\d+)') {
             $bicepInstalled = $true
-            $bicepVersion = "v$($Matches[0])"
+            $bicepVersion = "v$($Matches[1])"
+        } elseif ($bicepOutput -match '(\d+\.\d+\.\d+)') {
+            $bicepInstalled = $true
+            $bicepVersion = "v$($Matches[1])"
         }
     } catch { }
 }
@@ -225,8 +229,12 @@ $results.Optional += Write-CheckResult -Name "Docker" -Passed $dockerInstalled `
     -Details $dockerVersion `
     -Remediation "Install Docker Desktop from https://docker.com/products/docker-desktop"
 
-# markdownlint
-$mdlintInstalled = Test-Command "markdownlint" -or (Test-Path "node_modules/.bin/markdownlint")
+# markdownlint (check global, local binary, or npm script)
+$mdlintInstalled = (Test-Command "markdownlint-cli2") -or 
+    (Test-Command "markdownlint") -or 
+    (Test-Path "node_modules/.bin/markdownlint-cli2") -or
+    (Test-Path "node_modules/.bin/markdownlint") -or
+    ((Test-Path "package.json") -and ((Get-Content "package.json" -Raw) -match '"lint:md"'))
 $results.Optional += Write-CheckResult -Name "markdownlint-cli2" -Passed $mdlintInstalled `
     -Remediation "Run: npm install"
 

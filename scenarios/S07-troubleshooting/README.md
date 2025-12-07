@@ -364,22 +364,22 @@ S07-troubleshooting/
 
 Before starting, gauge your audience:
 
-| Question | If "Yes" | Adjust Approach |
-|----------|----------|-----------------|
-| "Who has written KQL queries?" | Many hands | Skip KQL syntax basics |
-| "Who has been on-call?" | Most | They'll relate to Maya's stress |
-| "Who has used App Insights?" | Some | Can skip portal navigation |
-| "Who has done root cause analysis?" | Few | Emphasize hypothesis-driven approach |
+| Question                            | If "Yes"   | Adjust Approach                      |
+| ----------------------------------- | ---------- | ------------------------------------ |
+| "Who has written KQL queries?"      | Many hands | Skip KQL syntax basics               |
+| "Who has been on-call?"             | Most       | They'll relate to Maya's stress      |
+| "Who has used App Insights?"        | Some       | Can skip portal navigation           |
+| "Who has done root cause analysis?" | Few        | Emphasize hypothesis-driven approach |
 
 ### Common Stumbling Points
 
-| Phase | Issue | How to Help |
-|-------|-------|-------------|
-| Phase 1 | "Just give me the query" | Explain why problem definition matters |
-| Phase 2 | "What logs should I look at?" | Guide discovery questions |
-| Phase 3 | "KQL syntax errors" | Show Copilot error correction |
-| Phase 4 | "Numbers don't make sense" | Walk through statistical interpretation |
-| Phase 5 | "How do I know it's the root cause?" | Teach validation techniques |
+| Phase   | Issue                                | How to Help                             |
+| ------- | ------------------------------------ | --------------------------------------- |
+| Phase 1 | "Just give me the query"             | Explain why problem definition matters  |
+| Phase 2 | "What logs should I look at?"        | Guide discovery questions               |
+| Phase 3 | "KQL syntax errors"                  | Show Copilot error correction           |
+| Phase 4 | "Numbers don't make sense"           | Walk through statistical interpretation |
+| Phase 5 | "How do I know it's the root cause?" | Teach validation techniques             |
 
 ### Facilitation Tips
 
@@ -391,12 +391,12 @@ Before starting, gauge your audience:
 
 ### Time Adjustments
 
-| Audience | Recommended Time | Focus Areas |
-|----------|------------------|-------------|
-| SREs/DevOps | 20 min | Quick scenario, focus on KQL patterns |
-| Developers | 30 min | Extended Phase 2-3, more KQL teaching |
-| IT Ops new to Azure | 40 min | Full 5-phase walkthrough |
-| Mixed experience | 25 min | Standard flow, pair experienced with beginners |
+| Audience            | Recommended Time | Focus Areas                                    |
+| ------------------- | ---------------- | ---------------------------------------------- |
+| SREs/DevOps         | 20 min           | Quick scenario, focus on KQL patterns          |
+| Developers          | 30 min           | Extended Phase 2-3, more KQL teaching          |
+| IT Ops new to Azure | 40 min           | Full 5-phase walkthrough                       |
+| Mixed experience    | 25 min           | Standard flow, pair experienced with beginners |
 
 ### Post-Session Resources
 

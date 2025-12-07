@@ -28,11 +28,13 @@ Use this before, during, and after your sessions to ensure smooth delivery.
   ```
 
 - [ ] **Verify Azure subscription access**
+
   - [ ] Contributor role on target subscription
   - [ ] No blocking policies for demo resources
   - [ ] Sufficient quota in `swedencentral` region
 
 - [ ] **Test VS Code setup**
+
   - [ ] GitHub Copilot extension active
   - [ ] Copilot Chat responding
   - [ ] Custom agents visible (Ctrl+Shift+A)
@@ -45,11 +47,13 @@ Use this before, during, and after your sessions to ensure smooth delivery.
 ### Content Review
 
 - [ ] **Review scenario README**
+
   - [ ] Understand learning objectives
   - [ ] Note time estimates per section
   - [ ] Review "Common Stumbling Points" in Trainer Notes
 
 - [ ] **Prepare talking points**
+
   - [ ] Character backstory (see `character-reference.md`)
   - [ ] Key value propositions to emphasize
   - [ ] Real-world examples to share
@@ -61,11 +65,13 @@ Use this before, during, and after your sessions to ensure smooth delivery.
 ### Logistics
 
 - [ ] **Confirm attendee list**
+
   - [ ] Number of participants
   - [ ] Experience levels
   - [ ] Specific interests or use cases
 
 - [ ] **Prepare materials**
+
   - [ ] Slide deck (if using)
   - [ ] Handout: Quick reference card
   - [ ] Feedback survey link ready
@@ -82,6 +88,7 @@ Use this before, during, and after your sessions to ensure smooth delivery.
 ### Technical Setup
 
 - [ ] **Fresh terminal/shell session**
+
   - [ ] No leftover environment variables
   - [ ] Clean working directory
 
@@ -93,6 +100,7 @@ Use this before, during, and after your sessions to ensure smooth delivery.
   ```
 
 - [ ] **VS Code clean state**
+
   - [ ] Close unnecessary files/tabs
   - [ ] Reset Copilot Chat history
   - [ ] Set font size for visibility (Ctrl+= to zoom)
@@ -105,11 +113,13 @@ Use this before, during, and after your sessions to ensure smooth delivery.
 ### Screen Setup
 
 - [ ] **Display settings**
+
   - [ ] Resolution appropriate for audience
   - [ ] Dark/light theme visible
   - [ ] Terminal font size readable
 
 - [ ] **Notifications off**
+
   - [ ] System notifications disabled
   - [ ] Teams/Slack DND mode
   - [ ] Email closed
@@ -122,6 +132,7 @@ Use this before, during, and after your sessions to ensure smooth delivery.
 ### Mental Preparation
 
 - [ ] **Review first 10 minutes**
+
   - [ ] Opening hook ready
   - [ ] Character introduction practiced
   - [ ] First prompt memorized
@@ -136,11 +147,13 @@ Use this before, during, and after your sessions to ensure smooth delivery.
 ### Opening (First 10 Minutes)
 
 - [ ] **Welcome and context**
+
   - [ ] Introduce yourself
   - [ ] State learning objectives
   - [ ] Set expectations (interactive, questions welcome)
 
 - [ ] **Introduce the character**
+
   - [ ] Name and role
   - [ ] Challenge they're facing
   - [ ] Why this matters to them
@@ -152,16 +165,19 @@ Use this before, during, and after your sessions to ensure smooth delivery.
 ### Core Delivery
 
 - [ ] **Pace check every 15 minutes**
+
   - [ ] On schedule?
   - [ ] Engagement level?
   - [ ] Questions piling up?
 
 - [ ] **Interactive elements**
+
   - [ ] Ask prediction questions before Copilot responses
   - [ ] "What do you think happens next?"
   - [ ] "How would you approach this?"
 
 - [ ] **Capture questions**
+
   - [ ] Note complex questions for follow-up
   - [ ] Park tangential topics professionally
 
@@ -194,10 +210,12 @@ Use this before, during, and after your sessions to ensure smooth delivery.
 ### Immediate (Within 30 Minutes)
 
 - [ ] **Send feedback survey**
+
   - [ ] Use template from `feedback-survey.md`
   - [ ] Personalize thank you message
 
 - [ ] **Share resources**
+
   - [ ] Repository link
   - [ ] Documentation links
   - [ ] Recording (if applicable)
@@ -211,11 +229,13 @@ Use this before, during, and after your sessions to ensure smooth delivery.
 ### Within 24 Hours
 
 - [ ] **Personal notes**
+
   - [ ] What worked well?
   - [ ] What could improve?
   - [ ] Interesting questions asked?
 
 - [ ] **Follow up on parking lot items**
+
   - [ ] Complex questions promised to answer
   - [ ] Resources to share
 
@@ -228,6 +248,7 @@ Use this before, during, and after your sessions to ensure smooth delivery.
 
 - [ ] **Review feedback survey responses**
 - [ ] **Report metrics** (if tracking)
+
   - [ ] Attendance
   - [ ] Satisfaction scores
   - [ ] Net Promoter Score
@@ -284,15 +305,15 @@ Use this before, during, and after your sessions to ensure smooth delivery.
 
 ### Keyboard Shortcuts
 
-| Action              | Shortcut        |
-| ------------------- | --------------- |
-| Open Copilot Chat   | Ctrl+Shift+I    |
-| Select Agent        | Ctrl+Shift+A    |
-| Accept suggestion   | Tab             |
-| Dismiss suggestion  | Esc             |
-| Zoom in VS Code     | Ctrl+=          |
-| Zoom out VS Code    | Ctrl+-          |
-| Toggle terminal     | Ctrl+`          |
+| Action             | Shortcut     |
+| ------------------ | ------------ |
+| Open Copilot Chat  | Ctrl+Shift+I |
+| Select Agent       | Ctrl+Shift+A |
+| Accept suggestion  | Tab          |
+| Dismiss suggestion | Esc          |
+| Zoom in VS Code    | Ctrl+=       |
+| Zoom out VS Code   | Ctrl+-       |
+| Toggle terminal    | Ctrl+`       |
 
 ### Important Links
 
