@@ -4,8 +4,8 @@ This folder contains Azure pricing examples generated for various infrastructure
 
 ## Available Estimates
 
-| Estimate | Description |
-| -------- | ----------- |
+| Estimate                                               | Description                                       |
+| ------------------------------------------------------ | ------------------------------------------------- |
 | [E-Commerce Cost Estimate](ecommerce-cost-estimate.md) | PCI-DSS compliant retail platform (~$1,595/month) |
 
 ## About Cost Estimates

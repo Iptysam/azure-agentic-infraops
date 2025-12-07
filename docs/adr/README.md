@@ -4,12 +4,12 @@ This folder contains Architecture Decision Records documenting key design choice
 
 ## Available ADRs
 
-| ADR | Title |
-| --- | ----- |
-| [ADR-001](ADR-001-agent-workflow-design.md) | Agent Workflow Design |
+| ADR                                           | Title                   |
+| --------------------------------------------- | ----------------------- |
+| [ADR-001](ADR-001-agent-workflow-design.md)   | Agent Workflow Design   |
 | [ADR-002](ADR-002-mcp-pricing-integration.md) | MCP Pricing Integration |
-| [ADR-003](ADR-003-avm-first-approach.md) | AVM-First Approach |
-| [ADR-004](ADR-004-region-defaults.md) | Region Defaults |
+| [ADR-003](ADR-003-avm-first-approach.md)      | AVM-First Approach      |
+| [ADR-004](ADR-004-region-defaults.md)         | Region Defaults         |
 
 ## About ADRs
 
