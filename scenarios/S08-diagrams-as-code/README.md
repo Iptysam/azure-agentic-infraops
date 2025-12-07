@@ -1,6 +1,7 @@
 # S08: Diagrams-as-Code with GitHub Copilot
 
-> **🤖 Agent Available**: This scenario is also available as the `diagram-generator` agent for integration with the 4-step workflow. See `.github/agents/diagram-generator.agent.md`.
+> **🤖 Agent Available**: This scenario is also available as the `diagram-generator` agent for integration with
+> the 4-step workflow. See `.github/agents/diagram-generator.agent.md`.
 
 ---
 
@@ -42,6 +43,16 @@ By the end of this demo, participants will understand:
 5. **Connection operators** (`>>`, `<<`, `Edge()`) and styling
 6. **Best practices** for team adoption and CI/CD integration
 7. **Trade-offs** vs. traditional tools like Visio
+
+## Related Assets
+
+| Resource                                                                   | Description                     |
+| -------------------------------------------------------------------------- | ------------------------------- |
+| [Diagram Generator Agent](../../.github/agents/diagram-generator.agent.md) | Agent definition                |
+| [Diagrams Output](../../docs/diagrams/)                                    | Generated architecture diagrams |
+| [Workflow Guide](../../docs/workflow/WORKFLOW.md)                          | Four-step agent workflow        |
+| [Presenter Toolkit](../../docs/presenter-toolkit/)                         | Demo delivery guides            |
+| [S03: Five-Agent Workflow](../S03-five-agent-workflow/)                    | Integration with main workflow  |
 
 ## The Challenge: Traditional Diagramming Pain Points
 

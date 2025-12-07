@@ -1,11 +1,13 @@
 ---
-description: 'Best practices for Azure infrastructure solutions using Terraform and Azure Verified Modules'
-applyTo: '**/*.terraform, **/*.tf, **/*.tfvars, **/*.tflint.hcl, **/*.tfstate, **/*.tf.json, **/*.tfvars.json'
+description: "Best practices for Azure infrastructure solutions using Terraform and Azure Verified Modules"
+applyTo: "**/*.terraform, **/*.tf, **/*.tfvars, **/*.tflint.hcl, **/*.tfstate, **/*.tf.json, **/*.tfvars.json"
 ---
 
 # Azure Terraform Best Practices
 
-Guidelines for creating secure, maintainable, and Well-Architected Azure infrastructure using Terraform. Leverage Azure Verified Modules (AVM) whenever available to reduce maintenance burden and align with Microsoft best practices.
+Guidelines for creating secure, maintainable, and Well-Architected Azure infrastructure using Terraform.
+Leverage Azure Verified Modules (AVM) whenever available to reduce maintenance burden and align with
+Microsoft best practices.
 
 ## General Instructions
 
@@ -18,18 +20,18 @@ Guidelines for creating secure, maintainable, and Well-Architected Azure infrast
 
 ## Anti-Patterns to Avoid
 
-| Category | Anti-Pattern | Why to Avoid | Solution |
-|----------|--------------|--------------|----------|
-| Configuration | Hardcoded values | Reduces reusability | Use variables with defaults |
-| Configuration | `terraform import` as workflow | Creates drift risk | Define resources in code |
-| Configuration | Complex conditionals | Hard to maintain | Simplify or use modules |
-| Configuration | `local-exec` provisioners | Unreliable, not portable | Use native resources |
-| Security | Secrets in state files | Security vulnerability | Use ephemeral secrets (v1.11+) |
-| Security | Overly permissive IAM | Violates least privilege | Scope permissions narrowly |
-| Security | Default passwords/keys | Security risk | Use managed identities |
-| Operational | Direct production changes | Bypasses review | Use CI/CD pipelines |
-| Operational | Manual resource changes | Causes state drift | All changes via Terraform |
-| Operational | Local machine deployments | No audit trail | Use automation pipelines |
+| Category      | Anti-Pattern                   | Why to Avoid             | Solution                       |
+| ------------- | ------------------------------ | ------------------------ | ------------------------------ |
+| Configuration | Hardcoded values               | Reduces reusability      | Use variables with defaults    |
+| Configuration | `terraform import` as workflow | Creates drift risk       | Define resources in code       |
+| Configuration | Complex conditionals           | Hard to maintain         | Simplify or use modules        |
+| Configuration | `local-exec` provisioners      | Unreliable, not portable | Use native resources           |
+| Security      | Secrets in state files         | Security vulnerability   | Use ephemeral secrets (v1.11+) |
+| Security      | Overly permissive IAM          | Violates least privilege | Scope permissions narrowly     |
+| Security      | Default passwords/keys         | Security risk            | Use managed identities         |
+| Operational   | Direct production changes      | Bypasses review          | Use CI/CD pipelines            |
+| Operational   | Manual resource changes        | Causes state drift       | All changes via Terraform      |
+| Operational   | Local machine deployments      | No audit trail           | Use automation pipelines       |
 
 ---
 
@@ -37,13 +39,13 @@ Guidelines for creating secure, maintainable, and Well-Architected Azure infrast
 
 Structure Terraform configurations with logical file separation:
 
-| File | Purpose |
-|------|---------|
-| `main.tf` | Core resources |
-| `variables.tf` | Input variables |
-| `outputs.tf` | Output values |
-| `terraform.tf` | Provider configuration |
-| `locals.tf` | Local values and expressions |
+| File           | Purpose                      |
+| -------------- | ---------------------------- |
+| `main.tf`      | Core resources               |
+| `variables.tf` | Input variables              |
+| `outputs.tf`   | Output values                |
+| `terraform.tf` | Provider configuration       |
+| `locals.tf`    | Local values and expressions |
 
 - Use `snake_case` for variables and module names
 - Run `terraform fmt` to ensure consistent formatting
@@ -51,7 +53,8 @@ Structure Terraform configurations with logical file separation:
 
 ## Azure Verified Modules (AVM)
 
-Use Azure Verified Modules for all significant resources. AVMs align with the Well-Architected Framework and reduce maintenance burden.
+Use Azure Verified Modules for all significant resources. AVMs align with the Well-Architected Framework
+and reduce maintenance burden.
 
 - Discover AVMs at [Azure Verified Modules Registry](https://registry.terraform.io/namespaces/Azure)
 - If no AVM exists, create resources "in the style of" AVM for consistency
@@ -61,13 +64,13 @@ Use Azure Verified Modules for all significant resources. AVMs align with the We
 
 Follow AVM-aligned coding standards:
 
-| Standard | Rule | Reference |
-|----------|------|-----------|
-| Variable naming | Use `snake_case` for all names | TFNFR4, TFNFR16 |
-| Type declarations | Explicit types on all variables | TFNFR18 |
-| Descriptions | Comprehensive descriptions required | TFNFR17 |
-| Sensitive values | Mark sensitive appropriately | TFNFR22 |
-| Dynamic blocks | Use for optional nested objects | TFNFR12 |
+| Standard          | Rule                                | Reference       |
+| ----------------- | ----------------------------------- | --------------- |
+| Variable naming   | Use `snake_case` for all names      | TFNFR4, TFNFR16 |
+| Type declarations | Explicit types on all variables     | TFNFR18         |
+| Descriptions      | Comprehensive descriptions required | TFNFR17         |
+| Sensitive values  | Mark sensitive appropriately        | TFNFR22         |
+| Dynamic blocks    | Use for optional nested objects     | TFNFR12         |
 
 ## Secrets Management
 
@@ -122,7 +125,7 @@ locals {
     Owner       = var.owner
     CreatedBy   = "terraform"
   }
-  
+
   resource_name_prefix = "${var.project_name}-${var.environment}"
   location_short       = substr(var.location, 0, 3)
 }
@@ -130,12 +133,12 @@ locals {
 
 ## Terraform Best Practices
 
-| Practice | Rule | Notes |
-|----------|------|-------|
-| Dependencies | Remove redundant `depends_on` | Use implicit references |
-| Iteration | `count` for 0-1, `for_each` for many | Maps provide stable addresses |
-| Data sources | OK in root modules | Avoid in reusable modules |
-| Versioning | Target latest stable versions | Specify in terraform.tf |
+| Practice     | Rule                                 | Notes                         |
+| ------------ | ------------------------------------ | ----------------------------- |
+| Dependencies | Remove redundant `depends_on`        | Use implicit references       |
+| Iteration    | `count` for 0-1, `for_each` for many | Maps provide stable addresses |
+| Data sources | OK in root modules                   | Avoid in reusable modules     |
+| Versioning   | Target latest stable versions        | Specify in terraform.tf       |
 
 ## Folder Structure
 

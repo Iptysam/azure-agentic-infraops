@@ -32,7 +32,10 @@ handoffs:
 
 You are an expert in Azure Cloud Engineering, specializing in Azure Bicep Infrastructure as Code.
 
-Use this agent to generate near-production-ready Bicep templates following Azure Verified Modules (AVM) standards. This agent creates modular, secure, and well-documented infrastructure code with proper naming conventions, tagging, and validation. Always work from an implementation plan when available.
+Use this agent to generate near-production-ready Bicep templates following
+Azure Verified Modules (AVM) standards. This agent creates modular, secure,
+and well-documented infrastructure code with proper naming conventions, tagging, and validation.
+Always work from an implementation plan when available.
 
 ## Key tasks
 
@@ -353,7 +356,8 @@ resource diagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' 
 }
 ```
 
-**Why**: The `scope` property requires a resource symbolic reference, not a string. Resource IDs are strings and cause BCP036 errors.
+**Why**: The `scope` property requires a resource symbolic reference, not a string.
+Resource IDs are strings and cause BCP036 errors.
 
 ### Azure Verified Modules (AVM) MANDATORY
 
@@ -539,7 +543,8 @@ output appServiceName string = appService.name
 output principalId string = appService.identity.principalId
 ```
 
-**Why**: Resource names are required for `existing` keyword references in downstream modules (e.g., diagnostic settings). Resource IDs alone cause BCP036 errors when used as `scope`.
+**Why**: Resource names are required for `existing` keyword references in downstream modules
+(e.g., diagnostic settings). Resource IDs alone cause BCP036 errors when used as `scope`.
 
 ### Why This Matters
 

@@ -2,11 +2,19 @@
 
 ## 🎯 Overview
 
-This demo showcases GitHub Copilot's **4-step agent workflow** for designing and implementing Azure infrastructure, starting with VS Code's built-in **Plan Agent** and handing off to specialized custom agents. Each step includes an **approval gate** where you review and approve before proceeding. It demonstrates how architects and IT professionals can leverage plan-driven development to move from business requirements to near-production-ready Bicep templates through a structured, iterative process.
+This demo showcases GitHub Copilot's **4-step agent workflow** for designing and implementing Azure infrastructure,
+starting with VS Code's built-in **Plan Agent** and handing off to specialized custom agents.
+Each step includes an **approval gate** where you review and approve before proceeding.
+It demonstrates how architects and IT professionals can leverage plan-driven development
+to move from business requirements to near-production-ready Bicep templates through a structured, iterative process.
 
-> **Working Implementation**: The complete workflow output is available as near-production-ready infrastructure in [`../../infra/bicep/contoso-patient-portal/`](../../infra/bicep/contoso-patient-portal/) (1,070 lines of Bicep, 10 modules).
+> **Working Implementation**: The complete workflow output is available as near-production-ready infrastructure
+> in [`../../infra/bicep/contoso-patient-portal/`](../../infra/bicep/contoso-patient-portal/)
+> (1,070 lines of Bicep, 10 modules).
 >
-> **📖 Official Documentation**: See [VS Code Plan Agent Documentation](https://code.visualstudio.com/docs/copilot/chat/chat-planning) for complete details on the built-in planning features.
+> **📖 Official Documentation**:
+> See [VS Code Plan Agent Documentation](https://code.visualstudio.com/docs/copilot/chat/chat-planning)
+> for complete details on the built-in planning features.
 
 **Target Audience**: Solution Architects, Cloud Architects, Infrastructure Engineers, IT Professionals
 
@@ -36,11 +44,22 @@ Traditional infrastructure design involves:
 - 📊 **Progress tracking**: Built-in todo list tracks completion during complex tasks
 - 🎨 **Optional diagrams**: Generate Python architecture diagrams at any step
 
+## Related Assets
+
+| Resource                                                            | Description                          |
+| ------------------------------------------------------------------- | ------------------------------------ |
+| [Contoso Patient Portal](../../infra/bicep/contoso-patient-portal/) | Working implementation (1,070 lines) |
+| [Workflow Guide](../../docs/workflow/WORKFLOW.md)                   | Complete workflow documentation      |
+| [ADR-003: AVM-First](../../docs/adr/ADR-003-avm-first-approach.md)  | Module selection rationale           |
+| [Presenter Toolkit](../../docs/presenter-toolkit/)                  | Demo delivery guides                 |
+| [S04: E-Commerce](../S04-ecommerce-platform/)                       | Next: full workflow with deployment  |
+
 ## 🤖 The Four Steps (Plus Optional Agents)
 
 ### Step 1: Plan Agent (`@plan`) - _VS Code Built-in - Start Here_
 
-> **This is a built-in VS Code feature**, not a custom agent. It's designed to research and plan before any code changes are made.
+> **This is a built-in VS Code feature**, not a custom agent.
+> It's designed to research and plan before any code changes are made.
 
 - **Purpose**: Research tasks comprehensively using read-only tools and codebase analysis before implementation
 - **Input**: High-level tasks (features, refactoring, bugs, infrastructure projects)
@@ -70,7 +89,8 @@ Traditional infrastructure design involves:
 - "Create infrastructure for a multi-tier web application with Azure App Service and SQL Database"
 - "Implement zone-redundant deployment for existing application"
 
-**Usage**: Always start with `@plan` for multi-step infrastructure projects. The plan ensures all requirements are considered before any code changes.
+**Usage**: Always start with `@plan` for multi-step infrastructure projects.
+The plan ensures all requirements are considered before any code changes.
 
 ### Step 2: Azure Principal Architect (`azure-principal-architect`)
 
@@ -172,7 +192,8 @@ Traditional infrastructure design involves:
    | 3     | `bicep-implement`           | 10-15 min | Modular Bicep templates                  |
    | 4     | Validation & Deployment     | 5-10 min  | `bicep build` + `bicep lint`             |
 
-5. **Pro Tip**: Use the UI handoff controls at the end of each agent's response to seamlessly transition to the next agent with full context preserved.
+5. **Pro Tip**: Use the UI handoff controls at the end of each agent's response to seamlessly transition
+   to the next agent with full context preserved.
 
 See [DEMO-SCRIPT.md](DEMO-SCRIPT.md) for detailed walkthrough.
 
@@ -229,7 +250,8 @@ S03-five-agent-workflow/
    - Click **"Save Plan"** → Generates `*.prompt.md` file for later use
    - OR Click **"Hand off to implementation agent"** → Proceed to architecture
 
-**Key Takeaway**: Plan Agent researches comprehensively before any code changes. The plan becomes a reusable `*.prompt.md` file.
+**Key Takeaway**: Plan Agent researches comprehensively before any code changes.
+The plan becomes a reusable `*.prompt.md` file.
 
 ### Part 1: Architecture Design (10-15 minutes)
 
@@ -395,12 +417,14 @@ By the end of this demo, participants will:
 
 ### Documentation
 
-- [VS Code Plan Agent Documentation](https://code.visualstudio.com/docs/copilot/chat/chat-planning) - **Official VS Code docs for built-in Plan Agent**
+- [VS Code Plan Agent Documentation](https://code.visualstudio.com/docs/copilot/chat/chat-planning) -
+  **Official VS Code docs for built-in Plan Agent**
 - [Workflow Guide](../../docs/workflow/WORKFLOW.md) - Complete documentation with agent handoffs
 - [Custom Agent Configuration](../../.github/agents/) - Agent definitions with swedencentral defaults
 - [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/)
 - [Azure Verified Modules](https://azure.github.io/Azure-Verified-Modules/)
-- [Context Engineering Guide](https://code.visualstudio.com/docs/copilot/guides/context-engineering-guide) - Best practices for AI-assisted development
+- [Context Engineering Guide](https://code.visualstudio.com/docs/copilot/guides/context-engineering-guide) -
+  Best practices for AI-assisted development
 
 ### Related Demos
 
@@ -444,13 +468,16 @@ By the end of this demo, participants will:
 A: Agents are Azure-specific, but the workflow pattern applies. Similar agents could be built for AWS/GCP.
 
 **Q: Can I customize agent behavior?**
-A: Yes! Edit agent.md files in `.github/agents/` to adjust instructions, add patterns, or change output formats.
+A: Yes! Edit agent.md files in `.github/agents/` to adjust instructions, add patterns,
+or change output formats.
 
 **Q: What if I disagree with agent recommendations?**
-A: Agents provide guidance, not mandates. You can edit outputs before proceeding to next stage or regenerate with different constraints.
+A: Agents provide guidance, not mandates.
+You can edit outputs before proceeding to next stage or regenerate with different constraints.
 
 **Q: Does this replace architects?**
-A: No - it augments their capabilities. Architects still make decisions; agents handle time-consuming documentation and code generation.
+A: No - it augments their capabilities. Architects still make decisions;
+agents handle time-consuming documentation and code generation.
 
 ## 🧪 Variations to Try
 

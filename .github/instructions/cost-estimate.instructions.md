@@ -152,7 +152,9 @@ investments are necessary. Link costs to business outcomes.}
 
 Include a visual diagram and brief description:
 
-````markdown
+<!-- markdownlint-disable MD013 -->
+
+```markdown
 ## Architecture Overview
 
 ### Cost Distribution
@@ -175,7 +177,9 @@ pie showData
 | Zone redundancy   | +$X/month 📈 | 99.9% SLA requirement    | Required |
 | Premium SKUs      | +$X/month 📈 | Performance requirements | Required |
 | Private endpoints | +$X/month    | Security/compliance      | Required |
-````
+```
+
+<!-- markdownlint-enable MD013 -->
 
 ### 6. Risk Indicators
 
@@ -276,7 +280,7 @@ Organize costs by category with clear subtotals and emoji prefixes:
 
 ### 10. Monthly Cost Summary with Visual
 
-````markdown
+```markdown
 ## 📋 Monthly Cost Summary
 
 | Category         | Monthly Cost | % of Total | Trend |
@@ -296,7 +300,7 @@ Cost Distribution:
 📨 Messaging    ██████░░░░░░░░░░░░░░░░░░░░░░░░ 13%
 🔐 Security     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  1%
 ​`
-````
+```
 
 ### 11. Regional Comparison
 

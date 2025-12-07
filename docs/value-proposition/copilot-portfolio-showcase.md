@@ -18,7 +18,9 @@ with limited coding experience leverages GitHub Copilot as an efficiency multipl
 - ❌ I had minimal Infrastructure-as-Code skills before GitHub Copilot
 - ✅ I have a strong understanding of what needs to be built, but struggled with _how_
 
-**The transformation:** GitHub Copilot bridged the gap between my architectural vision and actual implementation, enabling me to create production-quality code, documentation, and learning materials.
+**The transformation:** GitHub Copilot bridged the gap between my architectural vision and
+actual implementation, enabling me to create production-quality code, documentation, and
+learning materials.
 
 ---
 
@@ -217,13 +219,17 @@ including licensing management, monitoring, and onboarding automation.
 
 ### What Made the Difference
 
-1. **Context is Everything:** Copilot understood my Azure architecture context and generated code that followed best practices I wouldn't have known to implement.
+1. **Context is Everything:** Copilot understood my Azure architecture context and generated
+   code that followed best practices I wouldn't have known to implement.
 
-2. **Documentation at Scale:** Writing comprehensive docs for 5 projects would have taken months. With Copilot, I maintained consistent quality across thousands of lines of documentation.
+2. **Documentation at Scale:** Writing comprehensive docs for 5 projects would have taken
+   months. With Copilot, I maintained consistent quality across thousands of lines of documentation.
 
-3. **Learning While Building:** Every suggestion taught me something new. I went from not knowing Bash scripting to writing complex automation pipelines.
+3. **Learning While Building:** Every suggestion taught me something new. I went from not
+   knowing Bash scripting to writing complex automation pipelines.
 
-4. **Error Prevention:** Copilot helped me avoid common pitfalls in areas where I had no experience (Kubernetes, PostgreSQL configuration, Docker networking).
+4. **Error Prevention:** Copilot helped me avoid common pitfalls in areas where I had no
+   experience (Kubernetes, PostgreSQL configuration, Docker networking).
 
 ### The Multiplier Effect
 

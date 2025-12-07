@@ -20,6 +20,22 @@ Before you begin, ensure you have:
 
 ---
 
+## Defaults for IT Pros
+
+> **Region**: `swedencentral` (fallback: `germanywestcentral` for quota issues). See
+> [ADR-004](../adr/ADR-004-region-defaults.md) for latency/compliance guidance.
+>
+> **Naming**: Unique suffix via `uniqueString(resourceGroup().id)` — Key Vault ≤24 chars, Storage ≤24 chars (no
+> hyphens).
+>
+> **Modules**: AVM-first ([ADR-003](../adr/ADR-003-avm-first-approach.md)) for policy-compliant, repeatable
+> deployments.
+>
+> **Agent Workflow**: Four-step flow (`@plan` → `azure-principal-architect` → `bicep-plan` → `bicep-implement`). See
+> [Workflow Guide](../workflow/WORKFLOW.md) for details.
+
+---
+
 ## Step 1: Clone and Open
 
 ```bash

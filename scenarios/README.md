@@ -6,12 +6,23 @@
 
 ---
 
+## Defaults & Workflow
+
+> **Region**: `swedencentral` (fallback: `germanywestcentral`). See [ADR-004](../docs/adr/ADR-004-region-defaults.md).
+>
+> **Modules**: AVM-first for policy-compliant deployments. See [ADR-003](../docs/adr/ADR-003-avm-first-approach.md).
+>
+> **Agent Workflow**: `@plan` → `azure-principal-architect` → `bicep-plan` → `bicep-implement`. See
+> [Workflow Guide](../docs/workflow/WORKFLOW.md).
+
+---
+
 ## Quick Start
 
 | If you're...                     | Start with                                              |
 | -------------------------------- | ------------------------------------------------------- |
 | **New to Copilot**               | [S01 Bicep Baseline](#s01-bicep-baseline)               |
-| **Want a quick demo**            | [S11 Quick Demos](S11-quick-demos/) - 15-30 min prompts |
+| **Want a quick demo**            | [S10 Quick Demos](S10-quick-demos/) - 15-30 min prompts |
 | **Experienced with IaC**         | [S03 Five-Agent Workflow](#s03-five-agent-workflow)     |
 | **Full workflow demo**           | [S04 E-Commerce Platform](#s04-e-commerce-platform)     |
 | **Focused on Terraform**         | [S02 Terraform Baseline](#s02-terraform-baseline)       |
@@ -21,14 +32,14 @@
 
 ## Quick Demos
 
-For simple, single-prompt scenarios, see the [S11 Quick Demos](S11-quick-demos/) folder:
+For simple, single-prompt scenarios, see the [S10 Quick Demos](S10-quick-demos/) folder:
 
 | Demo                                                       | Complexity      | Time   | Description                           |
 | ---------------------------------------------------------- | --------------- | ------ | ------------------------------------- |
-| [E-Commerce Prompts](S11-quick-demos/ecommerce-prompts.md) | 🟡 Intermediate | 30 min | PCI-DSS compliant multi-tier platform |
-| [Healthcare Portal](S11-quick-demos/healthcare-demo.md)    | 🔴 Advanced     | 30 min | HIPAA-compliant patient portal        |
-| [Analytics Platform](S11-quick-demos/analytics-demo.md)    | 🟡 Intermediate | 30 min | Data analytics with Synapse           |
-| [Static Website](S11-quick-demos/static-site-demo.md)      | 🟢 Beginner     | 15 min | Simple static web app                 |
+| [E-Commerce Prompts](S10-quick-demos/ecommerce-prompts.md) | 🟡 Intermediate | 30 min | PCI-DSS compliant multi-tier platform |
+| [Healthcare Portal](S10-quick-demos/healthcare-demo.md)    | 🔴 Advanced     | 30 min | HIPAA-compliant patient portal        |
+| [Analytics Platform](S10-quick-demos/analytics-demo.md)    | 🟡 Intermediate | 30 min | Data analytics with Synapse           |
+| [Static Website](S10-quick-demos/static-site-demo.md)      | 🟢 Beginner     | 15 min | Simple static web app                 |
 
 ---
 
@@ -94,7 +105,8 @@ For simple, single-prompt scenarios, see the [S11 Quick Demos](S11-quick-demos/)
 
 **[📁 View Scenario](S03-five-agent-workflow/)**
 
-> **Production Example**: [`infra/bicep/contoso-patient-portal/`](../infra/bicep/contoso-patient-portal/) — 1,070 lines of Bicep, 10 modules
+> **Production Example**: [`infra/bicep/contoso-patient-portal/`](../infra/bicep/contoso-patient-portal/) —
+> 1,070 lines of Bicep, 10 modules
 
 **Challenge**: Design and implement a HIPAA-compliant patient portal for Contoso Healthcare.
 
@@ -141,7 +153,8 @@ flowchart LR
 
 **[📁 View Scenario](S04-ecommerce-platform/)**
 
-> **Production Example**: [`infra/bicep/ecommerce/`](../infra/bicep/ecommerce/) — Multi-tier retail platform with PCI-DSS compliance
+> **Production Example**: [`infra/bicep/ecommerce/`](../infra/bicep/ecommerce/) — Multi-tier retail platform
+> with PCI-DSS compliance
 
 **Challenge**: Design and deploy a production-ready e-commerce platform with payment processing requirements.
 

@@ -1,6 +1,6 @@
 # Agentic InfraOps - Agent Workflow
 
-> **Version 3.0.0** | Last Updated: December 3, 2025
+> **Version 3.1.0** | Last Updated: December 7, 2025
 
 This document describes the 4-step agent workflow for Azure infrastructure development with Agentic InfraOps.
 
@@ -76,7 +76,8 @@ graph TB
 
 ## 💰 Azure Pricing MCP Integration
 
-The Azure Pricing MCP Server provides **real-time cost data** to agents during infrastructure planning. This eliminates guesswork and ensures accurate cost estimates.
+The Azure Pricing MCP Server provides **real-time cost data** to agents during infrastructure planning.
+This eliminates guesswork and ensures accurate cost estimates.
 
 ### Available Tools
 
@@ -278,7 +279,8 @@ Implementer: [Executes deployment to Azure]
 
 ## Alternative: Unified Agent
 
-For simple infrastructure or quick iterations, use `infrastructure-specialist` which combines all steps into a single agent. This is useful for:
+For simple infrastructure or quick iterations, use `infrastructure-specialist` which combines all steps
+into a single agent. This is useful for:
 
 - Small projects (< 5 resources)
 - Prototyping and experimentation
@@ -336,6 +338,10 @@ For simple infrastructure or quick iterations, use `infrastructure-specialist` w
 
 ## Related Documentation
 
+- [Time Savings Evidence](../value-proposition/time-savings-evidence.md) — Quantified efficiency gains (45 min vs 18+ hours)
+- [Copilot Portfolio Showcase](../value-proposition/copilot-portfolio-showcase.md) — Real-world projects
+- [ADR-003: AVM-First Approach](../adr/ADR-003-avm-first-approach.md) — Why we use Azure Verified Modules
+- [ADR-004: Region Defaults](../adr/ADR-004-region-defaults.md) — Default `swedencentral`, fallback guidance
 - [Scenario Prompts](../../scenarios/S10-quick-demos/ecommerce-prompts.md)
 - [Copilot Instructions](../../.github/copilot-instructions.md)
 - [Azure Pricing MCP README](../../mcp/azure-pricing-mcp/README.md)

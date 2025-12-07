@@ -5,7 +5,8 @@ applyTo: "**/*.bicep"
 
 # Bicep Development Best Practices
 
-Guidelines for writing high-quality, secure, and maintainable Bicep infrastructure-as-code templates for Azure deployments. Follow these standards to ensure consistency across the repository.
+Guidelines for writing high-quality, secure, and maintainable Bicep infrastructure-as-code
+templates for Azure deployments. Follow these standards to ensure consistency across the repository.
 
 ## General Instructions
 
@@ -145,7 +146,8 @@ resource appService 'Microsoft.Web/sites@2023-01-01' = {
 
 ### Good Example - Referencing existing resources for diagnostic settings
 
-When creating diagnostic settings or other extension resources that need a `scope`, use the `existing` keyword to reference resources by name, not by resource ID string:
+When creating diagnostic settings or other extension resources that need a `scope`, use the `existing`
+keyword to reference resources by name, not by resource ID string:
 
 ```bicep
 // ✅ CORRECT: Use existing keyword to reference resources

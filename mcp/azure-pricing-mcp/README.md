@@ -6,16 +6,21 @@
 [![MCP](https://img.shields.io/badge/MCP-1.0+-green.svg)](https://modelcontextprotocol.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A **Model Context Protocol (MCP)** server that provides AI assistants with real-time access to Azure retail pricing information. Query VM prices, compare costs across regions, estimate monthly bills, and discover available SKUs—all through natural language.
+A **Model Context Protocol (MCP)** server that provides AI assistants with real-time access
+to Azure retail pricing information. Query VM prices, compare costs across regions, estimate
+monthly bills, and discover available SKUs—all through natural language.
 
 > **📍 Location in Repository**: `mcp/azure-pricing-mcp/`
 >
-> This MCP server is integrated with the GitHub Copilot agent workflow in this repository. See [Integration with Agent Workflow](#-integration-with-agent-workflow) below.
+> This MCP server is integrated with the GitHub Copilot agent workflow in this repository.
+> See [Integration with Agent Workflow](#-integration-with-agent-workflow) below.
 
+<!-- markdownlint-disable MD013 -->
 <p align="center">
   <img src="https://img.shields.io/badge/Azure-Pricing-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure Pricing"/>
   <img src="https://img.shields.io/badge/VS_Code-MCP-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code MCP"/>
 </p>
+<!-- markdownlint-enable MD013 -->
 
 ---
 
@@ -43,7 +48,8 @@ The MCP server is pre-configured in `.vscode/mcp.json` for this workspace.
 
 ## 🔗 Integration with Agent Workflow
 
-This MCP server integrates with the custom agents in this repository to provide **real-time Azure pricing** during infrastructure planning:
+This MCP server integrates with the custom agents in this repository to provide
+**real-time Azure pricing** during infrastructure planning:
 
 | Agent                       | Integration                            |
 | --------------------------- | -------------------------------------- |
@@ -86,13 +92,21 @@ The following tools are available to agents:
 
 ### Pricing Data Accuracy
 
-> **📊 Data Source**: All prices come from the [Azure Retail Prices API](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices), Microsoft's official public pricing endpoint (no authentication required).
+> **📊 Data Source**: All prices come from the [Azure Retail Prices API][pricing-api],
+> Microsoft's official public pricing endpoint (no authentication required).
 >
-> **What's included**: Retail list prices (pay-as-you-go), Savings Plan pricing (1-year and 3-year), and Spot pricing where available.
+> **What's included**: Retail list prices (pay-as-you-go), Savings Plan pricing
+> (1-year and 3-year), and Spot pricing where available.
 >
-> **What's NOT included**: Enterprise Agreement (EA) discounts, CSP partner pricing, Reserved Instance pricing (separate price type), negotiated contract rates, or Azure Hybrid Benefit savings.
+> **What's NOT included**: Enterprise Agreement (EA) discounts, CSP partner pricing,
+> Reserved Instance pricing (separate price type), negotiated contract rates, or
+> Azure Hybrid Benefit savings.
 >
-> **For official quotes**: Always verify with the [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/) or your Microsoft account team.
+> **For official quotes**: Always verify with the [Azure Pricing Calculator][calc]
+> or your Microsoft account team.
+
+[pricing-api]: https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices
+[calc]: https://azure.microsoft.com/pricing/calculator/
 
 ---
 
@@ -459,8 +473,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Contributors**:
   - [@notoriousmic](https://github.com/notoriousmic) - Testing infrastructure and best practices
 - [Model Context Protocol](https://modelcontextprotocol.io/) - The protocol that makes this possible
-- [Azure Retail Prices API](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices) - Microsoft's public pricing API
+- [Azure Retail Prices API][retail-api] - Microsoft's public pricing API
 - All open-source contributors
+
+[retail-api]: https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices
 
 ---
 

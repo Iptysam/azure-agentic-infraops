@@ -2,17 +2,29 @@
 
 This folder contains generated architecture diagrams for various scenarios.
 
-## Available Diagrams
+## Where Diagrams Live
 
-| Folder | Description |
-| ------ | ----------- |
-| [ecommerce/](ecommerce/) | E-commerce platform architecture diagram |
-| [mcp/](mcp/) | Azure Pricing MCP server architecture |
-| [workflow/](workflow/) | Agent workflow visualizations |
+| Folder                   | Description                           | Last Updated  |
+| ------------------------ | ------------------------------------- | ------------- |
+| [ecommerce/](ecommerce/) | E-commerce platform architecture      | December 2025 |
+| [mcp/](mcp/)             | Azure Pricing MCP server architecture | December 2025 |
+| [workflow/](workflow/)   | Agent workflow visualizations         | December 2025 |
+
+> **Freshness Note**: Diagrams are regenerated when infrastructure changes. Check the `.py` file timestamp or run
+> the diagram-generator agent to refresh.
+
+## IT Pro Usage
+
+Diagrams help IT Pros explain:
+
+- **Network flows**: VNet peering, NSG rules, private endpoints
+- **Security boundaries**: WAF placement, Key Vault access, managed identities
+- **Ops dependencies**: Monitoring, backup, DR relationships
 
 ## About Diagrams
 
-Architecture diagrams are generated using the `diagram-generator` custom agent, which uses the Python [diagrams](https://diagrams.mingrammer.com/) library by mingrammer.
+Architecture diagrams are generated using the `diagram-generator` custom agent, which uses the Python
+[diagrams](https://diagrams.mingrammer.com/) library by mingrammer.
 
 ### File Types
 

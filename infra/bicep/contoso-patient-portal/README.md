@@ -67,14 +67,16 @@ cd infra/bicep/contoso-patient-portal
 # Run deployment script (will prompt for SQL password)
 .\deploy.ps1 -Environment prod -Location eastus2
 
-# Or provide password inline
-.\deploy.ps1 -Environment prod -Location eastus2 -SqlAdminPassword (ConvertTo-SecureString 'YourSecurePassword123!' -AsPlainText -Force)
+# Or provide password inline (long command)
+.\deploy.ps1 -Environment prod -Location eastus2 `
+  -SqlAdminPassword (ConvertTo-SecureString 'YourSecurePassword123!' -AsPlainText -Force)
 
 # What-if analysis (dry run)
 .\deploy.ps1 -WhatIf
 ```
 
-> **Note**: If `-SqlAdminPassword` is not provided, the script will interactively prompt for a password. Password requirements: 8+ characters, uppercase, lowercase, and number.
+> **Note**: If `-SqlAdminPassword` is not provided, the script will interactively prompt
+> for a password. Password requirements: 8+ characters, uppercase, lowercase, and number.
 
 **Option 2: Using Azure CLI**
 
@@ -194,7 +196,8 @@ az keyvault secret list --vault-name <keyvault-name>
 | Private Endpoints | Standard      | 2           | Key Vault & SQL           |
 | Log Analytics     | Pay-as-you-go | 5-10 GB     | Application monitoring    |
 
-**Cost Estimation**: Use [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/) for current regional pricing.
+**Cost Estimation**: Use [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/)
+for current regional pricing.
 
 ### Cost Optimization Recommendations
 
@@ -296,10 +299,14 @@ az resource delete --ids <resource-id>
 
 ## 📝 Notes
 
-- **SQL Password Security**: Never commit passwords to source control. Use environment variables, Azure Key Vault, or Azure DevOps secure variables.
-- **Private Endpoints**: Requires VPN or Bastion for management access when public access is disabled.
-- **Zone Redundancy**: Available in limited regions. Check [Azure regions documentation](https://azure.microsoft.com/global-infrastructure/geographies/).
-- **HIPAA BAA**: Automatically included for all in-scope Azure services when using Azure for healthcare.
+- **SQL Password Security**: Never commit passwords to source control. Use environment
+  variables, Azure Key Vault, or Azure DevOps secure variables.
+- **Private Endpoints**: Requires VPN or Bastion for management access when public access
+  is disabled.
+- **Zone Redundancy**: Available in limited regions.
+  Check [Azure regions documentation](https://azure.microsoft.com/global-infrastructure/geographies/).
+- **HIPAA BAA**: Automatically included for all in-scope Azure services when using Azure
+  for healthcare.
 
 ## 🤝 Contributing
 

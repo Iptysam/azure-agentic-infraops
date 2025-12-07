@@ -12,7 +12,8 @@ Thank you to everyone who has contributed to making this project better!
 
 ## Azure Pricing MCP Server Contributors
 
-The [Azure Pricing MCP Server](mcp/azure-pricing-mcp/) is a key component that provides real-time Azure pricing information to AI assistants.
+The [Azure Pricing MCP Server](mcp/azure-pricing-mcp/) is a key component that provides
+real-time Azure pricing information to AI assistants.
 
 ### Original Author
 
@@ -29,7 +30,9 @@ The [Azure Pricing MCP Server](mcp/azure-pricing-mcp/) is a key component that p
 ### Acknowledgments
 
 - [Model Context Protocol](https://modelcontextprotocol.io/) - Protocol foundation
-- [Azure Retail Prices API](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices) - Pricing data source
+- [Azure Retail Prices API][azure-pricing] - Pricing data source
+
+[azure-pricing]: https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices
 
 ## How to Contribute
 
@@ -37,7 +40,8 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 ## Recognition
 
-All contributors are recognized for their valuable contributions to the project, whether through code, documentation, feedback, or community support.
+All contributors are recognized for their valuable contributions to the project, whether through
+code, documentation, feedback, or community support.
 
 ---
 

@@ -1,6 +1,7 @@
 # Contributing to Agentic InfraOps
 
-Thank you for your interest in contributing! Agentic InfraOps revolutionizes how IT Pros build Azure environments through coordinated AI agents.
+Thank you for your interest in contributing! Agentic InfraOps revolutionizes how IT Pros build
+Azure environments through coordinated AI agents.
 
 ## 🎯 What We're Looking For
 

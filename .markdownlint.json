@@ -1,9 +1,9 @@
 {
   "default": true,
   "MD013": {
-    "line_length": 1000,
-    "heading_line_length": 1000,
-    "code_block_line_length": 1000,
+    "line_length": 120,
+    "heading_line_length": 120,
+    "code_block_line_length": 120,
     "code_blocks": true,
     "tables": false,
     "headings": true,
@@ -30,5 +30,6 @@
   "MD046": false,
   "MD051": false,
   "MD058": false,
-  "MD060": false
+  "MD060": false,
+  "ignores": ["**/.venv/**"]
 }

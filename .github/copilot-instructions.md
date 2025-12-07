@@ -13,8 +13,10 @@ This file provides context and guidance for GitHub Copilot when assisting with t
 3. **Name Length Limits**: Key Vault ≤24 chars, Storage ≤24 chars (no hyphens), SQL ≤63 chars
 4. **Azure SQL Auth Policy**: Azure AD-only auth for SQL Server
 5. **Zone Redundancy**: App Service Plans need P1v4 SKU (not S1/P1v2) for zone redundancy
-6. **Four-Step Workflow**: `@plan` → `azure-principal-architect` → `bicep-plan` → `bicep-implement` (each step requires approval)
-7. **Deploy Script Pattern**: Use `[CmdletBinding(SupportsShouldProcess)]` + `$WhatIfPreference` (NOT explicit `$WhatIf` param)
+6. **Four-Step Workflow**: `@plan` → `azure-principal-architect` → `bicep-plan` → `bicep-implement`
+   (each step requires approval)
+7. **Deploy Script Pattern**: Use `[CmdletBinding(SupportsShouldProcess)]` + `$WhatIfPreference`
+   (NOT explicit `$WhatIf` param)
 8. **Dev Container**: Pre-configured Ubuntu 24.04 with all tools (Terraform, Azure CLI, Bicep, PowerShell 7)
 9. **Line Endings**: Use `.gitattributes` with `* text=auto eol=lf` for cross-platform consistency
 
@@ -55,9 +57,11 @@ This file provides context and guidance for GitHub Copilot when assisting with t
 
 ### Service Availability
 
-- **Preview Features**: Some Azure preview features may only be available in specific regions (typically `eastus`, `westus2`, `swedencentral`)
+- **Preview Features**: Some Azure preview features may only be available in specific regions
+  (typically `eastus`, `westus2`, `swedencentral`)
 - **VM/Database SKUs**: Not all VM sizes or database tiers are available in all regions
-- **Check Availability**: Use [Azure Products by Region](https://azure.microsoft.com/global-infrastructure/services/) to verify service availability
+- **Check Availability**: Use [Azure Products by Region](https://azure.microsoft.com/global-infrastructure/services/)
+  to verify service availability
 - **Availability Zones**: Ensure the selected region supports availability zones if zone redundancy is required
 
 ### Cost Optimization
@@ -67,11 +71,15 @@ This file provides context and guidance for GitHub Copilot when assisting with t
 - Fallback: [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/) for manual estimates
 - Consider egress costs for data transfer between regions
 
-**Best Practice**: When deviating from `swedencentral`, document the reason (latency/compliance/availability) in deployment parameters or README.
+**Best Practice**: When deviating from `swedencentral`,
+document the reason (latency/compliance/availability) in deployment parameters or README.
 
 ## Repository Purpose
 
-**Agentic InfraOps** revolutionizes how IT Pros build Azure environments. Powered by GitHub Copilot and coordinated AI agents, it transforms requirements into architecture diagrams, validated designs, and deploy-ready Bicep/Terraform templates—all aligned with Azure Well-Architected best practices and Azure Verified Modules.
+**Agentic InfraOps** revolutionizes how IT Pros build Azure environments.
+Powered by GitHub Copilot and coordinated AI agents,
+it transforms requirements into architecture diagrams, validated designs, and deploy-ready Bicep/Terraform templates—all
+aligned with Azure Well-Architected best practices and Azure Verified Modules.
 
 The target audience is:
 
@@ -80,7 +88,8 @@ The target audience is:
 
 ## Four-Step Agent Workflow Architecture
 
-This repository uses a **4-step agent workflow** for Azure infrastructure development, with optional pricing and diagram integrations:
+This repository uses a **4-step agent workflow** for Azure infrastructure development,
+with optional pricing and diagram integrations:
 
 ```mermaid
 %%{init: {'theme':'neutral'}}%%
@@ -110,7 +119,8 @@ graph LR
 **How to Use Custom Agents:**
 
 1. Press `Ctrl+Shift+A` or click the **Agent** button in Copilot Chat
-2. Select agent from dropdown: `@plan`, `azure-principal-architect`, `bicep-plan`, `bicep-implement`, `diagram-generator`, or `adr-generator`
+2. Select agent from dropdown: `@plan`, `azure-principal-architect`, `bicep-plan`, `bicep-implement`,
+   `diagram-generator`, or `adr-generator`
 3. Type your prompt and submit
 4. **Wait for approval prompt** before proceeding to next step
 
@@ -160,7 +170,8 @@ Prompt: Generate Bicep templates from the plan
 - **All agents require approval** before proceeding to next step (reply "yes", "approve", or provide feedback)
 - **azure-principal-architect does NOT create code** - only provides architectural guidance
 - **All agents default to `swedencentral` region** (alternative: `germanywestcentral`), unless explicitly specified
-- **Bicep agents ALWAYS generate unique resource name suffixes** using `uniqueString(resourceGroup().id)` to prevent naming collisions
+- **Bicep agents ALWAYS generate unique resource name suffixes** using `uniqueString(resourceGroup().id)`
+  to prevent naming collisions
 - **Key Vault names**: Must be ≤24 chars (pattern: `kv-{shortname}-{env}-{suffix}`)
 - **App Service Plans**: Use P1v4 (Premium) or higher for zone redundancy (Standard SKU doesn't support it)
 - **SQL Server**: Use Azure AD-only auth and grant logged in user appropriate admin permissions
@@ -315,13 +326,16 @@ When generating documentation:
 
 ## Value Messaging
 
-**Core Value Proposition**: "Agentic InfraOps is an **efficiency multiplier** for IT Pros, reducing infrastructure development time by 60-90% while delivering Well-Architected, deploy-ready Azure infrastructure through coordinated AI agents."
+**Core Value Proposition**: "Agentic InfraOps is an **efficiency multiplier** for IT Pros,
+reducing infrastructure development time by 60-90% while delivering Well-Architected,
+deploy-ready Azure infrastructure through coordinated AI agents."
 
 📊 **Time Savings Metrics**: See `docs/time-savings-evidence.md` for detailed methodology and scenario-specific data.
 
 🎯 **Real-World Portfolio**: See `docs/copilot-portfolio-showcase.md` for actual projects built using agentic workflows.
 
-**Messaging Focus**: Agentic Workflow (coordinated agents) • Well-Architected (Azure WAF aligned) • Verified Modules (AVM) • Deploy-Ready (validated templates)
+**Messaging Focus**: Agentic Workflow (coordinated agents) • Well-Architected (Azure WAF aligned) •
+Verified Modules (AVM) • Deploy-Ready (validated templates)
 
 ## Copilot Prompting Best Practices
 
@@ -388,7 +402,8 @@ graph LR
 
 ### Resource Naming with Unique Suffixes
 
-**Problem**: Azure resources like Key Vault, Storage Accounts, and SQL Servers require globally unique names. Without suffixes, deployments fail with naming collisions.
+**Problem**: Azure resources like Key Vault, Storage Accounts, and SQL Servers require globally unique names.
+Without suffixes, deployments fail with naming collisions.
 
 **Solution Pattern:**
 
@@ -454,9 +469,11 @@ resource diagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' 
 }
 ```
 
-**Why**: The `scope` property requires a resource symbolic reference, not a string. Resource IDs are strings and cause `BCP036: The property "scope" expected a value of type "resource | tenant"` errors.
+**Why**: The `scope` property requires a resource symbolic reference, not a string.
+Resource IDs are strings and cause `BCP036: The property "scope" expected a value of type "resource | tenant"` errors.
 
-**Module Output Rule**: Always output BOTH `resourceId` AND `resourceName` from modules to support downstream diagnostic settings.
+**Module Output Rule**: Always output BOTH `resourceId` AND `resourceName` from modules
+to support downstream diagnostic settings.
 
 ### Azure Policy Workarounds for Demo Environments
 
@@ -465,8 +482,11 @@ resource diagnostics 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' 
 1. **SQL Server Azure AD-only authentication**: Use `azureADOnlyAuthentication: true`
 2. **App Service Plan zone redundancy**: Must use Premium SKU (P1v4 recommended), not Standard
 3. **Key Vault name length**: Policy doesn't block, but Azure enforces 24-char limit
-4. **WAF matchVariable values**: Use `RequestHeader` (singular) not `RequestHeaders` - valid values are: `RemoteAddr`, `RequestMethod`, `QueryString`, `PostArgs`, `RequestUri`, `RequestHeader`, `RequestBody`, `Cookies`, `SocketAddr`
-5. **WAF policy naming**: Names must start with letter, alphanumeric only (NO hyphens) - use `wafpolicy{project}{env}001`
+4. **WAF matchVariable values**: Use `RequestHeader` (singular) not `RequestHeaders` - valid values are:
+   `RemoteAddr`, `RequestMethod`, `QueryString`, `PostArgs`, `RequestUri`, `RequestHeader`, `RequestBody`,
+   `Cookies`, `SocketAddr`
+5. **WAF policy naming**: Names must start with letter, alphanumeric only (NO hyphens) -
+   use `wafpolicy{project}{env}001`
 6. **Storage Account allowSharedKeyAccess**: Many orgs block shared key access - use identity-based storage connections
 7. **SQL Server diagnostic settings**: Don't use `SQLSecurityAuditEvents` category - use `auditingSettings` resource instead
 
@@ -582,7 +602,8 @@ All demo code should follow these security principles:
 
 3. **Region validation**: Add allowed regions to ValidateSet
 
-4. **Standard structure**: Prerequisites check → Bicep validation → Cost estimation → User confirmation → Deployment → Output display
+4. **Standard structure**: Prerequisites check → Bicep validation → Cost estimation →
+   User confirmation → Deployment → Output display
 
 5. **Auto-detect SQL Admin**: Use current Azure user if `SqlAdminGroupObjectId` not provided:
 
@@ -713,7 +734,8 @@ When users request changes or additions:
 
 This repository includes a pre-configured dev container with all tools installed:
 
-**Included Tools:** Terraform (latest) with tfsec/Checkov • Azure CLI with Bicep CLI • PowerShell 7+ • Git • Go, Python, Node.js runtimes • 25+ VS Code extensions • Azure Pricing MCP Server (auto-setup)
+**Included Tools:** Terraform (latest) with tfsec/Checkov • Azure CLI with Bicep CLI • PowerShell 7+ • Git •
+Go, Python, Node.js runtimes • 25+ VS Code extensions • Azure Pricing MCP Server (auto-setup)
 
 **Quick Start:**
 
@@ -732,7 +754,8 @@ az --version && bicep --version && pwsh --version
 
 ### Option 2: Manual Setup
 
-Required tools: VS Code • GitHub Copilot extension • Azure CLI 2.50+ • Bicep CLI 0.20+ • PowerShell 7+ • Git 2.30+ • Terraform 1.5+ (for Terraform demos)
+Required tools: VS Code • GitHub Copilot extension • Azure CLI 2.50+ • Bicep CLI 0.20+ •
+PowerShell 7+ • Git 2.30+ • Terraform 1.5+ (for Terraform demos)
 
 **Azure Pricing MCP Server (Manual Setup):**
 
@@ -791,4 +814,6 @@ npm run lint:md
 
 ---
 
-**Repository Mission**: Agentic InfraOps—Azure infrastructure engineered by agents. From requirements to deployed Bicep/Terraform templates, aligned with Azure Well-Architected best practices and Azure Verified Modules.
+**Repository Mission**: Agentic InfraOps—Azure infrastructure engineered by agents.
+From requirements to deployed Bicep/Terraform templates,
+aligned with Azure Well-Architected best practices and Azure Verified Modules.

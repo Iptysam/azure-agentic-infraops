@@ -1,8 +1,17 @@
 # Documentation Hub
 
-> **Agentic InfraOps v3.1.0** | Last Updated: December 3, 2025 | 🔗 [aka.ms/agenticinfraops](https://aka.ms/agenticinfraops)
+> **Agentic InfraOps v3.1.0** | Last Updated: December 7, 2025 |
+> 🔗 [aka.ms/agenticinfraops](https://aka.ms/agenticinfraops)
 
-Welcome to the Agentic InfraOps documentation center. This hub provides quick navigation to all documentation resources.
+Welcome to the Agentic InfraOps documentation center. This hub provides quick navigation to all documentation
+resources.
+
+## How to Use This Hub (IT Pros)
+
+1. **New here?** Start with [Quick Start](getting-started/QUICKSTART.md) → run a demo scenario
+2. **Prepping a demo?** See [Presenter Toolkit](presenter-toolkit/) and [Workflow Guide](workflow/WORKFLOW.md)
+3. **Looking for evidence?** Check [Time Savings](value-proposition/time-savings-evidence.md) and cost estimates
+4. **Need architecture decisions?** Browse [ADRs](adr/) (especially ADR-003 AVM-first, ADR-004 region defaults)
 
 ---
 
@@ -16,11 +25,11 @@ Welcome to the Agentic InfraOps documentation center. This hub provides quick na
 
 ## 📋 Workflow & Guides
 
-| Section                                      | Description                    |
-| -------------------------------------------- | ------------------------------ |
-| [Workflow Guide](workflow/WORKFLOW.md)       | Complete 4-step agent workflow |
+| Section                                      | Description                            |
+| -------------------------------------------- | -------------------------------------- |
+| [Workflow Guide](workflow/WORKFLOW.md)       | Complete 4-step agent workflow         |
 | [Guides](guides/)                            | Operational and troubleshooting guides |
-| [Troubleshooting](guides/troubleshooting.md) | Common issues and solutions    |
+| [Troubleshooting](guides/troubleshooting.md) | Common issues and solutions            |
 
 ## 📊 Reference Materials
 
@@ -30,6 +39,12 @@ Welcome to the Agentic InfraOps documentation center. This hub provides quick na
 | [Cost Estimates](cost-estimates/)     | Azure pricing examples          |
 | [Diagrams](diagrams/)                 | Generated architecture diagrams |
 | [Audit Checklists](audit-checklists/) | Compliance verification         |
+
+### Key ADRs for IT Pros
+
+- [ADR-003: AVM-First Approach](adr/ADR-003-avm-first-approach.md) — Use Azure Verified Modules for policy-compliant,
+  repeatable deployments
+- [ADR-004: Region Defaults](adr/ADR-004-region-defaults.md) — Default `swedencentral`; `germanywestcentral` fallback
 
 ## 💼 For Presenters & Sales
 
@@ -50,6 +65,10 @@ Welcome to the Agentic InfraOps documentation center. This hub provides quick na
 | ---------------------------------------- | ----------------------------------- |
 | [Agent Definitions](../.github/agents/)  | Custom agent configuration files    |
 | [Instructions](../.github/instructions/) | Coding standards and best practices |
+
+### Contributing
+
+- [Markdown Style Guide](MARKDOWN-STYLE-GUIDE.md) — ATX headers, 120-char lines, fenced code blocks
 
 ---
 

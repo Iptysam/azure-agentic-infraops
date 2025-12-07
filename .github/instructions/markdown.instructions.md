@@ -1,30 +1,32 @@
 ---
-description: 'Documentation and content creation standards for markdown files'
-applyTo: '**/*.md'
+description: "Documentation and content creation standards for markdown files"
+applyTo: "**/*.md"
 ---
 
 # Markdown Documentation Standards
 
-Standards for creating consistent, accessible, and well-structured markdown documentation. Follow these guidelines to ensure documentation quality across the repository.
+Standards for creating consistent, accessible, and well-structured markdown documentation.
+Follow these guidelines to ensure documentation quality across the repository.
 
 ## General Instructions
 
 - Use ATX-style headings (`##`, `###`) - never use H1 (`#`) in content (reserved for document title)
-- Limit line length to 120 characters for readability
+- Limit line length to 120 characters for readability (configure markdownlint MD013 to 120)
 - Use LF line endings (enforced by `.gitattributes`)
 - Include meaningful alt text for all images
 - Validate with `markdownlint` before committing
+- Refer to `docs/MARKDOWN-STYLE-GUIDE.md` for quick rules and examples
 
 ## Content Structure
 
-| Element | Rule | Example |
-|---------|------|---------|
-| Headings | Use `##` for H2, `###` for H3, avoid H4+ | `## Section Title` |
-| Lists | Use `-` for unordered, `1.` for ordered | `- Item one` |
-| Code blocks | Use fenced blocks with language | ` ```bicep ` |
-| Links | Descriptive text, valid URLs | `[Azure docs](https://...)` |
-| Images | Include alt text | `![Architecture diagram](./img.png)` |
-| Tables | Align columns, include headers | See examples below |
+| Element     | Rule                                     | Example                                                    |
+| ----------- | ---------------------------------------- | ---------------------------------------------------------- |
+| Headings    | Use `##` for H2, `###` for H3, avoid H4+ | `## Section Title`                                         |
+| Lists       | Use `-` for unordered, `1.` for ordered  | `- Item one`                                               |
+| Code blocks | Use fenced blocks with language          | ` ```bicep `                                               |
+| Links       | Descriptive text, valid URLs             | `[Azure docs](https://...)`                                |
+| Images      | Include alt text                         | `![Architecture diagram](https://example.com/diagram.png)` |
+| Tables      | Align columns, include headers           | See examples below                                         |
 
 ## Code Blocks
 
@@ -52,22 +54,22 @@ Always include the theme directive for dark mode compatibility:
 
 ### Good Example - Mermaid with theme directive
 
-```markdown
-​```mermaid
+````markdown
+​`mermaid
 %%{init: {'theme':'neutral'}}%%
 graph LR
     A[Start] --> B[End]
-​```
-```
+​`
+````
 
 ### Bad Example - Missing theme directive
 
-```markdown
-​```mermaid
+````markdown
+​`mermaid
 graph LR
     A[Start] --> B[End]
-​```
-```
+​`
+````
 
 ## Lists and Formatting
 
@@ -96,8 +98,11 @@ Steps:
 
 ```markdown
 Prerequisites:
-* Azure CLI 2.50+
-+ Bicep CLI 0.20+
+
+- Azure CLI 2.50+
+
+* Bicep CLI 0.20+
+
 - PowerShell 7+
 ```
 
@@ -108,10 +113,10 @@ Prerequisites:
 - Use tables for structured comparisons
 
 ```markdown
-| Resource | Purpose | Example |
-|----------|---------|---------|
+| Resource  | Purpose            | Example          |
+| --------- | ------------------ | ---------------- |
 | Key Vault | Secrets management | `kv-contoso-dev` |
-| Storage | Blob storage | `stcontosodev` |
+| Storage   | Blob storage       | `stcontosodev`   |
 ```
 
 ## Links and References
@@ -123,14 +128,14 @@ Prerequisites:
 ### Good Example - Descriptive links
 
 ```markdown
-See the [deployment guide](./docs/deployment.md) for setup instructions.
+See the [getting started guide](../../docs/getting-started/README.md) for setup instructions.
 Refer to [Azure Bicep documentation](https://learn.microsoft.com/azure/azure-resource-manager/bicep/) for syntax details.
 ```
 
 ### Bad Example - Non-descriptive links
 
 ```markdown
-Click [here](./docs/deployment.md) for more info.
+Click [here](../../docs/getting-started/README.md) for more info.
 ```
 
 ## Front Matter (Optional)
@@ -139,13 +144,13 @@ For blog posts or published content, include YAML front matter:
 
 ```yaml
 ---
-post_title: 'Article Title'
-author1: 'Author Name'
-post_slug: 'url-friendly-slug'
-post_date: '2025-01-15'
-summary: 'Brief description of the content'
-categories: ['Azure', 'Infrastructure']
-tags: ['bicep', 'iac', 'azure']
+post_title: "Article Title"
+author1: "Author Name"
+post_slug: "url-friendly-slug"
+post_date: "2025-01-15"
+summary: "Brief description of the content"
+categories: ["Azure", "Infrastructure"]
+tags: ["bicep", "iac", "azure"]
 ---
 ```
 
@@ -153,14 +158,14 @@ tags: ['bicep', 'iac', 'azure']
 
 ## Patterns to Avoid
 
-| Anti-Pattern | Problem | Solution |
-|--------------|---------|----------|
-| H1 in content | Conflicts with title | Use H2 (`##`) as top level |
-| Deep nesting (H4+) | Hard to navigate | Restructure content |
-| Long lines (400+ chars) | Poor readability | Break at 120 chars |
-| Missing code language | No syntax highlighting | Specify language |
-| "Click here" links | Poor accessibility | Use descriptive text |
-| Excessive whitespace | Inconsistent appearance | Single blank lines |
+| Anti-Pattern            | Problem                      | Solution                   |
+| ----------------------- | ---------------------------- | -------------------------- |
+| H1 in content           | Conflicts with title         | Use H2 (`##`) as top level |
+| Deep nesting (H4+)      | Hard to navigate             | Restructure content        |
+| Long lines (>120 chars) | Poor readability, lint fails | Break at natural clauses   |
+| Missing code language   | No syntax highlighting       | Specify language           |
+| "Click here" links      | Poor accessibility           | Use descriptive text       |
+| Excessive whitespace    | Inconsistent appearance      | Single blank lines         |
 
 ## Validation
 

@@ -2,11 +2,17 @@
 
 ## 🎯 Overview
 
-This demo showcases GitHub Copilot's **complete agent workflow** for designing and implementing a **PCI-DSS compliant e-commerce platform** on Azure. It demonstrates all 6 steps: `@plan → azure-principal-architect → pricing/diagram → bicep-plan → bicep-implement → deploy`, with real-time cost validation using the Azure Pricing MCP server.
+This demo showcases GitHub Copilot's **complete agent workflow** for designing and implementing a
+**PCI-DSS compliant e-commerce platform** on Azure.
+It demonstrates all 6 steps:
+`@plan → azure-principal-architect → pricing/diagram → bicep-plan → bicep-implement → deploy`,
+with real-time cost validation using the Azure Pricing MCP server.
 
-> **Working Implementation**: Complete Bicep templates available in [`../../infra/bicep/ecommerce/`](../../infra/bicep/ecommerce/) (18 modules, 61 Azure resources).
+> **Working Implementation**: Complete Bicep templates available in
+> [`../../infra/bicep/ecommerce/`](../../infra/bicep/ecommerce/) (18 modules, 61 Azure resources).
 >
-> **Workflow Output**: Step-by-step captured outputs in [`../scenario-output/ecommerce/`](../scenario-output/ecommerce/).
+> **Workflow Output**: Step-by-step captured outputs in
+> [`../scenario-output/ecommerce/`](../scenario-output/ecommerce/).
 
 **Target Audience**: Solution Architects, Cloud Architects, Infrastructure Engineers, IT Professionals
 
@@ -29,6 +35,16 @@ This demo extends the 4-step workflow by adding:
 - 💵 **Cost-validated**: Real-time Azure pricing before deployment
 - 🔒 **PCI-DSS aligned**: Security controls for payment processing
 - 📈 **Scalable**: Zone-redundant, 10K concurrent users
+
+## Related Assets
+
+| Resource                                                              | Description                         |
+| --------------------------------------------------------------------- | ----------------------------------- |
+| [E-Commerce Bicep](../../infra/bicep/ecommerce/)                      | Working implementation (18 modules) |
+| [Cost Estimate](../../docs/cost-estimates/ecommerce-cost-estimate.md) | Monthly cost breakdown              |
+| [Workflow Outputs](../scenario-output/ecommerce/)                     | Step-by-step captured outputs       |
+| [ADR-003: AVM-First](../../docs/adr/ADR-003-avm-first-approach.md)    | Module selection rationale          |
+| [Presenter Toolkit](../../docs/presenter-toolkit/)                    | Demo delivery guides                |
 
 ## 🤖 The Six Steps
 

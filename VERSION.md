@@ -15,7 +15,9 @@ This repository follows [Semantic Versioning 2.0.0](https://semver.org/):
 
 ### Summary
 
-Major rebrand from "GitHub Copilot Demo" to **Agentic InfraOps**. New identity emphasizes AI-agent-driven Azure infrastructure development with Well-Architected alignment and Azure Verified Modules.
+Major rebrand from "GitHub Copilot Demo" to **Agentic InfraOps**. New identity emphasizes
+AI-agent-driven Azure infrastructure development with Well-Architected alignment and Azure
+Verified Modules.
 
 ### Changed
 
@@ -39,7 +41,8 @@ Major rebrand from "GitHub Copilot Demo" to **Agentic InfraOps**. New identity e
 
 ### Summary
 
-Enhanced MCP integration with prominent featuring across documentation. Completed E-Commerce platform deployment with Azure Policy compliance fixes. Updated all App Service Plans to P1v4 SKU.
+Enhanced MCP integration with prominent featuring across documentation. Completed E-Commerce
+platform deployment with Azure Policy compliance fixes. Updated all App Service Plans to P1v4 SKU.
 
 ### Added
 
@@ -69,7 +72,9 @@ Enhanced MCP integration with prominent featuring across documentation. Complete
 
 ### Summary
 
-Repository restructured to focus exclusively on the 4-step agent workflow for Azure infrastructure development. Removed legacy scenarios and resources to provide a clean, focused experience.
+Repository restructured to focus exclusively on the 4-step agent workflow for Azure
+infrastructure development. Removed legacy scenarios and resources to provide a clean,
+focused experience.
 
 ### Changed
 
