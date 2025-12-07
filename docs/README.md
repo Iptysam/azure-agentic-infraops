@@ -42,12 +42,13 @@ resources.
 
 ## 📊 Reference Materials
 
-| Section                               | Description                     |
-| ------------------------------------- | ------------------------------- |
-| [Architecture Decisions](adr/)        | ADRs documenting design choices |
-| [Cost Estimates](cost-estimates/)     | Azure pricing examples          |
-| [Diagrams](diagrams/)                 | Generated architecture diagrams |
-| [Audit Checklists](audit-checklists/) | Compliance verification         |
+| Section                               | Description                        |
+| ------------------------------------- | ---------------------------------- |
+| [Glossary](GLOSSARY.md)               | Terms and acronyms (AVM, WAF, MCP) |
+| [Architecture Decisions](adr/)        | ADRs documenting design choices    |
+| [Cost Estimates](cost-estimates/)     | Azure pricing examples             |
+| [Diagrams](diagrams/)                 | Generated architecture diagrams    |
+| [Audit Checklists](audit-checklists/) | Compliance verification            |
 
 ### Key ADRs for IT Pros
 
