@@ -33,10 +33,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `scenarios/scenario-prompts.md` → `scenarios/quick-demos/ecommerce-prompts.md`
 - `scenarios/scenarios-index.md` → `scenarios/README.md`
 
-## [Unreleased]
+## [3.2.0] - 2025-12-07
 
 ### Added
 
+- **Character Reference Card** (`docs/presenter-toolkit/character-reference.md`) with all 11 personas
+- **"Meet [Character]" sections** added to S03 and S04 scenario READMEs
+- **New characters**: Jennifer Chen (S03), Carlos Mendez (S04)
 - GitHub Actions CI workflow (`.github/workflows/validate.yml`) with 5 validation jobs
 - Shared agent configuration (`.github/agents/_shared/defaults.md`) for centralized settings
 - Healthcare patient portal scenario (`scenarios/quick-demos/healthcare-demo.md`)
@@ -52,21 +55,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Scenario restructure**: Renumbered S01-S11 (was S01-S10 with duplicate S04)
+- **Character collision resolution**:
+  - S03: Sarah Chen → Jennifer Chen (Solutions Architect)
+  - S07: Sarah Chen → Maya Patel (On-Call SRE)
+  - S09: Marcus Chen → David Kim (Solutions Architect)
+  - Secondary stakeholders renamed to avoid main character collisions
+- **Presenter toolkit**: Added character-reference link, updated scenario count to S01-S11
+- **scenarios/README.md**: Complete rewrite with correct character assignments and time savings
 - Azure Pricing MCP server improvements:
   - Removed automatic 10% discount application in cost estimates
   - Added singleton HTTP session pattern to prevent connection errors
   - Added 1-hour TTL caching for API responses (cachetools)
   - Added 30-second timeout for API calls
   - Changed devcontainer setup to use editable install (`pip install -e .`)
-- Added pricing accuracy disclaimers to documentation:
-  - `mcp/azure-pricing-mcp/README.md`
-  - `.github/instructions/cost-estimate.instructions.md`
-  - `docs/cost-estimates/ecommerce-cost-estimate.md`
+- Added pricing accuracy disclaimers to documentation
 
 ### Fixed
 
+- Duplicate S04 folders (S04-documentation-generation and S04-ecommerce-platform)
+- Character name collisions across scenarios
+- Scenario header numbers not matching folder names after restructure
 - MCP server "Connector is closed" errors via singleton session pattern
 - Devcontainer MCP setup failing to find server module
+
+## [Unreleased]
 
 ## [2.0.0] - 2025-12-01
 

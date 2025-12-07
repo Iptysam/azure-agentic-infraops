@@ -1,6 +1,6 @@
 # Getting Started: Your Complete Journey
 
-> **Version 3.1.0** | Last Updated: December 3, 2025
+> **Version 3.2.0** | Last Updated: December 7, 2025
 >
 > **From zero to productive in 30 minutes.** This comprehensive guide covers setup, your first scenario,
 > exploration paths, and mastery.\n>\n> ⚡ **In a hurry?** Use [Quick Start](quickstart.md) for 10-minute setup + first demo.

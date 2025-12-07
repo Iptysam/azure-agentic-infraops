@@ -1,6 +1,6 @@
 # Presenter Toolkit
 
-> **Version 3.1.0** | Last Updated: December 3, 2025
+> **Version 3.2.0** | Last Updated: December 7, 2025
 
 This toolkit provides everything you need to deliver compelling Agentic InfraOps demonstrations to IT Professionals,
 whether you're presenting to customers, colleagues, training sessions, or leadership teams.

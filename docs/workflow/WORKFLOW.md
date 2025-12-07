@@ -1,6 +1,6 @@
 # Agentic InfraOps - Agent Workflow
 
-> **Version 3.1.0** | Last Updated: December 7, 2025
+> **Version 3.2.0** | Last Updated: December 7, 2025
 
 This document describes the 4-step agent workflow for Azure infrastructure development with Agentic InfraOps.
 

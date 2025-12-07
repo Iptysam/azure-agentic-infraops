@@ -1,6 +1,6 @@
 # Documentation Hub
 
-> **Agentic InfraOps v3.1.0** | Last Updated: December 7, 2025 |
+> **Agentic InfraOps v3.2.0** | Last Updated: December 7, 2025 |
 > 🔗 [aka.ms/agenticinfraops](https://aka.ms/agenticinfraops)
 
 Welcome to the Agentic InfraOps documentation center. This hub provides quick navigation to all documentation
@@ -89,4 +89,4 @@ resources.
 
 ---
 
-**Version**: 3.1.0 | [Back to Main README](../README.md)
+**Version**: 3.2.0 | [Back to Main README](../README.md)

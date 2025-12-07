@@ -11,6 +11,53 @@ This repository follows [Semantic Versioning 2.0.0](https://semver.org/):
 
 ---
 
+## Version 3.2.0 (2025-12-07) - Character System & Scenario Restructure 🎭
+
+### Summary
+
+Comprehensive scenario restructure with complete character system for storytelling. All 11 scenarios
+now have unique personas with detailed profiles, eliminating character collisions and enabling
+compelling demo narratives.
+
+### Added
+
+- **Character Reference Card** (`docs/presenter-toolkit/character-reference.md`)
+  - All 11 personas with detailed profiles and demo hooks
+  - Character selection guide by audience type
+  - Time savings table by character
+  - Storytelling tips and narrative arc guidance
+- **New Characters**: Jennifer Chen (S03), Carlos Mendez (S04)
+- **"Meet [Character]" sections** in S03 and S04 READMEs
+
+### Changed
+
+- **Scenario Restructure**: Sequential S01-S11 numbering (fixed duplicate S04)
+- **Character Collision Resolution**:
+  - S03: Sarah Chen → Jennifer Chen (Solutions Architect at Meridian Systems)
+  - S07: Sarah Chen → Maya Patel (On-Call SRE at RetailMax)
+  - S09: Marcus Chen → David Kim (Solutions Architect at TechVentures)
+  - Secondary stakeholders renamed across scenarios
+- **Presenter Toolkit**: Added character-reference link, updated to S01-S11
+- **scenarios/README.md**: Complete rewrite with all characters and time savings
+
+### Character Matrix
+
+| Scenario | Character | Role |
+|----------|-----------|------|
+| S01 | Elena Rodriguez | Cloud Infrastructure Engineer |
+| S02 | Jordan Martinez | Senior Infrastructure Engineer |
+| S03 | Jennifer Chen | Solutions Architect |
+| S04 | Carlos Mendez | E-Commerce Architect |
+| S05 | Priya Sharma | Senior Technical Writer |
+| S06 | Marcus Chen | Senior QA Engineer |
+| S07 | Maya Patel | On-Call SRE |
+| S08 | Sarah Chen | Security Engineer |
+| S09 | David Kim | Solutions Architect |
+| S10 | Alex Petrov | Cloud Operations Engineer |
+| S11 | Various | Quick demos |
+
+---
+
 ## Version 3.1.0 (2025-12-03) - Agentic InfraOps Rebrand 🚀
 
 ### Summary
@@ -131,6 +178,6 @@ PATCH (Improvements):
 
 ---
 
-**Current Version**: **3.1.0**
-**Release Date**: December 3, 2025
+**Current Version**: **3.2.0**
+**Release Date**: December 7, 2025
 **Status**: Production Ready ✅

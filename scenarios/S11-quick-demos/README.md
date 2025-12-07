@@ -1,6 +1,6 @@
 # Quick Demo Prompts
 
-> **Version 3.1.0** | Last Updated: December 3, 2025
+> **Version 3.2.0** | Last Updated: December 7, 2025
 
 Simple, copy-paste prompts for rapid infrastructure generation. These demos are designed for quick
 exploration of Agentic InfraOps capabilities.
@@ -67,4 +67,4 @@ Data analytics solution with Azure Synapse, Data Lake, and Power BI integration.
 
 ---
 
-**Version**: 3.1.0 | [Back to Scenarios](../) | [Back to Docs](../../docs/)
+**Version**: 3.2.0 | [Back to Scenarios](../) | [Back to Docs](../../docs/)

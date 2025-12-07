@@ -1,6 +1,6 @@
 # Agentic InfraOps
 
-> **Version 3.1.0** | Last Updated: December 3, 2025 | [Changelog](VERSION.md)
+> **Version 3.2.0** | Last Updated: December 7, 2025 | [Changelog](VERSION.md)
 
 [![Agentic InfraOps](https://img.shields.io/badge/Agentic-InfraOps-FF6B35?style=for-the-badge&logo=robot&logoColor=white)](https://github.com/jonathan-vella/azure-agentic-infraops)
 [![Azure](https://img.shields.io/badge/Azure-Infrastructure-0078D4?style=for-the-badge&logo=microsoftazure)](https://azure.microsoft.com)
