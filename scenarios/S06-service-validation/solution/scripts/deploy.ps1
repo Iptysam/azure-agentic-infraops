@@ -52,7 +52,7 @@ if (-not $resourceGroupName) {
 }
 
 # Tags
-$defaultApp = "S05-Service-Validation"
+$defaultApp = "S06-Service-Validation"
 $appInput = Read-Host "Application tag [$defaultApp]"
 $applicationName = if ([string]::IsNullOrWhiteSpace($appInput)) { $defaultApp } else { $appInput }
 $defaultOwner = $acct.user; if ([string]::IsNullOrWhiteSpace($defaultOwner)) { $defaultOwner = "Unknown" }

@@ -1,7 +1,7 @@
 # Full Troubleshooting Conversation Example
 
 **Scenario**: RetailMax checkout failures (15% error rate)  
-**Engineer**: Sarah Chen (On-call SRE)  
+**Engineer**: Maya Patel (On-call SRE)  
 **Time**: 10:15 PM EST, November 11, 2025  
 **Duration**: 5 hours (vs 30 hours manual)
 
@@ -421,7 +421,7 @@ AI-assisted diagnostics, significantly faster than typical 30-hour manual troubl
 |------|-------|
 | 8:00 PM | Incident begins - checkout failures start occurring |
 | 8:30 PM | Customer complaints increase, support tickets spike |
-| 10:15 PM | Incident detected by monitoring alert, on-call engineer (Sarah Chen) paged |
+| 10:15 PM | Incident detected by monitoring alert, on-call engineer (Maya Patel) paged |
 | 10:25 PM | Initial triage with Copilot - Application Insights queries reveal SQL exceptions |
 | 10:35 PM | Root cause hypothesis formed - SQL connection pool exhaustion |
 | 10:50 PM | Dependency analysis confirms long-running payment transactions |
@@ -669,7 +669,7 @@ Max Pool Size=200;Connect Timeout=30;
 ---
 
 **Report Generated:** November 12, 2025, 1:00 AM EST  
-**Report Author:** Sarah Chen (On-Call Engineer) with GitHub Copilot assistance  
+**Report Author:** Maya Patel (On-Call Engineer) with GitHub Copilot assistance  
 **Incident Status:** CLOSED  
 **Follow-up Review:** November 15, 2025, 10:00 AM EST
 ```

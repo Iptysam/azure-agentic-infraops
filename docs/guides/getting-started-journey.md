@@ -276,7 +276,7 @@ Delegate entire GitHub Issues to Copilot for autonomous implementation.
 3. Copilot analyzes codebase and implements
 4. Review the PR Copilot creates
 
-📖 **Full guide:** [S09 Coding Agent](../../scenarios/S09-coding-agent/)
+📖 **Full guide:** [S10 Coding Agent](../../scenarios/S10-coding-agent/)
 
 ---
 

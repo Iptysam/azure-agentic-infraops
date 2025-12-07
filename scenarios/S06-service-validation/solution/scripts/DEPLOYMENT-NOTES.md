@@ -34,7 +34,7 @@ Aligns with repository default region policy.
 
 ### Tagging
 
-**Application Tag:** `S05-Service-Validation` (default)
+**Application Tag:** `S06-Service-Validation` (default)
 
 - Previous: `SAIF`
 
@@ -126,7 +126,7 @@ Next Steps:
 
 The script references: `../infra/main.bicep` (relative to scripts folder)
 
-**Full Path:** `/scenarios/S05-service-validation/solution/infra/main.bicep`
+**Full Path:** `/scenarios/S06-service-validation/solution/infra/main.bicep`
 
 ## Validation
 
@@ -135,7 +135,7 @@ After deployment, verify:
 1. **Resource Group Created:**
 
    ```powershell
-   az group show --name rg-s05-validation-swc01 --query "{name:name,location:location,provisioningState:properties.provisioningState}"
+   az group show --name rg-s06-validation-swc01 --query "{name:name,location:location,provisioningState:properties.provisioningState}"
    ```
 
 2. **Application Accessible:**

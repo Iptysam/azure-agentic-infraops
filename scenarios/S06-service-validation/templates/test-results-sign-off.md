@@ -388,7 +388,7 @@ I approve these test results and authorize progression to the next phase.
 
 ```bash
 # Load Testing
-cd /workspaces/azure-agentic-infraops/scenarios/S05-service-validation/validation/load-testing
+cd /workspaces/azure-agentic-infraops/scenarios/S06-service-validation/validation/load-testing
 ./quick-load-test.sh 30 20
 
 # API Endpoint Testing

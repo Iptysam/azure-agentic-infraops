@@ -30,7 +30,7 @@
 ### Key Files for Demo
 
 ```text
-scenarios/S05-service-validation/
+scenarios/S06-service-validation/
 ├── examples/copilot-validation-conversation.md  ← Learning journey
 ├── agents/                                       ← Agent definitions
 │   ├── uat-assistant.agent.md

@@ -22,7 +22,7 @@
 | If you're...                     | Start with                                              |
 | -------------------------------- | ------------------------------------------------------- |
 | **New to Copilot**               | [S01 Bicep Baseline](#s01-bicep-baseline)               |
-| **Want a quick demo**            | [S10 Quick Demos](S10-quick-demos/) - 15-30 min prompts |
+| **Want a quick demo**            | [S11 Quick Demos](S11-quick-demos/) - 15-30 min prompts |
 | **Experienced with IaC**         | [S03 Five-Agent Workflow](#s03-five-agent-workflow)     |
 | **Full workflow demo**           | [S04 E-Commerce Platform](#s04-e-commerce-platform)     |
 | **Focused on Terraform**         | [S02 Terraform Baseline](#s02-terraform-baseline)       |
@@ -32,14 +32,14 @@
 
 ## Quick Demos
 
-For simple, single-prompt scenarios, see the [S10 Quick Demos](S10-quick-demos/) folder:
+For simple, single-prompt scenarios, see the [S11 Quick Demos](S11-quick-demos/) folder:
 
 | Demo                                                       | Complexity      | Time   | Description                           |
 | ---------------------------------------------------------- | --------------- | ------ | ------------------------------------- |
-| [E-Commerce Prompts](S10-quick-demos/ecommerce-prompts.md) | 🟡 Intermediate | 30 min | PCI-DSS compliant multi-tier platform |
-| [Healthcare Portal](S10-quick-demos/healthcare-demo.md)    | 🔴 Advanced     | 30 min | HIPAA-compliant patient portal        |
-| [Analytics Platform](S10-quick-demos/analytics-demo.md)    | 🟡 Intermediate | 30 min | Data analytics with Synapse           |
-| [Static Website](S10-quick-demos/static-site-demo.md)      | 🟢 Beginner     | 15 min | Simple static web app                 |
+| [E-Commerce Prompts](S11-quick-demos/ecommerce-prompts.md) | 🟡 Intermediate | 30 min | PCI-DSS compliant multi-tier platform |
+| [Healthcare Portal](S11-quick-demos/healthcare-demo.md)    | 🔴 Advanced     | 30 min | HIPAA-compliant patient portal        |
+| [Analytics Platform](S11-quick-demos/analytics-demo.md)    | 🟡 Intermediate | 30 min | Data analytics with Synapse           |
+| [Static Website](S11-quick-demos/static-site-demo.md)      | 🟢 Beginner     | 15 min | Simple static web app                 |
 
 ---
 
@@ -48,15 +48,16 @@ For simple, single-prompt scenarios, see the [S10 Quick Demos](S10-quick-demos/)
 | #   | Scenario                                                  | Character       | Challenge                              | Time      | Difficulty   |
 | --- | --------------------------------------------------------- | --------------- | -------------------------------------- | --------- | ------------ |
 | S01 | [Bicep Baseline](#s01-bicep-baseline)                     | Elena Rodriguez | Build secure Azure network foundation  | 30 min    | Beginner     |
-| S02 | [Terraform Baseline](#s02-terraform-baseline)             | Marcus Chen     | Multi-cloud IaC with Terraform         | 30 min    | Beginner     |
+| S02 | [Terraform Baseline](#s02-terraform-baseline)             | Jordan Martinez | Multi-cloud IaC with Terraform         | 30 min    | Beginner     |
 | S03 | [Five-Agent Workflow](#s03-five-agent-workflow)           | —               | End-to-end infrastructure design       | 45-60 min | Advanced     |
 | S04 | [E-Commerce Platform](#s04-e-commerce-platform)           | —               | PCI-DSS compliant retail platform      | 60-90 min | Advanced     |
-| S05 | [Documentation Generation](#s05-documentation-generation) | Elena Rodriguez | Auto-generate docs from code           | 20 min    | Beginner     |
-| S06 | [Service Validation](#s06-service-validation)             | Marcus Thompson | Automated compliance testing           | 30 min    | Intermediate |
-| S07 | [Troubleshooting](#s07-troubleshooting)                   | James Park      | Diagnose infrastructure issues         | 25 min    | Intermediate |
-| S08 | [SBOM Generator](#s08-sbom-generator)                     | —               | Software Bill of Materials             | 20 min    | Intermediate |
-| S09 | [Diagrams as Code](#s09-diagrams-as-code)                 | —               | Python-generated architecture diagrams | 20 min    | Beginner     |
+| S05 | [Documentation Generation](#s05-documentation-generation) | Priya Sharma    | Auto-generate docs from code           | 90 min    | Intermediate |
+| S06 | [Service Validation](#s06-service-validation)             | Marcus Chen     | Automated UAT and load testing         | 30 min    | Intermediate |
+| S07 | [Troubleshooting](#s07-troubleshooting)                   | Maya Patel      | Diagnose infrastructure issues         | 25 min    | Intermediate |
+| S08 | [SBOM Generator](#s08-sbom-generator)                     | Sarah Chen      | Software Bill of Materials             | 75 min    | Intermediate |
+| S09 | [Diagrams as Code](#s09-diagrams-as-code)                 | David Kim       | Python-generated architecture diagrams | 20 min    | Beginner     |
 | S10 | [Coding Agent](#s10-coding-agent)                         | Alex Petrov     | Async implementation via GitHub Issues | 30 min    | Advanced     |
+| S11 | [Quick Demos](#s11-quick-demos)                           | —               | Single-prompt scenarios                | 15-30 min | Varies       |
 
 ---
 
@@ -86,7 +87,7 @@ For simple, single-prompt scenarios, see the [S10 Quick Demos](S10-quick-demos/)
 
 **[📁 View Scenario](S02-terraform-baseline/)**
 
-> **Character**: Marcus Chen — Senior Infrastructure Engineer with multi-cloud responsibilities
+> **Character**: Jordan Martinez — Senior Infrastructure Engineer with multi-cloud responsibilities
 
 **Challenge**: Same hub-spoke topology as S01, but using Terraform for multi-cloud consistency.
 
@@ -201,18 +202,18 @@ flowchart LR
 
 **[📁 View Scenario](S05-documentation-generation/)**
 
-> **Character**: Elena Rodriguez — Her infrastructure is deployed, but documentation is outdated
+> **Character**: Priya Sharma — Senior Technical Writer needing to document 50-server migration in 1 week
 
-**Challenge**: Generate and maintain documentation that stays in sync with infrastructure code.
+**Challenge**: Transform Azure resource data into professional documentation using conversation patterns.
 
 **What You'll Learn**:
 
-- Auto-generate READMEs from Bicep/Terraform
-- Create Mermaid architecture diagrams
-- Build runbooks and operational guides
-- Maintain consistency across documentation
+- Resource Graph patterns for documentation
+- Data-to-documentation flow
+- Mermaid diagrams from code
+- The 90/10 rule (what to automate vs. human judgment)
 
-**Key Insight**: Documentation as a **byproduct** of development, not a separate task.
+**Key Insight**: Documentation as a **conversation-driven** byproduct, not a separate task.
 
 ---
 
@@ -220,18 +221,18 @@ flowchart LR
 
 **[📁 View Scenario](S06-service-validation/)**
 
-> **Character**: Marcus Thompson — Cloud Architect preparing for Azure Advanced Specialization audit
+> **Character**: Marcus Chen — Senior QA Engineer at ValidationFirst Consulting
 
-**Challenge**: Verify 200+ compliance controls across infrastructure before auditors arrive.
+**Challenge**: Validate Azure infrastructure meets requirements through automated UAT and load testing.
 
 **What You'll Learn**:
 
 - PowerShell validation scripts with Pester
-- Azure Policy compliance checking
-- Automated audit evidence collection
+- Load testing with Azure Load Testing
+- Automated test evidence collection
 - Pre-deployment validation patterns
 
-**Key Insight**: Catch compliance gaps **before** auditors do.
+**Key Insight**: Catch issues **before** they reach production.
 
 ---
 
@@ -239,18 +240,18 @@ flowchart LR
 
 **[📁 View Scenario](S07-troubleshooting/)**
 
-> **Character**: James Park — Platform Engineer with production down and cryptic errors
+> **Character**: Maya Patel — On-Call SRE at RetailMax with 2 AM production incident
 
-**Challenge**: Diagnose and fix infrastructure issues under time pressure.
+**Challenge**: Diagnose and fix checkout failures under time pressure before Black Friday.
 
 **What You'll Learn**:
 
-- AI-assisted log analysis
+- AI-assisted log analysis with KQL
 - Azure Monitor and Log Analytics queries
 - Root cause identification patterns
 - Systematic debugging with Copilot
 
-**Key Insight**: Minutes of AI-assisted diagnosis vs. hours of manual investigation.
+**Key Insight**: Better **questions** lead to faster diagnosis, not just faster queries.
 
 ---
 
@@ -258,16 +259,18 @@ flowchart LR
 
 **[📁 View Scenario](S08-sbom-generator/)**
 
-**Challenge**: Generate Software Bill of Materials for compliance and security auditing.
+> **Character**: Sarah Chen — Security Engineer with 48-hour deadline for customer SBOM request
+
+**Challenge**: Create comprehensive Software Bill of Materials for compliance without prior SBOM experience.
 
 **What You'll Learn**:
 
-- SBOM generation with Syft
-- Vulnerability scanning with Grype
-- Container image analysis
-- Compliance reporting formats
+- SBOM fundamentals and CycloneDX format
+- Component discovery across application, container, and infrastructure layers
+- License compliance analysis
+- Validation techniques for SBOM completeness
 
-**Key Insight**: Automated security compliance without manual inventory.
+**Key Insight**: Learn **how** to create SBOMs through conversation, not just get output.
 
 ---
 
@@ -275,7 +278,9 @@ flowchart LR
 
 **[📁 View Scenario](S09-diagrams-as-code/)**
 
-**Challenge**: Create Azure architecture diagrams that can be version-controlled and automated.
+> **Character**: David Kim — Solutions Architect with design review in 2 hours
+
+**Challenge**: Create version-controlled Azure architecture diagrams without prior diagrams-as-code experience.
 
 **What You'll Learn**:
 
@@ -306,6 +311,25 @@ flowchart LR
 **⚠️ Requirements**: GitHub Copilot Business/Enterprise with Coding Agent enabled
 
 **Key Insight**: Delegate implementation to Copilot, focus on review and approval.
+
+---
+
+### S11: Quick Demos
+
+**[📁 View Scenario](S11-quick-demos/)**
+
+**Challenge**: Quick single-prompt demonstrations for time-constrained presentations.
+
+**Available Demos**:
+
+| Demo               | Complexity      | Time   | Description                           |
+| ------------------ | --------------- | ------ | ------------------------------------- |
+| E-Commerce Prompts | 🟡 Intermediate | 30 min | PCI-DSS compliant multi-tier platform |
+| Healthcare Portal  | 🔴 Advanced     | 30 min | HIPAA-compliant patient portal        |
+| Analytics Platform | 🟡 Intermediate | 30 min | Data analytics with Synapse           |
+| Static Website     | 🟢 Beginner     | 15 min | Simple static web app                 |
+
+**Key Insight**: Proof-of-value demos that fit any meeting schedule.
 
 ---
 
@@ -375,15 +399,21 @@ Best for: Live demonstrations and workshops
 
 ## Time Savings Summary
 
+For detailed methodology and research sources, see
+[Time Savings Evidence](../docs/value-proposition/time-savings-evidence.md).
+
 | Scenario                | Traditional | With Copilot | Savings |
 | ----------------------- | ----------- | ------------ | ------- |
 | S01 Bicep Baseline      | 4-6 hours   | 30 min       | 87-92%  |
 | S02 Terraform Baseline  | 4-6 hours   | 30 min       | 87-92%  |
 | S03 Five-Agent Workflow | 18+ hours   | 45 min       | 96%     |
 | S04 E-Commerce Platform | 24+ hours   | 60 min       | 96%     |
-| S05 Documentation       | 2-3 hours   | 20 min       | 85-89%  |
+| S05 Documentation Gen   | 20+ hours   | 90 min       | 93%     |
 | S06 Service Validation  | 4-6 hours   | 30 min       | 87-92%  |
-| S07 Troubleshooting     | 2-4 hours   | 25 min       | 79-90%  |
+| S07 Troubleshooting     | 30 hours    | 5 hours      | 83%     |
+| S08 SBOM Generator      | 6 hours     | 75 min       | 79%     |
+| S09 Diagrams as Code    | 45 min      | 20 min       | 56%     |
+| S10 Coding Agent        | 8+ hours    | 30 min       | 94%     |
 
 ---
 
@@ -402,10 +432,10 @@ Each scenario should:
 
 ## Document Info
 
-|                |                            |
-| -------------- | -------------------------- |
-| **Created**    | November 2025              |
-| **Updated**    | December 2025              |
-| **Scenarios**  | 11 (S01-S10 + Quick Demos) |
-| **Total Time** | ~7-8 hours (all scenarios) |
-| **Maintainer** | Repository maintainers     |
+|                |                               |
+| -------------- | ----------------------------- |
+| **Created**    | November 2025                 |
+| **Updated**    | December 2025                 |
+| **Scenarios**  | 11 (S01-S11)                  |
+| **Total Time** | ~8-10 hours (all scenarios)   |
+| **Maintainer** | Repository maintainers        |

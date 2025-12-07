@@ -9,7 +9,7 @@
 
 ### The Story: Sarah's 2 AM Alert
 
-**Who**: Sarah Chen, On-Call SRE at RetailMax Online
+**Who**: Maya Patel, On-Call SRE at RetailMax Online
 **Challenge**: 15% checkout failures, $22K/hour revenue impact, Black Friday in 3 days
 **Discovery**: AI isn't about faster queries—it's about better questions
 
@@ -671,4 +671,4 @@ who helps you **think through** complex problems systematically.
 
 ---
 
-*"I came for faster KQL. I stayed for better diagnostic thinking."* — Sarah Chen
+*"I came for faster KQL. I stayed for better diagnostic thinking."* — Maya Patel

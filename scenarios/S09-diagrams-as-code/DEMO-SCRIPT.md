@@ -29,7 +29,7 @@
 
 **[Show this slide or read aloud]**
 
-> "Meet Marcus Chen, a Solutions Architect at TechVentures. He has a design review in 2 hours
+> "Meet David Kim, a Solutions Architect at TechVentures. He has a design review in 2 hours
 > and needs to document their new microservices architecture. He's heard about diagrams-as-code
 > but has never used it."
 

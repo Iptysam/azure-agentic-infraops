@@ -43,5 +43,5 @@ The agent will create a Python script and generate the corresponding image.
 
 ## Related Documentation
 
-- [S08 Diagrams as Code](../../scenarios/S08-diagrams-as-code/) - Hands-on scenario for diagram generation
+- [S09 Diagrams as Code](../../scenarios/S09-diagrams-as-code/) - Hands-on scenario for diagram generation
 - [Visual Elements Guide](../presenter-toolkit/visual-elements-guide.md) - Using diagrams in presentations

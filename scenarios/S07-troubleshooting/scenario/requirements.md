@@ -35,7 +35,7 @@
 **Date/Time**: November 11, 2025 - 10:15 PM EST (Black Friday week)
 **Severity**: SEV-1 (Revenue Impacting)
 **Reporter**: Operations Dashboard Alert + Customer Support (spike in complaints)
-**On-Call Engineer**: Sarah Chen, Cloud Operations Lead (3 years Azure experience)
+**On-Call Engineer**: Maya Patel, Cloud Operations Lead (3 years Azure experience)
 
 ### Symptoms
 
@@ -194,7 +194,7 @@ Sarah needs to quickly:
 
 ### Primary
 
-- **Sarah Chen** (On-Call Engineer): Needs fast diagnosis and clear solution
+- **Maya Patel** (On-Call Engineer): Needs fast diagnosis and clear solution
 - **Mark Rodriguez** (Engineering Manager): Wants incident resolved and postmortem
 - **Customers**: Want to complete purchases, losing patience
 

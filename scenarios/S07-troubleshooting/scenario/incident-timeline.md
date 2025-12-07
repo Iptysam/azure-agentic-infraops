@@ -95,7 +95,7 @@
 
 - Customer support escalates: 20 similar complaints in 30 minutes
 - Support supervisor creates Slack post in #operations channel
-- Sarah Chen (on-call engineer) sees message, but initially assesses as "monitor"
+- Maya Patel (on-call engineer) sees message, but initially assesses as "monitor"
 - Sarah's thought: "Maybe temporary surge, let's watch for 15 minutes"
 
 **9:45 PM EST**
@@ -103,7 +103,7 @@
 - Error rate: 5.2% (650 errors/minute)
 - Customer complaints on social media: 10 tweets mentioning checkout issues
 - Support ticket count: 35 open tickets (related to checkout)
-- Sarah Chen: "This is not temporary, investigating now"
+- Maya Patel: "This is not temporary, investigating now"
 
 #### 10:00 PM EST - 11:00 PM EST (Incident Declared)
 

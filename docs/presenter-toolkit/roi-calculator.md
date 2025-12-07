@@ -21,19 +21,20 @@ cost. Most IT Pros report saving 1-2 hours on their first day.
 
 ## 📊 Time Savings by Scenario
 
-These measurements come from the repository's documented scenarios (S01-S09):
+These measurements come from the repository's documented scenarios (S01-S11):
 
 | Scenario                  | Manual Time | With Copilot | Time Saved     | Savings % |
 | ------------------------- | ----------- | ------------ | -------------- | --------- |
 | S01 - Bicep Baseline      | 4-6 hours   | 30-45 min    | 3.5-5.5 hours  | 85-90%    |
 | S02 - Terraform Baseline  | 4-6 hours   | 30-45 min    | 3.5-5.5 hours  | 85-90%    |
 | S03 - Five-Agent Workflow | 18 hours    | 45 min       | 17.25 hours    | 96%       |
-| S04 - Documentation       | 3-4 hours   | 20-30 min    | 2.5-3.5 hours  | 85-90%    |
-| S05 - Service Validation  | 2-3 hours   | 15-20 min    | 1.75-2.75 hrs  | 85-90%    |
-| S06 - Troubleshooting     | 1-4 hours   | 10-15 min    | 0.75-3.75 hrs  | 80-90%    |
-| S07 - SBOM Generator      | 2-3 hours   | 15-20 min    | 1.75-2.75 hrs  | 85-90%    |
-| S08 - Diagrams as Code    | 2-3 hours   | 15-20 min    | 1.75-2.75 hrs  | 85-90%    |
-| S09 - Coding Agent        | 2-4 hours   | 15-30 min    | 1.5-3.5 hours  | 85-90%    |
+| S04 - E-Commerce Platform | 24 hours    | 60 min       | 23 hours       | 96%       |
+| S05 - Documentation Gen   | 20 hours    | 90 min       | 18.5 hours     | 93%       |
+| S06 - Service Validation  | 4-6 hours   | 30 min       | 3.5-5.5 hours  | 85-90%    |
+| S07 - Troubleshooting     | 30 hours    | 5 hours      | 25 hours       | 83%       |
+| S08 - SBOM Generator      | 6 hours     | 75 min       | 4.75 hours     | 79%       |
+| S09 - Diagrams as Code    | 45 min      | 20 min       | 25 min         | 56%       |
+| S10 - Coding Agent        | 8+ hours    | 30 min       | 7.5+ hours     | 94%       |
 
 📖 **Methodology**: See [Time Savings Evidence](../value-proposition/time-savings-evidence.md) for measurement details.
 

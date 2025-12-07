@@ -151,7 +151,7 @@ Ask the Load Test Assistant:
 ## Directory Structure
 
 ```
-S05-service-validation/
+S06-service-validation/
 ├── README.md                      # This file
 ├── DEMO-SCRIPT.md                 # 30-45 minute presenter guide
 ├── agents/
@@ -305,8 +305,8 @@ They adapt to any REST API with HTTP endpoints.
 
 - **S01-bicep-baseline:** Deploy infrastructure to test
 - **S03-five-agent-workflow:** Multi-agent architecture planning
-- **S04-documentation-generation:** Generate testing documentation
-- **S06-troubleshooting:** Debug issues found in testing
+- **S05-documentation-generation:** Generate testing documentation
+- **S07-troubleshooting:** Debug issues found in testing
 
 ---
 

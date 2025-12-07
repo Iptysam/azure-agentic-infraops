@@ -342,7 +342,7 @@ into a single agent. This is useful for:
 - [Copilot Portfolio Showcase](../value-proposition/copilot-portfolio-showcase.md) — Real-world projects
 - [ADR-003: AVM-First Approach](../adr/ADR-003-avm-first-approach.md) — Why we use Azure Verified Modules
 - [ADR-004: Region Defaults](../adr/ADR-004-region-defaults.md) — Default `swedencentral`, fallback guidance
-- [Scenario Prompts](../../scenarios/S10-quick-demos/ecommerce-prompts.md)
+- [Scenario Prompts](../../scenarios/S11-quick-demos/ecommerce-prompts.md)
 - [Copilot Instructions](../../.github/copilot-instructions.md)
 - [Azure Pricing MCP README](../../mcp/azure-pricing-mcp/README.md)
 - [README](../../README.md)

@@ -1,6 +1,6 @@
-# S06: Azure Troubleshooting Assistant
+# S07: Azure Troubleshooting Assistant
 
-## Meet Sarah Chen
+## Meet Maya Patel
 
 **Role**: On-Call Site Reliability Engineer at RetailMax Online
 **Experience**: 4 years in cloud operations, certified Azure Administrator
@@ -288,7 +288,7 @@ Help me troubleshoot systematically.
 ### Files in This Scenario
 
 ```text
-S06-troubleshooting/
+S07-troubleshooting/
 ├── README.md                      ← You are here
 ├── DEMO-SCRIPT.md                 ← 30-min presenter guide
 ├── examples/
@@ -356,4 +356,4 @@ S06-troubleshooting/
 
 ---
 
-*"The goal isn't faster queries. It's better questions."* — Sarah Chen
+*"The goal isn't faster queries. It's better questions."* — Maya Patel

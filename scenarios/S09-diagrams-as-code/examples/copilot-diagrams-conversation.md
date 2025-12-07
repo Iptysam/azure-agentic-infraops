@@ -6,7 +6,7 @@ maintain diagrams independently.
 
 ## Scenario Context
 
-**Character**: Marcus Chen, Solutions Architect at TechVentures Ltd  
+**Character**: David Kim, Solutions Architect at TechVentures Ltd  
 **Situation**: Design review meeting in 2 hours. Marcus needs to document a new microservices architecture
 for stakeholders. He's heard about "diagrams-as-code" but has never used it.
 

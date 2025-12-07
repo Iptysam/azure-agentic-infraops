@@ -699,9 +699,9 @@ Each scenario has unique troubleshooting content. For scenario-specific issues, 
 - [S01: Bicep Baseline](../scenarios/S01-bicep-baseline/README.md#troubleshooting)
 - [S02: Terraform Baseline](../scenarios/S02-terraform-baseline/README.md#troubleshooting)
 - [S03: Five-Agent Workflow](../scenarios/S03-five-agent-workflow/README.md#troubleshooting)
-- [S07: SBOM Generator](../scenarios/S07-sbom-generator/README.md#troubleshooting)
-- [S08: Diagrams as Code](../scenarios/S08-diagrams-as-code/README.md#troubleshooting)
-- [S09: Coding Agent](../scenarios/S09-coding-agent/README.md#troubleshooting)
+- [S08: SBOM Generator](../../scenarios/S08-sbom-generator/README.md#troubleshooting)
+- [S09: Diagrams as Code](../../scenarios/S09-diagrams-as-code/README.md#troubleshooting)
+- [S10: Coding Agent](../../scenarios/S10-coding-agent/README.md#troubleshooting)
 
 ---
 

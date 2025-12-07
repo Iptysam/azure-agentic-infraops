@@ -1,4 +1,4 @@
-# S07: SBOM Discovery - Learn Component Documentation with Copilot
+# S08: SBOM Discovery - Learn Component Documentation with Copilot
 
 ## Meet Sarah Chen
 

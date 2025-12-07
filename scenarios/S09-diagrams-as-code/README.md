@@ -1,11 +1,11 @@
-# S08: Diagrams-as-Code with GitHub Copilot
+# S09: Diagrams-as-Code with GitHub Copilot
 
 > **🤖 Agent Available**: This scenario is also available as the `diagram-generator` agent for integration with
 > the 4-step workflow. See `.github/agents/diagram-generator.agent.md`.
 
 ---
 
-## Meet Marcus Chen
+## Meet David Kim
 
 > **Role**: Solutions Architect at TechVentures Ltd  
 > **Experience**: 8 years in cloud architecture, expert in Azure and AWS  
@@ -75,7 +75,7 @@ Instead of asking Copilot to "generate a diagram script," we use Copilot as a **
 
 ## Scenario
 
-**Character**: Marcus Chen, Solutions Architect at TechVentures Ltd  
+**Character**: David Kim, Solutions Architect at TechVentures Ltd  
 **Situation**: Design review meeting in 2 hours. Needs to document a new microservices architecture.
 Has never used diagrams-as-code before.
 
@@ -92,7 +92,7 @@ Has never used diagrams-as-code before.
 ## Demo Components
 
 ```
-S08-diagrams-as-code/
+S09-diagrams-as-code/
 ├── README.md                              # This file
 ├── DEMO-SCRIPT.md                         # 20-minute presenter guide
 ├── examples/
@@ -387,7 +387,7 @@ in the diagrams library?
 
 - [Python Diagrams Library](https://diagrams.mingrammer.com/)
 - [Azure Icons Reference](https://diagrams.mingrammer.com/docs/nodes/azure)
-- [S04: Documentation Generation](../S04-documentation-generation/)
+- [S05: Documentation Generation](../S05-documentation-generation/)
 - [Workflow Guide](../../docs/workflow/WORKFLOW.md)
 
 ---
