@@ -42,19 +42,19 @@ compelling demo narratives.
 
 ### Character Matrix
 
-| Scenario | Character | Role |
-|----------|-----------|------|
-| S01 | Elena Rodriguez | Cloud Infrastructure Engineer |
-| S02 | Jordan Martinez | Senior Infrastructure Engineer |
-| S03 | Jennifer Chen | Solutions Architect |
-| S04 | Carlos Mendez | E-Commerce Architect |
-| S05 | Priya Sharma | Senior Technical Writer |
-| S06 | Marcus Chen | Senior QA Engineer |
-| S07 | Maya Patel | On-Call SRE |
-| S08 | Sarah Chen | Security Engineer |
-| S09 | David Kim | Solutions Architect |
-| S10 | Alex Petrov | Cloud Operations Engineer |
-| S11 | Various | Quick demos |
+| Scenario | Character       | Role                           |
+| -------- | --------------- | ------------------------------ |
+| S01      | Elena Rodriguez | Cloud Infrastructure Engineer  |
+| S02      | Jordan Martinez | Senior Infrastructure Engineer |
+| S03      | Jennifer Chen   | Solutions Architect            |
+| S04      | Carlos Mendez   | E-Commerce Architect           |
+| S05      | Priya Sharma    | Senior Technical Writer        |
+| S06      | Marcus Chen     | Senior QA Engineer             |
+| S07      | Maya Patel      | On-Call SRE                    |
+| S08      | Sarah Chen      | Security Engineer              |
+| S09      | David Kim       | Solutions Architect            |
+| S10      | Alex Petrov     | Cloud Operations Engineer      |
+| S11      | Various         | Quick demos                    |
 
 ---
 
