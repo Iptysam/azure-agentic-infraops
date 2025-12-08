@@ -21,8 +21,14 @@ git config --global core.autocrlf input
 echo "🪝 Setting up Git hooks (Husky)..."
 git config core.hooksPath .husky
 if [ -f ".husky/pre-commit" ]; then
-    chmod +x .husky/pre-commit
-    echo "  ✅ Pre-commit hook enabled"
+    # Try to set executable permission, but don't fail if it doesn't work
+    # (file may already be executable or permissions may be restricted on mounted volumes)
+    chmod +x .husky/pre-commit 2>/dev/null || true
+    if [ -x ".husky/pre-commit" ]; then
+        echo "  ✅ Pre-commit hook enabled"
+    else
+        echo "  ⚠️  Pre-commit hook exists but couldn't set executable (may already be executable)"
+    fi
 else
     echo "  ⚠️  Pre-commit hook not found"
 fi
