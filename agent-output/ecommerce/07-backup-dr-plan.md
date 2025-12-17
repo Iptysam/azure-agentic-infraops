@@ -27,21 +27,21 @@ datacenter-level failures but not full regional outages.
 
 ### 1.1 Recovery Time Objective (RTO)
 
-| Tier            | RTO Target | Services                               |
-| --------------- | ---------- | -------------------------------------- |
-| Critical        | 1 hour     | App Service, SQL Database, Redis       |
-| Important       | 4 hours    | Functions, Service Bus, Cognitive Search |
-| Standard        | 8 hours    | Log Analytics, App Insights            |
+| Tier      | RTO Target | Services                                 |
+| --------- | ---------- | ---------------------------------------- |
+| Critical  | 1 hour     | App Service, SQL Database, Redis         |
+| Important | 4 hours    | Functions, Service Bus, Cognitive Search |
+| Standard  | 8 hours    | Log Analytics, App Insights              |
 
 ### 1.2 Recovery Point Objective (RPO)
 
-| Data Type       | RPO Target | Backup Strategy                        |
-| --------------- | ---------- | -------------------------------------- |
-| Transaction DB  | 5 minutes  | SQL point-in-time restore              |
-| Session Data    | 0 (loss acceptable) | Redis in-memory (ephemeral)     |
-| Search Index    | 24 hours   | Rebuild from source data               |
-| Config/Secrets  | 0 minutes  | Key Vault with soft-delete             |
-| Logs            | 24 hours   | Log Analytics retention                |
+| Data Type      | RPO Target          | Backup Strategy             |
+| -------------- | ------------------- | --------------------------- |
+| Transaction DB | 5 minutes           | SQL point-in-time restore   |
+| Session Data   | 0 (loss acceptable) | Redis in-memory (ephemeral) |
+| Search Index   | 24 hours            | Rebuild from source data    |
+| Config/Secrets | 0 minutes           | Key Vault with soft-delete  |
+| Logs           | 24 hours            | Log Analytics retention     |
 
 ---
 
@@ -49,15 +49,15 @@ datacenter-level failures but not full regional outages.
 
 ### 2.1 Azure SQL Database
 
-| Setting                | Configuration                            |
-| ---------------------- | ---------------------------------------- |
-| Backup Type            | Automated (Azure-managed)                |
-| Full Backup Frequency  | Weekly                                   |
-| Differential Frequency | Every 12 hours                           |
-| Transaction Log        | Every 5-10 minutes                       |
-| Retention (PITR)       | 7 days (Standard) / 35 days (Premium)    |
-| Long-Term Retention    | Not configured (recommend enabling)      |
-| Geo-Redundancy         | GRS (backup stored in paired region)     |
+| Setting                | Configuration                         |
+| ---------------------- | ------------------------------------- |
+| Backup Type            | Automated (Azure-managed)             |
+| Full Backup Frequency  | Weekly                                |
+| Differential Frequency | Every 12 hours                        |
+| Transaction Log        | Every 5-10 minutes                    |
+| Retention (PITR)       | 7 days (Standard) / 35 days (Premium) |
+| Long-Term Retention    | Not configured (recommend enabling)   |
+| Geo-Redundancy         | GRS (backup stored in paired region)  |
 
 **Point-in-Time Restore Command:**
 
@@ -72,11 +72,11 @@ az sql db restore \
 
 ### 2.2 Azure Key Vault
 
-| Setting                | Configuration                            |
-| ---------------------- | ---------------------------------------- |
-| Soft Delete            | Enabled (90 days retention)              |
-| Purge Protection       | Enabled (cannot force delete)            |
-| Backup Method          | Manual export or IaC redeploy            |
+| Setting          | Configuration                 |
+| ---------------- | ----------------------------- |
+| Soft Delete      | Enabled (90 days retention)   |
+| Purge Protection | Enabled (cannot force delete) |
+| Backup Method    | Manual export or IaC redeploy |
 
 **Key Vault Backup Command:**
 
@@ -89,38 +89,38 @@ az keyvault secret backup \
 
 ### 2.3 Azure Cache for Redis
 
-| Setting                | Configuration                            |
-| ---------------------- | ---------------------------------------- |
-| Persistence            | Not enabled (session cache only)         |
-| Data Criticality       | Low (regenerated from DB)                |
-| Recovery Strategy      | Cold start (cache warming on restart)    |
+| Setting           | Configuration                         |
+| ----------------- | ------------------------------------- |
+| Persistence       | Not enabled (session cache only)      |
+| Data Criticality  | Low (regenerated from DB)             |
+| Recovery Strategy | Cold start (cache warming on restart) |
 
 **Note**: Redis is used for session caching only. No backup required; cache rebuilds on application startup.
 
 ### 2.4 Azure Cognitive Search
 
-| Setting                | Configuration                            |
-| ---------------------- | ---------------------------------------- |
-| Index Backup           | Not native (rebuild from source)         |
-| Recovery Strategy      | Reindex from SQL Database                |
-| Estimated Reindex Time | 30-60 minutes for current data volume    |
+| Setting                | Configuration                         |
+| ---------------------- | ------------------------------------- |
+| Index Backup           | Not native (rebuild from source)      |
+| Recovery Strategy      | Reindex from SQL Database             |
+| Estimated Reindex Time | 30-60 minutes for current data volume |
 
 ### 2.5 Service Bus
 
-| Setting                | Configuration                            |
-| ---------------------- | ---------------------------------------- |
-| Message Retention      | 14 days (dead-letter queue)              |
-| Geo-DR                 | Not configured (Premium tier required)   |
-| Recovery Strategy      | Replay from dead-letter or source system |
+| Setting           | Configuration                            |
+| ----------------- | ---------------------------------------- |
+| Message Retention | 14 days (dead-letter queue)              |
+| Geo-DR            | Not configured (Premium tier required)   |
+| Recovery Strategy | Replay from dead-letter or source system |
 
 ### 2.6 App Service / Functions
 
-| Setting                | Configuration                            |
-| ---------------------- | ---------------------------------------- |
-| Code Backup            | Git repository (source of truth)         |
-| Configuration          | IaC (Bicep templates)                    |
-| Recovery Strategy      | Redeploy from source control             |
-| Deployment Slots       | Staging slot available for swap          |
+| Setting           | Configuration                    |
+| ----------------- | -------------------------------- |
+| Code Backup       | Git repository (source of truth) |
+| Configuration     | IaC (Bicep templates)            |
+| Recovery Strategy | Redeploy from source control     |
+| Deployment Slots  | Staging slot available for swap  |
 
 ---
 
@@ -179,13 +179,13 @@ az keyvault secret backup \
 
 **Enhancements Required:**
 
-| Component          | Enhancement                    | Monthly Cost |
-| ------------------ | ------------------------------ | ------------ |
-| SQL Geo-Replication| Active geo-replication         | +$153        |
-| App Service (DR)   | P1v4 instance (warm standby)   | +$229        |
-| Functions (DR)     | EP1 instance (warm standby)    | +$200        |
-| Service Bus Geo-DR | Premium tier pairing           | +$58         |
-| **Total**          |                                | **+$640**    |
+| Component           | Enhancement                  | Monthly Cost |
+| ------------------- | ---------------------------- | ------------ |
+| SQL Geo-Replication | Active geo-replication       | +$153        |
+| App Service (DR)    | P1v4 instance (warm standby) | +$229        |
+| Functions (DR)      | EP1 instance (warm standby)  | +$200        |
+| Service Bus Geo-DR  | Premium tier pairing         | +$58         |
+| **Total**           |                              | **+$640**    |
 
 ---
 
@@ -397,12 +397,12 @@ cd infra/bicep/ecommerce
 
 ## 6. DR Testing Schedule
 
-| Test Type                  | Frequency   | Duration  | Stakeholders                    |
-| -------------------------- | ----------- | --------- | ------------------------------- |
-| Backup Verification        | Weekly      | 1 hour    | Operations Team                 |
-| Point-in-Time Restore Test | Monthly     | 2 hours   | DBA, Operations                 |
-| Failover Drill (Planned)   | Quarterly   | 4 hours   | All Teams, Management           |
-| Full DR Test               | Annually    | 8 hours   | All Teams, Executives, Vendor   |
+| Test Type                  | Frequency | Duration | Stakeholders                  |
+| -------------------------- | --------- | -------- | ----------------------------- |
+| Backup Verification        | Weekly    | 1 hour   | Operations Team               |
+| Point-in-Time Restore Test | Monthly   | 2 hours  | DBA, Operations               |
+| Failover Drill (Planned)   | Quarterly | 4 hours  | All Teams, Management         |
+| Full DR Test               | Annually  | 8 hours  | All Teams, Executives, Vendor |
 
 ### Test Checklist
 
@@ -419,12 +419,12 @@ cd infra/bicep/ecommerce
 
 ### 7.1 Backup Monitoring
 
-| Alert                      | Condition                       | Severity | Action                          |
-| -------------------------- | ------------------------------- | -------- | ------------------------------- |
-| Backup Failed              | SQL backup job failure          | Sev 1    | Immediate investigation         |
-| Backup Age > 24h           | No backup in last 24 hours      | Sev 2    | Investigate within 4 hours      |
-| Geo-Replication Lag > 1hr  | SQL geo-replication delay       | Sev 2    | Check network/load              |
-| Storage Capacity < 20%     | Backup storage running low      | Sev 3    | Plan capacity increase          |
+| Alert                     | Condition                  | Severity | Action                     |
+| ------------------------- | -------------------------- | -------- | -------------------------- |
+| Backup Failed             | SQL backup job failure     | Sev 1    | Immediate investigation    |
+| Backup Age > 24h          | No backup in last 24 hours | Sev 2    | Investigate within 4 hours |
+| Geo-Replication Lag > 1hr | SQL geo-replication delay  | Sev 2    | Check network/load         |
+| Storage Capacity < 20%    | Backup storage running low | Sev 3    | Plan capacity increase     |
 
 ### 7.2 Log Analytics Queries
 
@@ -452,21 +452,21 @@ AzureMetrics
 
 ## 8. Roles and Responsibilities
 
-| Role                    | Responsibility                                    |
-| ----------------------- | ------------------------------------------------- |
-| **DR Coordinator**      | Owns DR plan, coordinates drills                  |
-| **DBA**                 | SQL backup/restore, data integrity                |
-| **Platform Engineer**   | App Service, Functions, networking recovery       |
-| **Security Lead**       | Key Vault recovery, access validation             |
-| **Communications Lead** | Stakeholder notifications, status updates         |
+| Role                    | Responsibility                              |
+| ----------------------- | ------------------------------------------- |
+| **DR Coordinator**      | Owns DR plan, coordinates drills            |
+| **DBA**                 | SQL backup/restore, data integrity          |
+| **Platform Engineer**   | App Service, Functions, networking recovery |
+| **Security Lead**       | Key Vault recovery, access validation       |
+| **Communications Lead** | Stakeholder notifications, status updates   |
 
 ---
 
 ## 9. Document Control
 
-| Version | Date       | Author                    | Changes                    |
-| ------- | ---------- | ------------------------- | -------------------------- |
-| 1.0     | 2025-12-17 | Workload Documentation Agent | Initial version          |
+| Version | Date       | Author                       | Changes         |
+| ------- | ---------- | ---------------------------- | --------------- |
+| 1.0     | 2025-12-17 | Workload Documentation Agent | Initial version |
 
 ---
 

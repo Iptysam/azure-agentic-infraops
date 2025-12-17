@@ -6,13 +6,13 @@
 
 ## Document Package Contents
 
-| Document                                         | Description                                  | Status      |
-| ------------------------------------------------ | -------------------------------------------- | ----------- |
-| [Design Document](./07-design-document.md)       | Comprehensive 10-section architecture design | ✅          |
-| [Operations Runbook](./07-operations-runbook.md) | Day-2 operational procedures                 | ✅          |
-| [Resource Inventory](./07-resource-inventory.md) | Complete resource listing from IaC           | ✅          |
-| [Compliance Matrix](./07-compliance-matrix.md)   | PCI-DSS security controls mapping            | ✅          |
-| [Backup & DR Plan](./07-backup-dr-plan.md)       | Recovery procedures and failover             | ✅          |
+| Document                                         | Description                                  | Status |
+| ------------------------------------------------ | -------------------------------------------- | ------ |
+| [Design Document](./07-design-document.md)       | Comprehensive 10-section architecture design | ✅     |
+| [Operations Runbook](./07-operations-runbook.md) | Day-2 operational procedures                 | ✅     |
+| [Resource Inventory](./07-resource-inventory.md) | Complete resource listing from IaC           | ✅     |
+| [Compliance Matrix](./07-compliance-matrix.md)   | PCI-DSS security controls mapping            | ✅     |
+| [Backup & DR Plan](./07-backup-dr-plan.md)       | Recovery procedures and failover             | ✅     |
 
 ## Source Artifacts
 
