@@ -11,7 +11,7 @@
 - [x] Step 4: Planning (bicep-plan)
 - [x] Step 5: Implementation (bicep-implement)
 - [x] Step 6: Deploy (simulated)
-- [x] Step 7: As-Built Artifacts (diagram)
+- [x] Step 7: As-Built Artifacts + Workload Documentation ✅
 
 ## Generated Artifacts
 
@@ -28,6 +28,12 @@
 | [06-deployment-summary.md](./06-deployment-summary.md)             | Deployment results (simulated)  | 2024-12-17 |
 | [07-ab-diagram.py](./07-ab-diagram.py)                             | As-built diagram source         | 2024-12-17 |
 | [07-ab-diagram.png](./07-ab-diagram.png)                           | As-built diagram image          | 2024-12-17 |
+| [07-documentation-index.md](./07-documentation-index.md)           | Workload documentation hub      | 2024-12-17 |
+| [07-design-document.md](./07-design-document.md)                   | Comprehensive design document   | 2024-12-17 |
+| [07-operations-runbook.md](./07-operations-runbook.md)             | Day-2 operational procedures    | 2024-12-17 |
+| [07-resource-inventory.md](./07-resource-inventory.md)             | Complete resource inventory     | 2024-12-17 |
+| [07-compliance-matrix.md](./07-compliance-matrix.md)               | Security controls mapping       | 2024-12-17 |
+| [07-backup-dr-plan.md](./07-backup-dr-plan.md)                     | Backup & disaster recovery      | 2024-12-17 |
 
 ## Related Resources
 
