@@ -89,7 +89,7 @@ The target audience is:
 
 ## Six-Step Agent Workflow Architecture
 
-This repository uses a **6-step agent workflow** for Azure infrastructure development,
+This repository uses a **6-step agent workflow** (with optional Step 7) for Azure infrastructure development,
 with explicit artifact phases and governance discovery:
 
 ```mermaid
@@ -100,18 +100,20 @@ graph LR
     D --> B[bicep-plan<br/>Step 4]
     B --> I[bicep-implement<br/>Step 5]
     I --> F["Post-Build Artifacts<br/>Step 6"]
+    F -.-> W["workload-documentation<br/>Step 7 (optional)"]
     MCP["💰 Azure Pricing MCP"] -.->|real-time costs| A
     MCP -.->|cost validation| B
 ```
 
-| Step | Agent/Phase                 | Purpose                                             | Artifacts/Integrations           |
-| ---- | --------------------------- | --------------------------------------------------- | -------------------------------- |
-| 1    | `@plan` (Built-in)          | Create implementation plans with cost estimates     | Requirements plan                |
-| 2    | `azure-principal-architect` | Azure Well-Architected Framework guidance (NO CODE) | 💰 Pricing MCP                   |
-| 3    | Pre-Build Artifacts         | Design diagrams (`-design`) + ADRs (optional)       | 📊 diagram-generator, 📝 ADR     |
-| 4    | `bicep-plan`                | Infrastructure planning + governance discovery      | 💰 Pricing MCP, governance files |
-| 5    | `bicep-implement`           | Bicep code generation                               | Bicep templates                  |
-| 6    | Post-Build Artifacts        | As-built diagrams (`-asbuilt`) + ADRs (optional)    | 📊 diagram-generator, 📝 ADR     |
+| Step | Agent/Phase                        | Purpose                                             | Artifacts/Integrations              |
+| ---- | ---------------------------------- | --------------------------------------------------- | ----------------------------------- |
+| 1    | `@plan` (Built-in)                 | Create implementation plans with cost estimates     | Requirements plan                   |
+| 2    | `azure-principal-architect`        | Azure Well-Architected Framework guidance (NO CODE) | 💰 Pricing MCP                      |
+| 3    | Pre-Build Artifacts                | Design diagrams (`-design`) + ADRs (optional)       | 📊 diagram-generator, 📝 ADR        |
+| 4    | `bicep-plan`                       | Infrastructure planning + governance discovery      | 💰 Pricing MCP, governance files    |
+| 5    | `bicep-implement`                  | Bicep code generation                               | Bicep templates                     |
+| 6    | Post-Build Artifacts               | As-built diagrams (`-asbuilt`) + ADRs (optional)    | 📊 diagram-generator, 📝 ADR        |
+| 7    | `workload-documentation-generator` | Comprehensive documentation package (OPTIONAL)      | 📚 Design docs, runbooks, inventory |
 
 **Key Concepts:**
 
@@ -119,12 +121,13 @@ graph LR
 - **📊 `-design` suffix** - Pre-implementation diagrams/ADRs (Step 3)
 - **📊 `-asbuilt` suffix** - Post-implementation diagrams/ADRs (Step 6)
 - **Governance Discovery** - bicep-plan queries Azure Policy before planning (Step 4)
+- **📚 Step 7 (Optional)** - Generate customer-deliverable documentation when needed
 
 **How to Use Custom Agents:**
 
 1. Press `Ctrl+Shift+A` or click the **Agent** button in Copilot Chat
 2. Select agent from dropdown: `@plan`, `azure-principal-architect`, `bicep-plan`, `bicep-implement`,
-   `diagram-generator`, or `adr-generator`
+   `diagram-generator`, `adr-generator`, or `workload-documentation-generator`
 3. Type your prompt and submit
 4. **Wait for approval prompt** before proceeding to next step
 
@@ -155,6 +158,11 @@ Step 5: bicep-implement
 Step 6: Post-Build Artifacts (OPTIONAL)
 → Ask: "Generate as-built diagram" for -asbuilt diagram
 → Ask: "Create ADR documenting implementation" for -asbuilt ADR
+
+Step 7: Workload Documentation (OPTIONAL)
+→ Ask: "Generate workload documentation package"
+→ Creates: design document, operations runbook, resource inventory
+→ Use when customer-deliverable documentation is needed
 ```
 
 **Quick Workflow (Skip artifacts):**
@@ -205,17 +213,18 @@ Prompt: Generate Bicep templates from the plan
 
 ### Output File Locations
 
-| Agent                     | Step | Output Location                                                                    |
-| ------------------------- | ---- | ---------------------------------------------------------------------------------- |
-| @plan                     | 1    | Chat context only (not persisted)                                                  |
-| azure-principal-architect | 2    | `agent-output/{project}/01-architecture-assessment.md`, `01-cost-estimate.md`      |
-| diagram-generator         | 3    | `agent-output/{project}/03-design-diagram.py`, `03-design-diagram.png`             |
-| adr-generator             | 3    | `agent-output/{project}/03-design-adr-NNN-{title}.md`                              |
-| bicep-plan                | 4    | `agent-output/{project}/04-implementation-plan.md`, `04-governance-constraints.md` |
-| bicep-implement           | 5    | `infra/bicep/{project}/` (Bicep code stays here)                                   |
-| —                         | 5    | `agent-output/{project}/05-implementation-reference.md` (link to Bicep folder)     |
-| diagram-generator         | 6    | `agent-output/{project}/06-asbuilt-diagram.py`, `06-asbuilt-diagram.png`           |
-| adr-generator             | 6    | `agent-output/{project}/06-asbuilt-adr-NNN-{title}.md`                             |
+| Agent                            | Step | Output Location                                                                    |
+| -------------------------------- | ---- | ---------------------------------------------------------------------------------- |
+| @plan                            | 1    | Chat context only (not persisted)                                                  |
+| azure-principal-architect        | 2    | `agent-output/{project}/01-architecture-assessment.md`, `01-cost-estimate.md`      |
+| diagram-generator                | 3    | `agent-output/{project}/03-design-diagram.py`, `03-design-diagram.png`             |
+| adr-generator                    | 3    | `agent-output/{project}/03-design-adr-NNN-{title}.md`                              |
+| bicep-plan                       | 4    | `agent-output/{project}/04-implementation-plan.md`, `04-governance-constraints.md` |
+| bicep-implement                  | 5    | `infra/bicep/{project}/` (Bicep code stays here)                                   |
+| —                                | 5    | `agent-output/{project}/05-implementation-reference.md` (link to Bicep folder)     |
+| diagram-generator                | 6    | `agent-output/{project}/06-asbuilt-diagram.py`, `06-asbuilt-diagram.png`           |
+| adr-generator                    | 6    | `agent-output/{project}/06-asbuilt-adr-NNN-{title}.md`                             |
+| workload-documentation-generator | 7    | `agent-output/{project}/07-*.md` (design doc, runbook, inventory, etc.)            |
 
 ### Auto-Generated Project README
 
@@ -235,6 +244,7 @@ Each project's `README.md` is updated by agents to track progress:
 - [ ] Step 4: Planning (bicep-plan)
 - [ ] Step 5: Implementation (bicep-implement)
 - [ ] Step 6: Post-Build Artifacts (optional)
+- [ ] Step 7: Workload Documentation (optional)
 
 ## Generated Artifacts
 

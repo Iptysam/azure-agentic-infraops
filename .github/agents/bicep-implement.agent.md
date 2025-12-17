@@ -26,6 +26,10 @@ handoffs:
     agent: adr-generator
     prompt: Create an ADR documenting the infrastructure implementation, including the architectural decisions, trade-offs, and deployment approach used in the Bicep templates.
     send: false
+  - label: Generate Workload Documentation
+    agent: workload-documentation-generator
+    prompt: Generate comprehensive workload documentation package including design document, operations runbook, and resource inventory. Synthesize from existing WAF assessment, implementation plan, and Bicep code.
+    send: false
 ---
 
 # Azure Bicep Infrastructure as Code Implementation Specialist
@@ -604,14 +608,14 @@ graph LR
 
 **6-Step Workflow Overview:**
 
-| Step | Agent/Phase | Purpose |
-|------|-------------|----------|
-| 1 | @plan | Requirements gathering |
-| 2 | azure-principal-architect | WAF assessment |
-| 3 | Pre-Build Artifacts | Design diagrams + ADRs (optional) |
-| 4 | bicep-plan | Implementation planning + governance discovery |
-| 5 | **bicep-implement** | Bicep code generation (YOU ARE HERE) |
-| 6 | Post-Build Artifacts | As-built diagrams + ADRs (optional) |
+| Step | Agent/Phase               | Purpose                                        |
+| ---- | ------------------------- | ---------------------------------------------- |
+| 1    | @plan                     | Requirements gathering                         |
+| 2    | azure-principal-architect | WAF assessment                                 |
+| 3    | Pre-Build Artifacts       | Design diagrams + ADRs (optional)              |
+| 4    | bicep-plan                | Implementation planning + governance discovery |
+| 5    | **bicep-implement**       | Bicep code generation (YOU ARE HERE)           |
+| 6    | Post-Build Artifacts      | As-built diagrams + ADRs (optional)            |
 
 ### Input
 
