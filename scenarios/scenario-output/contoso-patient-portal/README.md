@@ -1,6 +1,6 @@
 # Contoso Patient Portal Scenario Workflow
 
-> **Version 1.0.0** | Last Updated: December 4, 2025
+> **Version 1.0.0**
 >
 > **HIPAA-compliant patient portal using GitHub Copilot agents**
 

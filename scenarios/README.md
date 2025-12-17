@@ -1,6 +1,6 @@
 # Scenarios Overview
 
-> **Version 3.2.0** | Last Updated: December 7, 2025
+> **Version 3.2.0** | [Changelog](../VERSION.md)
 >
 > **Hands-on learning scenarios demonstrating Agentic InfraOps as an efficiency multiplier for IT Professionals.**
 

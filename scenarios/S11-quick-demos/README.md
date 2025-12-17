@@ -1,6 +1,6 @@
 # Quick Demo Prompts
 
-> **Version 3.2.0** | Last Updated: December 7, 2025
+> **Version 3.2.0** | [Changelog](../../VERSION.md)
 
 Simple, copy-paste prompts for rapid infrastructure generation. These demos are designed for quick
 exploration of Agentic InfraOps capabilities.

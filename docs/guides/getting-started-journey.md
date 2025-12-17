@@ -1,6 +1,6 @@
 # Getting Started: Your Complete Journey
 
-> **Version 3.2.0** | Last Updated: December 7, 2025
+> **Version 3.2.0** | [Changelog](../../VERSION.md)
 >
 > **From zero to productive in 30 minutes.** This comprehensive guide covers setup, your first scenario,
 > exploration paths, and mastery.\n>\n> ⚡ **In a hurry?** Use [Quick Start](quickstart.md) for 10-minute setup + first demo.
@@ -27,7 +27,7 @@ flowchart LR
 | **Setup**          | Clone repo, open Dev Container, verify tools | 15 min    |
 | **First Scenario** | Complete S01 Bicep Baseline                  | 30 min    |
 | **Explore**        | Try scenarios matching your role             | 2-4 hours |
-| **Master**         | Agentic Workflow, Coding Agent            | Ongoing   |
+| **Master**         | Agentic Workflow, Coding Agent               | Ongoing   |
 
 ---
 
