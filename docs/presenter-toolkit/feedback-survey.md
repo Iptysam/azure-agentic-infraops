@@ -75,7 +75,7 @@ Use these as discussion prompts for smaller groups.
 - [ ] Writing effective prompts for Copilot
 - [ ] Understanding Azure Well-Architected Framework alignment
 - [ ] Working with Bicep/Terraform templates
-- [ ] Other: ********\_\_\_\_********
+- [ ] Other: **\*\*\*\***\_\_\_\_**\*\*\*\***
 
 **Q5. Before this workshop, how confident were you using AI-assisted tools
 for infrastructure development?**
@@ -172,7 +172,7 @@ in the next 30 days?**
 - [ ] Technical complexity
 - [ ] Unclear business value
 - [ ] Need manager approval
-- [ ] Other: ********\_\_\_\_********
+- [ ] Other: **\*\*\*\***\_\_\_\_**\*\*\*\***
 - [ ] No barriers - ready to start!
 
 **Q15. What specific project or task will you try this on first?**
@@ -201,7 +201,7 @@ _Open text field_
 - [ ] Security and compliance automation
 - [ ] Multi-environment deployments
 - [ ] Troubleshooting and debugging
-- [ ] Other: ********\_\_\_\_********
+- [ ] Other: **\*\*\*\***\_\_\_\_**\*\*\*\***
 
 **Q19. Any additional comments or feedback?**
 

@@ -41,15 +41,15 @@ With optional artifact phases:
 
 ### Workflow Steps
 
-| Step | Agent/Phase                 | Purpose                           | Creates Code? |
-| ---- | --------------------------- | --------------------------------- | ------------- |
-| 1    | `@plan`                     | Requirements gathering            | No            |
-| 2    | `azure-principal-architect` | WAF assessment, recommendations   | No            |
-| 3    | Design Artifacts (optional) | Design diagrams + ADRs            | No            |
-| 4    | `bicep-plan`                | Implementation planning with AVM  | Planning docs |
-| 5    | `bicep-implement`           | Bicep code generation             | Yes           |
-| 6    | Deploy                      | Deploy to Azure                   | No            |
-| 7    | As-Built Artifacts (opt.)   | As-built diagrams + ADRs          | No            |
+| Step | Agent/Phase                 | Purpose                          | Creates Code? |
+| ---- | --------------------------- | -------------------------------- | ------------- |
+| 1    | `@plan`                     | Requirements gathering           | No            |
+| 2    | `azure-principal-architect` | WAF assessment, recommendations  | No            |
+| 3    | Design Artifacts (optional) | Design diagrams + ADRs           | No            |
+| 4    | `bicep-plan`                | Implementation planning with AVM | Planning docs |
+| 5    | `bicep-implement`           | Bicep code generation            | Yes           |
+| 6    | Deploy                      | Deploy to Azure                  | No            |
+| 7    | As-Built Artifacts (opt.)   | As-built diagrams + ADRs         | No            |
 
 ### Why Seven Steps?
 

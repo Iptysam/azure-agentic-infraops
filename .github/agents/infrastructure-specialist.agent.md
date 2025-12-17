@@ -37,8 +37,8 @@ consider using the specialized agents (`azure-principal-architect`, `bicep-plan`
 
 This unified agent consolidates the 7-step workflow into 3 internal phases:
 
-| Unified Phase     | Equivalent 7-Step Phases                                                 |
-| ----------------- | ------------------------------------------------------------------------ |
+| Unified Phase      | Equivalent 7-Step Phases                                                 |
+| ------------------ | ------------------------------------------------------------------------ |
 | 1. Assess & Design | Step 1 (@plan) + Step 2 (architect) + Step 3 (design artifacts)          |
 | 2. Plan            | Step 4 (bicep-plan with governance discovery)                            |
 | 3. Implement       | Step 5 (bicep-implement) + Step 6 (deploy) + Step 7 (as-built artifacts) |

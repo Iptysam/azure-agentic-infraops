@@ -26,21 +26,21 @@ Workload documentation serves as:
 
 Documentation must be synthesized from existing agentic workflow outputs:
 
-| Source                 | Location                           | Content to Extract                               |
-| ---------------------- | ---------------------------------- | ------------------------------------------------ |
-| WAF Assessment         | `02-architecture-assessment.md`    | Business context, pillar scores, recommendations |
-| Cost Estimate          | `03-des-cost-estimate.md`          | Monthly/annual costs, SKU rationale              |
-| Implementation Plan    | `04-implementation-plan.md`        | Resource specs, dependencies, phases             |
-| Governance Constraints | `04-governance-constraints.md`     | Azure Policy requirements                        |
-| Bicep Code             | `infra/bicep/{project}/`           | Resource definitions, parameters, outputs        |
+| Source                 | Location                        | Content to Extract                               |
+| ---------------------- | ------------------------------- | ------------------------------------------------ |
+| WAF Assessment         | `02-architecture-assessment.md` | Business context, pillar scores, recommendations |
+| Cost Estimate          | `03-des-cost-estimate.md`       | Monthly/annual costs, SKU rationale              |
+| Implementation Plan    | `04-implementation-plan.md`     | Resource specs, dependencies, phases             |
+| Governance Constraints | `04-governance-constraints.md`  | Azure Policy requirements                        |
+| Bicep Code             | `infra/bicep/{project}/`        | Resource definitions, parameters, outputs        |
 
 ### Optional Sources
 
-| Source           | Location                | Content to Extract                          |
-| ---------------- | ----------------------- | ------------------------------------------- |
-| Design Diagram   | `03-des-diagram.png`    | Pre-implementation architecture             |
-| As-Built Diagram | `07-ab-diagram.png`     | Deployed architecture                       |
-| ADRs             | `*-adr-*.md`            | Decision rationale, alternatives considered |
+| Source           | Location             | Content to Extract                          |
+| ---------------- | -------------------- | ------------------------------------------- |
+| Design Diagram   | `03-des-diagram.png` | Pre-implementation architecture             |
+| As-Built Diagram | `07-ab-diagram.png`  | Deployed architecture                       |
+| ADRs             | `*-adr-*.md`         | Decision rationale, alternatives considered |
 
 ### Integration Rules
 

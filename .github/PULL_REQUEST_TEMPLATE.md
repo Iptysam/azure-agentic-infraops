@@ -48,7 +48,7 @@ Fixes #
 
 - [ ] `bicep build` succeeds for all `.bicep` files
 - [ ] `bicep lint` passes with no errors
-- [ ] Deployed to Azure subscription (region: ****\_\_\_\_****)
+- [ ] Deployed to Azure subscription (region: \***\*\_\_\_\_\*\***)
 - [ ] All resources pass Azure Policy compliance
 - [ ] Resources cleaned up after testing
 
