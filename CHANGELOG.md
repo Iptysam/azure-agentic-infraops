@@ -5,6 +5,10 @@ All notable changes to **Agentic InfraOps** will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.7.1] - 2025-12-18
+
+- fix: Complete docs rebuild cleanup - fix broken links and old path references
+
 ## [Unreleased] - Docs Rebuild Complete
 
 ### Added
