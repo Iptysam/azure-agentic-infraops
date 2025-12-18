@@ -1,6 +1,6 @@
 # Presenter Resources
 
-> **Version 3.6.0** | [Back to Documentation Hub](../README.md)
+> **Version 3.7.8** | [Back to Documentation Hub](../README.md)
 
 Complete toolkit for demonstrating Agentic InfraOps to customers, partners, and internal teams.
 

@@ -1,6 +1,6 @@
 # Contoso Healthcare Patient Portal - Bicep Infrastructure
 
-> **Version 3.6.0**
+> **Version 3.7.8**
 
 This directory contains Bicep templates for deploying a HIPAA-compliant patient portal infrastructure on Azure.
 

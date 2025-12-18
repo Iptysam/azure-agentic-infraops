@@ -1,6 +1,6 @@
 # Scenarios Overview
 
-> **Version 3.6.0** | [Changelog](../VERSION.md)
+> **Version 3.7.8** | [Changelog](../VERSION.md)
 >
 > **Hands-on learning scenarios demonstrating Agentic InfraOps as an efficiency multiplier for IT Professionals.**
 
