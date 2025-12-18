@@ -5,6 +5,10 @@ All notable changes to **Agentic InfraOps** will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.7.8] - 2025-12-18
+
+- fix: update Azure Pricing Calculator URLs with locale
+
 ## [3.7.7] - 2025-12-18
 
 - fix: correct broken relative paths in azure-principal-architect.agent.md
