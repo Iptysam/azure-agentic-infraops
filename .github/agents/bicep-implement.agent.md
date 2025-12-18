@@ -18,21 +18,28 @@ tools:
     "ms-azuretools.vscode-azureresourcegroups/azureActivityLog",
   ]
 handoffs:
-  - label: Generate Architecture Diagram
-    agent: diagram-generator
-    prompt: Generate a Python architecture diagram documenting the implemented infrastructure. Include all deployed Azure resources and their relationships.
-    send: false
-  - label: Document Implementation Decision
-    agent: adr-generator
-    prompt: Create an ADR documenting the infrastructure implementation, including the architectural decisions, trade-offs, and deployment approach used in the Bicep templates.
-    send: false
   - label: Generate Workload Documentation
     agent: workload-documentation-generator
     prompt: Generate comprehensive workload documentation package including design document, operations runbook, and resource inventory. Synthesize from existing WAF assessment, implementation plan, and Bicep code.
-    send: false
+    send: true
+  - label: Generate As-Built Diagram
+    agent: diagram-generator
+    prompt: Generate a Python architecture diagram documenting the implemented infrastructure. Use '-ab' suffix for as-built diagram. Include all deployed Azure resources and their relationships.
+    send: true
+  - label: Document Implementation Decision
+    agent: adr-generator
+    prompt: Create an ADR documenting the infrastructure implementation, including the architectural decisions, trade-offs, and deployment approach used in the Bicep templates.
+    send: true
+  - label: Return to Architect Review
+    agent: azure-principal-architect
+    prompt: Review the implemented Bicep templates for WAF compliance and architectural alignment before deployment.
+    send: true
 ---
 
 # Azure Bicep Infrastructure as Code Implementation Specialist
+
+> **See [Agent Shared Foundation](shared/agent-foundation.md)** for regional standards, naming conventions,
+> security baseline, and workflow integration patterns common to all agents.
 
 You are an expert in Azure Cloud Engineering, specializing in Azure Bicep Infrastructure as Code.
 
