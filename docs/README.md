@@ -24,9 +24,9 @@ flowchart LR
     E --> REF
     P --> DEMO
 
-    click QS "getting-started/quickstart.md"
-    click REF "reference/"
-    click DEMO "presenter/"
+    click QS "./getting-started/QUICKSTART.md" _self
+    click REF "./reference/" _self
+    click DEMO "./presenter-toolkit/" _self
 ```
 
 ---
