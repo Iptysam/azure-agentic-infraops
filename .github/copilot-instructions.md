@@ -26,7 +26,7 @@ This file provides context and guidance for GitHub Copilot when assisting with t
 - Agent definitions: `.github/agents/*.agent.md`
 - **Plan requirements template**: `.github/prompts/plan-requirements.prompt.md` (comprehensive NFR capture)
 - Workflow guide: `docs/workflow/WORKFLOW.md`
-- Quick start: `docs/guides/quickstart.md`
+- Quick start: `docs/getting-started/quickstart.md`
 - Troubleshooting: `docs/guides/troubleshooting.md`
 - Bicep implement agent: `.github/agents/bicep-implement.agent.md` (has unique suffix guidance)
 - Diagram generator: `.github/agents/diagram-generator.agent.md` (Python architecture diagrams)
@@ -34,6 +34,13 @@ This file provides context and guidance for GitHub Copilot when assisting with t
 - Line ending rules: `.gitattributes` (normalizes CRLF→LF for cross-platform development)
 - MCP configuration: `.vscode/mcp.json` (Azure Pricing MCP server)
 - MCP server source: `mcp/azure-pricing-mcp/` (real-time Azure pricing tools)
+
+**Reference Documentation (Single Source of Truth):**
+
+- `docs/reference/defaults.md` - Regions, CAF naming, tags, SKUs, security baseline
+- `docs/reference/workflow.md` - Canonical 7-step workflow diagram
+- `docs/reference/bicep-patterns.md` - Unique suffix, diagnostic settings, policy workarounds
+- `docs/reference/agents-overview.md` - All agents comparison table with examples
 
 ## Regional Selection Guidelines
 
